@@ -3,7 +3,7 @@
 
         <form class="form-signin" style = "margin-top : 25px" id ="sign_in">
 
-          <input style = "padding: 25px; font-size:17px; font-weight:bold; " type="text" name = "inputnumber" id="inputnumber" class="form-control" ng-model = "mobileNumber" placeholder="Mobile Number" required autofocus>
+          <input style = "padding: 25px; font-size:17px; font-weight:bold; " type="text" name = "inputnumber" id="inputnumber" class="form-control" ng-model = "mobileNumber" ng-pattern="onlyNumbers"  placeholder="Mobile Number" required autofocus>
 
           <input style = "padding: 25px; font-size:17px; font-weight:bold; margin-top:15px;" type="text" name ="inputnumber" id="inputnumber" class="form-control" ng-model = "aadharNumber" placeholder="Last 4 digits of AADHAR" required autofocus>
 
