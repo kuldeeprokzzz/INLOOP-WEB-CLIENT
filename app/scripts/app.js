@@ -28,6 +28,14 @@ angular
         templateUrl: 'views/driver/licensePlate.html',
         
       })
+      .when('/onMyWay', {
+        templateUrl: 'views/driver/onMyWay.html',
+        
+      })
+      .when('/checkIn', {
+        templateUrl: 'views/delivery_associate/checkIn.html',
+        
+      })
        .otherwise({
         redirectTo: '/'
       });
