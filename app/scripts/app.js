@@ -36,6 +36,10 @@ angular
         templateUrl: 'views/delivery_associate/checkIn.html',
         
       })
+      .when('/driverCheckIn', {
+        templateUrl: 'views/delivery_associate/driverCheckIn.html',
+        
+      })
        .otherwise({
         redirectTo: '/'
       });

@@ -1,3 +1,95 @@
+/*sign in page css*/
+
+.container {
+ 
+}
+
+.form-signin {
+  margin-top : 150px;
+  width: 405px;
+  text-align: center;
+  margin: 150px auto;
+}
+
+.textLine {
+  padding: 10px; 
+  font-size:20px; 
+  font-weight:bold; margin-top:15px; 
+  color:#08A19C;
+}
+
+/*end of sign in page css*/
+
+/*css for driverCard*/
+
+.cardHeader {
+  background-color: #394165;
+  color:white;
+  padding: 10px;
+}
+
+
+/*end of css for driverCard*/
+.cover {
+  width:100%; 
+  background:#1d1f20; 
+  height:125px; 
+  line-height:50px;
+}
+.hamburger{
+  background:none;
+  position:absolute;
+  top:0;
+  left:0;
+  line-height:122px;
+  padding:0px 15px 0px 15px;
+  color:white;
+  border:0;
+  font-size:33px;
+  cursor:pointer;
+  outline:none;
+  z-index:10000000000000;
+}
+.cross{
+  background:none;
+  position:absolute;
+  top:0px;
+  left:0;
+  padding:0px 15px 0px 15px;
+  color:white;
+  border:0;
+  font-size:110px;
+  line-height:203px;
+  cursor:pointer;
+  outline:none;
+  z-index:10000000000000;
+}
+.menu{z-index:1000000; font-weight:bold; font-size:0.8em; width:25%; background:#131313;  position:absolute; text-align:center;}
+.menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
+.menu li {display: block;   padding:15px 0 15px 0; border-bottom:#1d1f20 1px solid;}
+.menu li:hover{display: block;    background:#181818; padding:15px 0 15px 0; border-bottom:#1d1f20 1px solid;}
+.menu ul li a { text-decoration:none;  margin: 0px; color:#fff;}
+.menu ul li a:hover {  color: #fff; text-decoration:none;}
+.menu a{text-decoration:none; color:white;}
+.menu a:hover{text-decoration:none; color:white;}
+.glyphicon-home{
+  color:white; 
+  font-size:1.5em; 
+  margin-top:5px; 
+  margin:0 auto;
+}
+@font-face {
+    font-family: 'action_manbold';
+    src: url('fonts/Action_Man_Bold-webfont.eot');
+    src: url('fonts/Action_Man_Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Action_Man_Bold-webfont.woff') format('woff'),
+         url('fonts/Action_Man_Bold-webfont.ttf') format('truetype'),
+         url('fonts/Action_Man_Bold-webfont.svg#action_manbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -5,7 +97,8 @@
   padding: 0.2em 0;
 }
 
-body {
+
+body { 
   padding: 0;
 }
 

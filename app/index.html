@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="inloopYeomanApp" style = "background-color : #394165; ">
+  <body ng-app="inloopYeomanApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -40,7 +40,6 @@
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
     </script>
-
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -56,10 +55,12 @@
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/sign_in.js"></script>
         <script src="scripts/directives/driverCard.js"></script>
         <script src="scripts/directives/driverfullCard.js"></script>
+
         <!-- endbuild -->
 </body>
 </html>

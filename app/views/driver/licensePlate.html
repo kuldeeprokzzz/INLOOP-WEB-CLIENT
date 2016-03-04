@@ -1,10 +1,17 @@
 
 
-<div width : "100px;" height : "100%">
+<div>
 	    <driver-card></driver-card>
-        <form class="form-signin" style = "margin-top : 10px; padding: 15px;" id ="sign_in">
-          <input style = "padding: 30px; font-size:24px;" type="text" name ="inputnumber" id="inputnumber" class="form-control" ng-model = "licensePlateNumber" placeholder="Last 4 digits of License Plate Number" required autofocus> 
-          <button style = "padding: 5px; font-size:32px; font-weight:bold; margin-top:10px; background-color:#08A19C;" class="btn btn-lg btn-primary btn-block" type="submit" ng-click = "add()">ADD</button>
-        </form>
+        <div class = "container">
+        	
+	        	<div class = "pull-left">
+	        		<input style = "width: 560px; height: 60px;font-size: 26px;" type="text" class="form-control" placeholder ="License Plate (last 4 digits)" required>
+	        	</div>
+	        	<div class = "pull-right">
+	        	 	 <button style = "height: 59px;width: 140px;font-size: 32px;background-color: #00A89F;"type="button" class="btn btn-info">ADD</button>
 
-  </div> <!-- /container -->
+	        	</div>
+
+        </div>
+
+</div>
