@@ -1,15 +1,15 @@
 <div class = "container">
   <div class ="cardHeader">
-    <h2>Niketan Dhama </h2>
-    <h4>G Trans Logistics Pvt. Ltd.</h4>
+    <h2>{{driver.driverName}}</h2>
+    <h4>{{driver.providerName}}</h4>
   </div>
   <div>
-    <img src="images/img.png" class="img-responsive center-block">
+    <img src={{driver.vehicleImage}} class="img-responsive center-block">
   </div>
   <div style = "background:grey; height: 48px;">
     <div style = "font-size: 34px;">
-       <span style = "margin-left: 24px;">KA-12545-8785</span>
-       <span style = "margin-left: 227px;">Tata Ace</span>
+       <span style = "margin-left: 24px;">{{driver.licensePlateNumber}}</span>
+       <span style = "margin-left: 227px;">{{driver.model}}</span>
     </div> 
   </div>
   <div>

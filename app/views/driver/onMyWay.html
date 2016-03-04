@@ -1,11 +1,8 @@
 <div>
 	    <driver-full-card></driver-full-card>
         <div class = "container">
-        		<div>
-	        	 	 <button style = "height: 59px;width: 700px;font-size: 32px;background-color: #00A89F;"type="button" class="btn btn-info">On My WAy</button>
-
+        		<div ng-init="showOnMyWay=true">
+	        	 	 <button style = "height: 59px;width: 700px;font-size: 32px;background-color: #00A89F;"type="button" class="btn btn-info" ng-click = "submitOnMyWay()" ng-show="showOnMyWay">On My WAy</button>
 	        	</div>
-
         </div>
-
 </div>

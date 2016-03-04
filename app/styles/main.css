@@ -25,14 +25,13 @@
 .cardHeader {
   background-color: #394165;
   color:white;
-  padding: 10px;
+  padding: 23px;
 }
 
 
 /*end of css for driverCard*/
 .cover {
-  width:100%; 
-  background:#1d1f20; 
+  background:#394165; 
   height:125px; 
   line-height:50px;
 }
@@ -40,7 +39,6 @@
   background:none;
   position:absolute;
   top:0;
-  left:0;
   line-height:122px;
   padding:0px 15px 0px 15px;
   color:white;
@@ -54,7 +52,6 @@
   background:none;
   position:absolute;
   top:0px;
-  left:0;
   padding:0px 15px 0px 15px;
   color:white;
   border:0;
@@ -64,7 +61,7 @@
   outline:none;
   z-index:10000000000000;
 }
-.menu{z-index:1000000; font-weight:bold; font-size:0.8em; width:25%; background:#131313;  position:absolute; text-align:center;}
+.menu{z-index:1000000; font-weight:bold; font-size:0.8em; width:25%; background:#394165;;text-align:center;}
 .menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
 .menu li {display: block;   padding:15px 0 15px 0; border-bottom:#1d1f20 1px solid;}
 .menu li:hover{display: block;    background:#181818; padding:15px 0 15px 0; border-bottom:#1d1f20 1px solid;}
