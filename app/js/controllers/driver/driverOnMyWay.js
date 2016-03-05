@@ -1,13 +1,4 @@
-'use strict';
-
-/**
- * @ngdoc function
- * @name inloopYeomanApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the inloopYeomanApp
- */
-angular.module('inloopYeomanApp')
+inLoopApp
   .controller('driver_OnMyWay_Ctrl', function ($scope, $location, $rootScope,callRemoteService,$http) {
 
 

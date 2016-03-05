@@ -1,28 +1,12 @@
-'use strict';
 
-/**
- * @ngdoc overview
- * @name inloopYeomanApp
- * @description
- * # inloopYeomanApp
- *
- * Main module of the application.
- */
-angular
-  .module('inloopYeomanApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch'
-  ])
+var inLoopApp = angular
+  .module('inLoopApp', [ 'ngRoute'])
   .config(function ($routeProvider) {
     $routeProvider
       
       .when('/', {
-        templateUrl: 'views/sign_in.html',
-        controller: 'Sign_inCtrl'
+        templateUrl: 'views/login.html',
+        controller: 'loginController'
       })
       .when('/licensePlate', {
         templateUrl: 'views/driver/licensePlate.html',
@@ -61,3 +45,43 @@ angular
         redirectTo: '/'
       });
   });
+
+inLoopApp.factory('$global',function(){
+ 
+  
+    var _baseURL = 'http://54.169.251.56:10010/api/v1';
+      
+    var _authToken = '';
+
+    roles = {
+
+            driver : 0,
+            deliveryAssociate : 2,
+            loadManager : 3,
+
+        };       
+
+    contractStatusType = {
+
+            onWay : { type : 'ON_WAY', id : 0},
+            
+        };
+
+    
+ 
+    return { 
+        getUrl : function(){
+                return _baseURL;
+            },
+
+        getAuthToken : function(){
+          return _authToken;
+        },
+
+        setAuthToken: function(token){
+          _authToken = token;
+        }
+        
+
+        };
+}); 

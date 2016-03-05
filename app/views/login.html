@@ -1,7 +1,7 @@
 
   <div class="container">
 
-        <form class="form-signin" id ="sign_in">
+        <div class="form-signin">
 
           <input style = "padding: 30px; font-size:24px;" type="text" name = "inputnumber" id="inputnumber" class="form-control" ng-model = "username" ng-pattern="onlyNumbers"  placeholder="Mobile Number" required autofocus>
 
@@ -10,6 +10,7 @@
           <p class = "textLine">Sign In with your username, email or mobile number.</p>
 
           <button style = "padding: 5px; font-size:32px; font-weight:bold; margin-top:60px; background-color:#08A19C;" class="btn btn-lg btn-primary btn-block" type="submit" ng-click = "submit()">Sign in</button>
-        </form>
+        </div>
 
-  </div> <!-- /container -->
+  </div> 
+  <!-- inline styling has to be removed -->
