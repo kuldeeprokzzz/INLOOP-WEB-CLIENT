@@ -1,8 +1,10 @@
 inLoopApp.service('completeModel',function(){
  
-  var completeModel = {
+  this.completeModel = {
+      
     driver : {},
     deliveryAssociate : {}
+    
   }
         
 

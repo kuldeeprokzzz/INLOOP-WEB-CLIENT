@@ -1,11 +1,11 @@
-inLoopApp.service('sharedProperties',function(){
+inLoopApp.service('sharedProperties',function($location){
  
   
-        var _baseURL = 'http://54.169.251.56:10010/api/v1';
+        this._baseURL = 'http://54.169.251.56:10010/api/v1';
           
-        var _authToken = '';
+        this._authToken = '';
 
-        roles = {
+        this.roles = {
 
                 driver : 0,
                 deliveryAssociate : 2,
@@ -13,7 +13,7 @@ inLoopApp.service('sharedProperties',function(){
 
             };       
 
-        contractStatusType = {
+        this.contractStatusType = {
 
             onWay : { type : 'ON_WAY', id : 0},
             
@@ -23,16 +23,20 @@ inLoopApp.service('sharedProperties',function(){
  
     
         this.getUrl = function(){
-                return _baseURL;
+            return this._baseURL;
         };
 
         this.getAuthToken = function(){
-          return _authToken;
+            return this._authToken;
         };
 
         this.setAuthToken = function(token){
-          _authToken = token;
+            this._authToken = token;
         };
+        
+        this.setPath = function (path) {
+            return $location.path(path);
+        }
         
 
 
