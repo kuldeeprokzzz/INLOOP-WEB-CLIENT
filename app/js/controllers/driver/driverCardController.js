@@ -1,16 +1,15 @@
 inLoopApp.controller('driverCardController', function ($scope, completeModel) {
     
-    $scope.getDriverName = function(){
-         var middleName = completeModel.driver.middle_name + " ";
-         return completeModel.driver.first_name + " " + middleName + completeModel.driver.last_name;
-    }
+    $scope.initializeDriver = function(){
 
-    $scope.driverName = $scope.getDriverName();
-    $scope.providerName = completeModel.driver.organization_name;
-    
-    
+        $scope.driver = completeModel.driver;
+        var middleName = $scope.driver.middle_name + " ";
+        $scope.driver.driverName = $scope.driver.first_name + " " + middleName + $scope.driver.last_name;
+        $scope.driver.providerName = $scope.driver.organization_name;
+    };
 
-    $scope.OnLicenceKeyPress = function(){
+
+    $scope.onLicenceKeyPress = function(){
         /*callRemoteService.getVehicleProfile($rootScope.driver.providerId,$rootScope.driver.providerId)
           .then(function(response){
 
@@ -19,11 +18,11 @@ inLoopApp.controller('driverCardController', function ($scope, completeModel) {
             $scope.model = ($scope.responseData)[0].model;
             $scope.vehicleImage = ($scope.responseData)[0].vehicleImage;
       });*/
-    }
+    };
 
 
   	$scope.addLicencePlate = function(){
-    
+        var n = $scope.driver.licensePlateNumber;
         //   callRemoteService.getVehicleProfile($rootScope.driver.providerId,$rootScope.driver.providerId)
         //   .then(function(response){
         //     alert('1')*/
