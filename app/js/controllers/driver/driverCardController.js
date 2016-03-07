@@ -1,4 +1,4 @@
-inLoopApp.controller('driverCardController', function ($scope, completeModel) {
+inLoopApp.controller('driverCardController', function ($scope, completeModel, driverService, sharedProperties) {
     
     $scope.initializeDriver = function(){
 
@@ -6,35 +6,45 @@ inLoopApp.controller('driverCardController', function ($scope, completeModel) {
         var middleName = $scope.driver.middle_name + " ";
         $scope.driver.driverName = $scope.driver.first_name + " " + middleName + $scope.driver.last_name;
         $scope.driver.providerName = $scope.driver.organization_name;
+        $scope.driver.licensePlateNumber = '';
+        $scope.driver.vehicleProfile = {};
+        $scope.driver.errorMessage = '';
     };
 
 
-    $scope.onLicenceKeyPress = function(){
-        /*callRemoteService.getVehicleProfile($rootScope.driver.providerId,$rootScope.driver.providerId)
-          .then(function(response){
+    $scope.OnLicenceKeyPress = function(event){
 
-            $scope.responseData = response.data;
-            $scope.licensePlateNumber = ($scope.responseData)[0].regNumber;
-            $scope.model = ($scope.responseData)[0].model;
-            $scope.vehicleImage = ($scope.responseData)[0].vehicleImage;
-      });*/
+        if(($scope.driver.licensePlateNumber).length == 4){
+            driverService.getVehicleProfile($scope.driver.organizationid,$scope.driver.licensePlateNumber)
+            .then(function(response){
+
+                if(response.data.length == 0){
+                    $scope.driver.errorMessage = 'No Matching Vehicle Found';
+                }else{
+
+                    if(response.data.length == 2){
+                        $scope.driver.vehicleProfile = response.data[0];
+                        $scope.driver.licensePlateNumber = response.data[0].regNumber;
+                    }else{
+                        $scope.driver.errorMessage = 'More than One vehicle Found';
+                    }
+                }
+            });
+        }
+
+        if($scope.driver.licensePlateNumber.length > 4){
+            if (event.keyCode == 8) {
+                $scope.driver.licensePlateNumber = '';
+            }
+        }
     };
 
 
   	$scope.addLicencePlate = function(){
-        var n = $scope.driver.licensePlateNumber;
-        //   callRemoteService.getVehicleProfile($rootScope.driver.providerId,$rootScope.driver.providerId)
-        //   .then(function(response){
-        //     alert('1')*/
-
-        //     $rootScope.driver.licensePlateNumber = $scope.licensePlateNumber;
-        //     $rootScope.driver.model = ($scope.responseData)[0].model;
-        //     $rootScope.driver.vehicleImage = ($scope.responseData)[0].vehicleImage;
-        //     $rootScope.driver.vehicleId = ($scope.responseData)[0].id;
-        //     $rootScope.driver.vehicleMake = ($scope.responseData)[0].make;
-
-        //     $location.path('/onMyWay');
-        //     console.log($location.path());
+        
+        completeModel.driver.vehicleProfile = {};
+        completeModel.driver.vehicleProfile = $scope.driver.vehicleProfile;
+        sharedProperties.setPath('/onMyWay');
         };
 
   });

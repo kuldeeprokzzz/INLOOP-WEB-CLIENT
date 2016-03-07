@@ -10,8 +10,8 @@ inLoopApp.config(function ($routeProvider) {
         controller : 'driverCardController'
       })
       .when('/onMyWay', {
-        templateUrl: 'views/driver/onMyWay.html',
-        controller : 'driver_OnMyWay_Ctrl'
+        templateUrl: 'views/driver/onWay.html',
+        controller : 'driverOnWayController'
         
       })
       .when('/checkIn', {
