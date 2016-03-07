@@ -1,4 +1,25 @@
 /*sign in page css*/
+.btn.btn-info.ImgButton{
+  height: 59px;width: 500px;
+  font-size: 32px;
+  background-color: #00A89F;
+  position: absolute;
+  left: 425px;
+  top: 1120px;
+
+}
+.serverText {
+  height: 59px;width: 500px;
+  font-size: 40px;
+  color: #00A89F;
+  left: 550px;
+  position: absolute;
+  top: 1120px;
+  font-weight: bold;
+}
+.img-responsive.center-block.imageSize {
+  width: 100%;
+}
 .form-control.formInput {
   width: 560px; 
   height: 60px;

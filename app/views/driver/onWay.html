@@ -2,14 +2,9 @@
         <div class = "container" ng-init="initializeDriver()">
         <div ng-include ="'/views/driver/templates/driverHeader.html'"/>
         <div ng-include ="'/views/driver/templates/driverImage.html'"/>
-        <div style = "background:grey; height: 48px;">
-		    <div style = "font-size: 34px;">
-		       <span style = "margin-left: 24px;">{{driver.licensePlateNumber}}</span>
-		       <span style = "margin-left: 227px;">{{driver.model}}</span>
-		    </div> 
-		</div>
-        		<div>
-	        	 	 <button style = "height: 59px;width: 700px;font-size: 32px;background-color: #00A89F;"type="button" class="btn btn-info" ng-click = "submitOnMyWay()">On My WAy</button>
-	        	</div>
+        <div ng-include ="'/views/driver/templates/map.html'"/>
+        <!-- <div ng-include ="'/views/driver/templates/onMyWayButton.html'"/> -->
+        <div ng-include ="'/views/driver/templates/textFromServer.html'"/>
+        		
 </div>
 
