@@ -1,7 +1,30 @@
 /*sign in page css*/
+.form-control.formInput {
+  width: 560px; 
+  height: 60px;
+  font-size: 26px;
+}
+.btn.btn-info.formButton{
+  height: 59px;
+  width: 140px;
+  font-size: 32px;
+  background-color: #00A89F;
+}
+.container{
+ background-color: #394165;
+}
 
-.container {
- 
+.form-control.login_password, .form-control.login_number{
+  padding: 30px; 
+  font-size:24px;
+}
+
+#login #login-form .login_btn{
+  padding: 5px; 
+  font-size:32px; 
+  font-weight:bold; 
+  margin-top:60px; 
+  background-color:#08A19C;
 }
 
 .form-signin {
@@ -10,13 +33,15 @@
   text-align: center;
   margin: 150px auto;
 }
-
 .textLine {
   padding: 10px; 
   font-size:20px; 
-  font-weight:bold; margin-top:15px; 
+  font-weight:bold; 
+  margin-top:15px; 
   color:#08A19C;
+  text-align: center;
 }
+
 
 /*end of sign in page css*/
 
@@ -172,3 +197,24 @@ body {
   }
 }
 
+@media only screen and (max-width : 480px) {
+  
+  #login{
+    background-color: #394165;
+  }
+
+  #login #login-form .textLine{
+    padding: 10px 0px;
+    font-size: 18px;
+  }
+
+  #login #login-form .login_btn{
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width : 1024px) {
+  #login{
+    background-color: #394165;
+  }
+}

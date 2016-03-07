@@ -5,6 +5,11 @@ inLoopApp.config(function ($routeProvider) {
         templateUrl: 'views/login.html',
         controller: 'loginController'
       })
+      .when('/login', {
+        templateUrl: 'views/loginWithUserName.html',
+        controller: 'loginController'
+      })
+
       .when('/licensePlate', {
         templateUrl: 'views/driver/driverCard.html',
         controller : 'driverCardController'
