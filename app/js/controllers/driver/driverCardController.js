@@ -23,6 +23,7 @@ inLoopApp.controller('driverCardController', function ($scope, completeModel, dr
                 }else{
 
                     if(response.data.length == 2){
+                        completeModel.driver.vehicleProfile = response.data[0];
                         $scope.driver.vehicleProfile = response.data[0];
                         $scope.driver.licensePlateNumber = response.data[0].regNumber;
                     }else{
@@ -42,9 +43,9 @@ inLoopApp.controller('driverCardController', function ($scope, completeModel, dr
 
   	$scope.addLicencePlate = function(){
         
-        completeModel.driver.vehicleProfile = {};
-        completeModel.driver.vehicleProfile = $scope.driver.vehicleProfile;
-        sharedProperties.setPath('/onMyWay');
-        };
+        if(!($scope.driver.licensePlateNumber.length<=4)){
+            sharedProperties.setPath('/onMyWay');
+        }
+    };
 
   });

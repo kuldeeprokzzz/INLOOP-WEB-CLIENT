@@ -13,7 +13,7 @@ inLoopApp.service('driverService', ['sharedProperties','$http', function(sharedP
 
     this.driverOnMyWay = function(requestBody){
 
-    	return $http.post($rootScope.baseURL+'/contracts/',requestBody,{token : $rootScope.authenticationToken})
+    	return $http.post(sharedProperties.getUrl()+'/contracts/',requestBody,{token : sharedProperties.getAuthToken})
     			.then(function(response){
 
     				return response;

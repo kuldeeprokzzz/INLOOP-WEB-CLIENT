@@ -5,7 +5,7 @@ inLoopApp.service('sharedProperties',function($location){
           
         this._authToken = '';
 
-        this.roles = {
+        this._roles = {
 
                 driver : 0,
                 deliveryAssociate : 2,
@@ -13,9 +13,9 @@ inLoopApp.service('sharedProperties',function($location){
 
             };       
 
-        this.contractStatusType = {
+        this._contractStatusType = {
 
-            onWay : { type : 'ON_WAY', id : 0},
+            onWay : {id : 0,type : 'ON_WAY'},
             
         };
 
@@ -36,8 +36,9 @@ inLoopApp.service('sharedProperties',function($location){
         
         this.setPath = function (path) {
             return $location.path(path);
-        }
-        
+        };
 
-
+        this.getContractStatusType = function(){
+            return this._contractStatusType;
+        };
 }); 

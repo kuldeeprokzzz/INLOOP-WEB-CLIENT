@@ -1,3 +1,4 @@
 <div style  ="text-align : center;">
-	 <button type="button" class="btn btn-info ImgButton" ng-click = "submitOnMyWay()">On My WAy</button>
+	 <button ng-show="driver.showOnWayButton" type="button" class="btn btn-info ImgButton" ng-click = "submitOnMyWay()">On My WAy</button>
+	 <h3 ng-show="driver.showMessage" class="serverText">{{driver.message}}<h3>
 </div>
