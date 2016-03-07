@@ -1,21 +1,25 @@
 /*sign in page css*/
+.Deatils {
+  clear : both;
+  overflow: hidden;
+  background-color: white;
+  padding: 15px
+}
 .btn.btn-info.ImgButton{
   height: 59px;width: 500px;
   font-size: 32px;
   background-color: #00A89F;
-  position: absolute;
-  left: 425px;
-  top: 1120px;
+  margin-top: -160px;
 
 }
 .serverText {
-  height: 59px;width: 500px;
+  height: 59px;
   font-size: 40px;
   color: #00A89F;
-  left: 550px;
-  position: absolute;
-  top: 1120px;
-  font-weight: bold;
+  margin-top: -67px;
+
+  
+
 }
 .img-responsive.center-block.imageSize {
   width: 100%;
