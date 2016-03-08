@@ -16,6 +16,7 @@ inLoopApp.service('sharedProperties',function($location){
         this._contractStatusType = {
 
             onWay : {id : 0,type : 'ON_WAY'},
+            checkedIn : {id : 0,type : 'CHECKED_IN'},
             
         };
 
