@@ -1,12 +1,50 @@
-<div>
+<div ng-init = "initialize()">
+    <div ng-repeat = "contract in contracts">
+
+
     <div>
-        <div ng-include ="'/views/driver/templates/driverHeader.html'"/>
+
+
+      <div class ="cardHeader">
+	    <h2>{{contract.driver_name}}</h2>
+	    <h4>{{contract.provider_name}}</h4>
+	  </div>
+
+
+	  <div ng-include ="'/views/driver/templates/driverImage.html'"/>
+      <div style = "background-color : yellow; height : 15px;"></div>
+
+
+      <div>
+		<div class  ="Deatils">
+			<div class= "pull-left">
+				<h3>{{contract.vehicle_regNumber}}</h3>
+			</div>
+			<div class = "pull-right">
+	            <h3>IN Transit</h3>
+			</div>
+		</div>
+	</div>
+	<div>
+		<div class  ="Deatils">
+			<div class= "pull-left">
+				<h3>{{contract.vehicle_make}}</h3>
+			</div>
+			<div class = "pull-right">
+	            <h3>{{contract.states[1].time}}</h3>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+        <!-- <div ng-include ="'/views/driver/templates/driverHeader.html'"/>
         <div ng-include ="'/views/driver/templates/driverImage.html'"/>
         <div style = "background-color : yellow; height : 15px;"></div>
-        <div ng-include ="'/views/deliveryAssociate/templates/driverDetails.html'"/>
+        <div ng-include ="'/views/deliveryAssociate/templates/driverDetails.html'"/> -->
         
-        <!-- <div ng-include ="'/views/driver/templates/vehicleDetails.html'"/> -->
-        
+        <!-- <div ng-include ="'/views/driver/templates/vehicleDetails.html'"/> -->       
 
     </div>	        	
 </div>
