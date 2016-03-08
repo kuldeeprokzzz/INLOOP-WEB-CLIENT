@@ -1,33 +1,21 @@
-<div class = "container">
-  <div class ="cover">
-    <button class="hamburger">&#9776; Driver Check In</button> 
-	<button class="cross">&#735;</button>
-	<div class="menu">
-	  <ul>
-	    <a href="#"><li>LINK ONE</li></a>
-	    <a href="#"><li>LINK TWO</li></a>
-	    <a href="#"><li>LINK THREE</li></a>
-	    <a href="#"><li>LINK FOUR</li></a>
-	    <a href="#"><li>LINK FIVE</li></a>
-	  </ul>
-	</div>
-  </div> 
-  <driver-state-card></driver-state-card> 
+<div class = "container" style = "padding : 0px">
+	<div class = "col-xs-12">
+		<div class = "burgerBox">
+			<img class ="burger" src="images/burger.png">
+		    <h3 class = "textBurger">Driver Check In</h3>
+		</div>	
+    </div>
+    <div class = "boxNav hide">
+		<ul>
+			<li>hello</li>
+			<li>hello</li>
+			<li>hello</li>
+		</ul>
+	</div>	
+	<div ng-include ="'/views/deliveryAssociate/templates/intransit.html'"/>
 </div>
 <script>
-$( ".cross" ).hide();
-$( ".menu" ).hide();
-$( ".hamburger" ).click(function() {
-$( ".menu" ).slideToggle( "slow", function() {
-$( ".hamburger" ).hide();
-$( ".cross" ).show();
-});
-});
-
-$( ".cross" ).click(function() {
-$( ".menu" ).slideToggle( "slow", function() {
-$( ".cross" ).hide();
-$( ".hamburger" ).show();
-});
+$( ".burger" ).click(function() {
+	$(this).parents().find(".boxNav").toggleClass("hide");
 });
 </script>

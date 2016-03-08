@@ -29,10 +29,6 @@ inLoopApp.config(function ($routeProvider) {
         templateUrl: 'views/deliveryAssociate/checkIn.html',
         
       })
-        .when('/driverList', {
-        templateUrl: 'views/deliveryAssociate/driverList.html',
-        
-      })
       .when('/driverCheckInList', {
         templateUrl: 'views/deliveryAssociate/driverCheckInList.html',
         
