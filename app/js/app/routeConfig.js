@@ -45,6 +45,10 @@ inLoopApp.config(function ($routeProvider) {
         templateUrl: 'views/driver/manifestDetails.html',
         
       })
+      .when('/deliveryMenifestMap', {
+        templateUrl: 'views/driver/deliveryMenifestMap.html',
+        
+      })
        .otherwise({
         redirectTo: '/'
       });

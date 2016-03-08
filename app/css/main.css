@@ -1,4 +1,17 @@
 /*sign in page css*/
+.card {
+  background-color : white;
+  padding : 20px; 
+  border-bottom-style: groove;
+}
+.btn.btn-info.butt{
+  height: 59px;
+width: 473px;
+font-size: 32px;
+background-color: #00A89F; 
+margin-top: 28px;
+}
+
 .Deatils {
   clear : both;
   overflow: hidden;
@@ -38,7 +51,9 @@
 .container{
  background-color: #394165;
 }
-
+.cardHeader{
+  height: 153px;
+}
 .form-control.login_password, .form-control.login_number{
   padding: 30px; 
   font-size:24px;

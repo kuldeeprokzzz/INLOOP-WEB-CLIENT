@@ -1,17 +1,10 @@
 <div>
-	    <driver-card></driver-card>
-        <div class = "container">
-        	    <div class = "pull-left">
-	        		<input style = "width: 560px; height: 60px;font-size: 26px;" type="text" class="form-control" placeholder ="License Plate No." required>
-	        	</div>
-	        	<div class = "pull-left">
-	        		<input style = "width: 560px; height: 60px;font-size: 26px;" type="text" class="form-control" placeholder ="Odometer" required>
-	        	</div>
-	        	<div class = "pull-right">
-	        	 	 <button style = "height: 59px;width: 140px;font-size: 32px;background-color: #00A89F;"type="button" class="btn btn-info">CheckIn</button>
+    <div class = "container" ng-init="initializeDriver()">
+        <div ng-include ="'/views/driver/templates/driverHeader.html'"/>
+        <div ng-include ="'/views/driver/templates/driverImage.html'"/>
+        <!-- <div ng-include ="'/views/driver/templates/vehicleDetails.html'"/> -->
+        <div ng-include ="'/views/driver/templates/driverFooter.html'"/>
+        <div ng-include ="'/views/delivery_associate/templates/odometer.html'"/>
 
-	        	</div>
-
-        </div>
-
+    </div>	        	
 </div>
