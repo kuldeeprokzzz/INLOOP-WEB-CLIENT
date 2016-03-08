@@ -1,5 +1,4 @@
-inLoopApp
-  .controller('driverCheckedInController', function ($scope,$filter, completeModel, driverService, sharedProperties) {
+inLoopApp.controller('driverCheckedInController', function ($scope,$filter, completeModel, driverService, sharedProperties) {
 
     $scope.initialize = function(){
 

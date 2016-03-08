@@ -1,13 +1,8 @@
 inLoopApp.service('loginService', ['sharedProperties','$http', function(sharedProperties, $http){
 	
-	this.getLoginToken = function(userName, password){
+	this.getLoginToken = function(requestData){
 
-		var requestData = {
-	    	"username": userName,
-  			"password": password,
-	    };
-
-	    return $http({
+		return $http({
 	            method: 'POST',
 	            url: sharedProperties.getUrl()+'/login',
 	            headers: {

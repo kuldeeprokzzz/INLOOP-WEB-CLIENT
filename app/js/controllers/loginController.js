@@ -1,8 +1,13 @@
 inLoopApp.controller('loginController', function ($scope, sharedProperties, completeModel, loginService) {
 
     $scope.submit = function(){
+
+        var requestData = {
+            "username": $scope.username,
+            "password": $scope.password,
+        };
        
-        loginService.getLoginToken($scope.username, $scope.password)
+        loginService.getLoginToken(requestData)
         .then(function(response){
 
             if(response.status == 200){

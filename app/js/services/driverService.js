@@ -3,26 +3,31 @@ inLoopApp.service('driverService', ['sharedProperties','$http', function(sharedP
 
 	this.getVehicleProfile = function(providerId,licensePlateNumber){
 
-    	return $http.get(sharedProperties.getUrl()+'/providers/'+providerId+'/vehicles?regNumber='+licensePlateNumber+'&wildcard=true', { token : sharedProperties.getAuthToken})
-        .then(function(response){
-            return response;
-        }, function(response){
-            return response;
-        });
+    	return $http({
+                method: 'GET',
+                url: sharedProperties.getUrl()+'/providers/'+providerId+'/vehicles?regNumber='+licensePlateNumber+'&wildcard=true',
+                headers: { token : sharedProperties.getAuthToken()}
+
+                }).success(function(response){
+                    return response;
+                }).error(function(response){
+                    return response;
+                });
     }
 
-    this.driverOnMyWay = function(requestBody){
+    this.driverOnMyWay = function(requestData){
 
-    	return $http.post(sharedProperties.getUrl()+'/contracts/',requestBody,{token : sharedProperties.getAuthToken})
-    			.then(function(response){
+    	return $http({
+                method: 'POST',
+                url: sharedProperties.getUrl()+'/contracts/',
+                headers: {token : sharedProperties.getAuthToken()},
+                data: requestData
 
-    				return response;
-
-    			},function(response){
-
-    				return response;
-    				
-    			});
+            }).success(function(response){
+                return response;
+            }).error(function(response){
+    			return response;
+    		});
     }
 
 }])
