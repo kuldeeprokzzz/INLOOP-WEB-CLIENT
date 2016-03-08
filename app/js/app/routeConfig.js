@@ -9,26 +9,28 @@ inLoopApp.config(function ($routeProvider) {
         templateUrl: 'views/loginWithUserName.html',
         controller: 'loginController'
       })
-
       .when('/licensePlate', {
         templateUrl: 'views/driver/driverCard.html',
         controller : 'driverCardController'
       })
       .when('/onMyWay', {
         templateUrl: 'views/driver/onWay.html',
-        controller : 'driverOnWayController'
-        
+        controller : 'driverOnWayController' 
       })
-      .when('/checkIn', {
-        templateUrl: 'views/delivery_associate/checkIn.html',
-        
+      .when('/iotDetected', {
+        templateUrl: 'views/driver/driverIOTDetectedPage.html',
+        controller : 'driverIOTDetectedController'  
+      })
+      .when('/driverCheckedIn', {
+        templateUrl: 'views/driver/driverCheckedIn.html',
+        controller : 'driverCheckedInController'
       })
        .when('/driverList', {
-        templateUrl: 'views/delivery_associate/driverList.html',
+        templateUrl: 'views/deliveryAssociate/driverList.html',
         
       })
       .when('/driverCheckInList', {
-        templateUrl: 'views/delivery_associate/driverCheckInList.html',
+        templateUrl: 'views/deliveryAssociate/driverCheckInList.html',
         
       })
       .when('/deliveryMenifest', {
