@@ -1,4 +1,20 @@
 /*sign in page css*/
+.scrollBar{
+  height: 700px;
+  width: 96%;
+  margin: 0 auto;
+  border: solid 2px #999;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
+ }   
+.boxInput{
+  padding: 5px 10px;
+  clear: both;
+  overflow: hidden;
+  border: 2px solid grey;
+  background-color: white;
+}
 .container{
   margin: 0px;
 }
@@ -63,9 +79,13 @@ margin-top: 28px;
   width: 100%;
 }
 .form-control.formInput {
-  width: 560px; 
+  width: 536px; 
   height: 60px;
   font-size: 26px;
+  border: 0px;
+  box-shadow: 0px 0px 0px;
+  border-radius: 0px;
+
 }
 .btn.btn-info.formButton{
   height: 59px;
@@ -265,9 +285,9 @@ body {
   }
 }
 
-@media only screen and (max-width : 480px) {
+@media only screen and (max-width : 600px) {
   
-  #login{
+  .container{
     background-color: #394165;
   }
 
@@ -285,4 +305,17 @@ body {
   #login{
     background-color: #394165;
   }
+  .wrapper {
+    background-color: #394165;
+  }
+  .form-control.formInput {
+  width: 359px; 
+  height: 60px;
+  font-size: 26px;
+  border: 0px;
+  box-shadow: 0px 0px 0px;
+  border-radius: 0px;
+  }
 }
+
+
