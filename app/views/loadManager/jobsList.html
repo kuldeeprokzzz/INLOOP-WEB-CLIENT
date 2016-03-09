@@ -1,0 +1,63 @@
+	
+<div class = "container">
+	<header>
+	  <button class="hamburger"><i class="fa fa-bars"></i>
+			 Jobs</button>
+	  <button class="cross"><i class="fa fa-bars"></i>
+			 Jobs</button>		 
+	</header>
+	<div class = "tabList">
+	  	<div class ="pullLeft">
+	  		<a href="#"><h3>Unassigned</h3></a>
+	  	</div>
+	  	<div class = "pullMiddle">
+	  		<a href="#"><h3>Assigned</h3></a>
+	  	</div>
+	  	<div class ="pullRight">
+	  		<a href="#"><h3>Completed</h3></a>
+	  	</div>
+	</div>
+
+	<div class="menu">
+	  <ul>
+	    <div><li class = "liHead"><i class="fa fa-user"></i>
+			Drivers</li></div>
+	    <div><li class = "liHead"><i class="fa fa-shopping-basket"></i>
+			Jobs</li></div>
+	    <div  ng-click="sendToBlankDriverPage()"><li class = "setHead"><i class="fa fa-toggle-on"></i>
+			Find Driver</li></div>
+	    <div><li class = "setHead"><i class="fa fa-cogs"></i>
+			Settings</li></div>
+	    <div><li class = "setHead"><i class="fa fa-sign-out"></i>
+			Logout</li></div>
+	  </ul>
+	</div>
+	<div class = "division">
+		<div class= "scrollBar" style = "margin-top:0px; width:100%; height : 600px;" id="style-2">
+		    
+				<div ng-include ="'/views/loadManager/templates/jobCard.html'"/>
+		   
+		</div> 
+	</div>	
+</div>   
+	
+<script type="text/javascript">
+  $( ".cross" ).hide();
+$( ".menu" ).hide();
+$( ".hamburger" ).click(function() {
+$( ".menu" ).slideToggle( "slow", function() {
+$( ".hamburger" ).hide();
+$( ".cross" ).show();
+});
+});
+
+$( ".cross" ).click(function() {
+$( ".menu" ).slideToggle( "slow", function() {
+$( ".cross" ).hide();
+$( ".hamburger" ).show();
+});
+});
+
+
+
+</script>

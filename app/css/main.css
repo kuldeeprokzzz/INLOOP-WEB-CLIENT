@@ -1,4 +1,46 @@
 /*sign in page css*/
+.tabList{
+  background-color: #394165;
+  margin-top: -56px;
+  color: white;
+  font-weight: bold;
+  word-spacing: 146px;
+  padding: 22px;
+}
+.tabList a {
+  text-decoration: none !important;
+  color: white;
+}
+.tabList h3:hover{
+  color: black; 
+}
+.pullLeft{
+  display: inline-block;
+  vertical-align: middle;
+}
+.pullMiddle{
+  display: inline-block;
+  vertical-align: middle;
+}
+.pullRight{
+  display: inline-block;
+  vertical-align: middle;
+}
+.cardWrapper{
+  padding: 14px;
+  margin-left: 25px;
+
+}
+.cardWrapper h3{
+  color : #00A49B;
+  font-weight: bold;
+}  
+.cardContainer {
+  clear: both;
+  overflow: hidden;
+  background-color: white;
+  border-bottom: 2px solid grey;
+}
 .bigBox{
   padding: 38px;
 }
@@ -32,7 +74,6 @@
   border-radius: 10px;
   background-color: lightgrey;
 }
-
 #style-2::-webkit-scrollbar
 {
   width: 12px;
