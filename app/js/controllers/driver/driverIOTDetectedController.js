@@ -15,4 +15,8 @@ inLoopApp
         $scope.driver.message = 'IOT Detected';
     };
 
+    $scope.next = function(){
+
+        sharedProperties.setPath('/driverCheckedIn');
+    };
   });

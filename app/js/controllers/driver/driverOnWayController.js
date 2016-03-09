@@ -54,4 +54,10 @@ inLoopApp
 
     }
 
+
+    $scope.next = function(){
+
+        sharedProperties.setPath('/iotDetected');
+    };
+
   });
