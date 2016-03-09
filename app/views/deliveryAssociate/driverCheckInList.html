@@ -1,5 +1,5 @@
 	
-<div class = "container">
+<div class = "container" ng-init = "initialize()">
 	<header>
 	  <button class="hamburger"><i class="fa fa-bars"></i>
 			 Driver Check-in</button>
@@ -9,28 +9,22 @@
 
 	<div class="menu">
 	  <ul>
-	    <a href="#"><li class = "liHead"><i class="fa fa-user"></i>
-			Drivers</li></a>
-	    <a href="#"><li>Available</li></a>
-	    <a href="#"><li>Assigned</li></a>
-	    <a href="#"><li>Returning</li></a>
-	    <a href="#"><li class = "liHead"><i class="fa fa-shopping-basket"></i>
-			Jobs</li></a>
-	    <a href="#"><li>Unassigned</li></a>
-	    <a href="#"><li>Assigned</li></a>
-	    <a href="#"><li>Completed</li></a>
-	    <a href="#"><li class = "setHead"><i class="fa fa-toggle-on"></i>
-			Find Driver</li></a>
-	    <a href="#"><li class = "setHead"><i class="fa fa-cogs"></i>
-			Settings</li></a>
-	    <a href="#"><li class = "setHead"><i class="fa fa-sign-out"></i>
-			Logout</li></a>
-
+	    <div><li class = "liHead"><i class="fa fa-user"></i>
+			Drivers</li></div>
+	    <div><li class = "liHead"><i class="fa fa-shopping-basket"></i>
+			Jobs</li></div>
+	    <div  ng-click="sendToBlankDriverPage()"><li class = "setHead"><i class="fa fa-toggle-on"></i>
+			Find Driver</li></div>
+	    <div><li class = "setHead"><i class="fa fa-cogs"></i>
+			Settings</li></div>
+	    <div><li class = "setHead"><i class="fa fa-sign-out"></i>
+			Logout</li></div>
 	  </ul>
 	</div>
 	<div class= "scrollBar">
-	    
+	    <div ng-show="showDriverList">
 			<div ng-include ="'/views/deliveryAssociate/templates/intransit.html'"/>
+
 	   
 	</div> 
 </div>   
@@ -50,6 +44,8 @@ $( ".menu" ).slideToggle( "slow", function() {
 $( ".cross" ).hide();
 $( ".hamburger" ).show();
 });
-});	
+});
+
+
 
 </script>

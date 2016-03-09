@@ -1,10 +1,10 @@
 
-<div ng-init = "initialize()">
+<div>
     <div ng-repeat = "contract in contracts">
 
 
 
-    <div>
+    <div ng-click = "sendToBlankDriverPageWithContract(contract)">
 
 
       <div class ="cardHeader">
@@ -23,7 +23,7 @@
 				<h3>{{contract.vehicle_regNumber}}</h3>
 			</div>
 			<div class = "pull-right">
-	            <h3>IN Transit</h3>
+	            <h3>{{contract.status}}</h3>
 			</div>
 		</div>
 	</div>

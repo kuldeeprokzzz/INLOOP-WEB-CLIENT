@@ -2,18 +2,64 @@ inLoopApp.controller('deliveryAssociateBlankCardController', function ($scope, $
     
     $scope.initialize = function(){
 
-        $scope.blankDriverCard = completeModel.deliveryAssociate.blankDriverCard;
+      if(completeModel.deliveryAssociate.from == 'login'){
+
+        if(completeModel.deliveryAssociate.blankDriverCard == undefined){
+           completeModel.deliveryAssociate.blankDriverCard= {
+                                                              first_name : 'DRIVER',
+                                                              middle_name : '',
+                                                              last_name : 'NAME',
+                                                              organization_name : 'PROVIDER NAME',
+                                                              driverName : '',
+                                                              providerName : '',
+                                                              licensePlateNumber : '',
+                                                              vehicleModelName : '',
+                                                              odometerReading : '',
+                                                            }
+        }
+
+
         $scope.showDriverFooter = true;
         $scope.showAddOdometer = false;
         $scope.showVehicleDetails = false;
 
+        $scope.blankDriverCard = completeModel.deliveryAssociate.blankDriverCard;
+    
+
         $scope.driver = {
-            driverName : $scope.blankDriverCard.driverName,
-            providerName : $scope.blankDriverCard.providerName,
-            licensePlateNumber : $scope.blankDriverCard.licensePlateNumber,
-            vehicleModelName : '',
-            odometerReading : '',
+          driverName : $scope.blankDriverCard.first_name + ' ' + $scope.blankDriverCard.middle_name + ' ' + $scope.blankDriverCard.last_name,
+          providerName : $scope.blankDriverCard.organization_name,
+          licensePlateNumber : $scope.blankDriverCard.regNumber,
         }
+
+      }
+
+      if(completeModel.deliveryAssociate.from == 'driversList'){
+        if(completeModel.deliveryAssociate.contract != undefined){
+
+          $scope.showDriverFooter = false;
+          $scope.showVehicleDetails = true;
+          $scope.showAddOdometer = true;
+
+          $scope.blankDriverCard = completeModel.deliveryAssociate.contract;
+
+          $scope.driver = {
+          driverName : $scope.blankDriverCard.driver_name,
+          providerName : $scope.blankDriverCard.provider_name,
+          licensePlateNumber : $scope.blankDriverCard.vehicle_regNumber,
+          vehicleModelName : $scope.blankDriverCard.vehicle_make,
+
+        }
+
+        }
+      }
+
+
+
+        
+        
+
+        
     };
 
     $scope.OnLicenceKeyPress = function(event){
@@ -27,7 +73,7 @@ inLoopApp.controller('deliveryAssociateBlankCardController', function ($scope, $
                 }else{
 
                     if(response.data.length == 1){
-                        completeModel.deliveryAssociate.tempContract = response.data[0];
+                        completeModel.deliveryAssociate.contract = response.data[0];
                         $scope.driver.vehicleProfile = response.data[0];
                         $scope.driver.licensePlateNumber = response.data[0].vehicle_regNumber;
                         $scope.driver.driverName= response.data[0].driver_name;
@@ -78,7 +124,7 @@ inLoopApp.controller('deliveryAssociateBlankCardController', function ($scope, $
                             }
 
 
-        deliveryAssociateService.checkinVelicleByContractId(completeModel.deliveryAssociate.tempContract.id,requestBody)
+        deliveryAssociateService.checkinVelicleByContractId(completeModel.deliveryAssociate.contract.id,requestBody)
             .then(function(response){
 
 
@@ -170,14 +216,18 @@ inLoopApp.controller('deliveryAssociateBlankCardController', function ($scope, $
 
 
 
-
-
-                completeModel.deliveryAssociate.driverQueue = response;
                 sharedProperties.setPath('/driverCheckInList');
 
             });
 
 
     }
+
+    $scope.sendToDriverQueue = function(){
+      completeModel.deliveryAssociate.blankDriverCard = undefined;
+      completeModel.deliveryAssociate.contract = undefined;
+      completeModel.deliveryAssociate.from == '';
+      sharedProperties.setPath('/driverCheckInList');
+    };
 
   });
