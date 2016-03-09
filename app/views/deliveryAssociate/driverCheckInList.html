@@ -1,25 +1,55 @@
-<div class = "container" style = "padding : 0px">
-	<div class = "col-xs-12">
-		<div class = "burgerBox">
-			<img class ="burger" src="images/burger.png">
-		    <h3 class = "textBurger">Driver Check In</h3>
-		</div>	
-    </div>
-    <div class = "boxNav hide">
-		<ul>
-			<li>hello</li>
-			<li>hello</li>
-			<li>hello</li>
-		</ul>
-	</div>	
-   
+	
+<div class = "container">
+	<header>
+	  <button class="hamburger"><i class="fa fa-bars"></i>
+			 Driver Check-in</button>
+	  <button class="cross"><i class="fa fa-bars"></i>
+			 Driver Check-in</button>
+	</header>
+
+	<div class="menu">
+	  <ul>
+	    <a href="#"><li class = "liHead"><i class="fa fa-user"></i>
+			Drivers</li></a>
+	    <a href="#"><li>Available</li></a>
+	    <a href="#"><li>Assigned</li></a>
+	    <a href="#"><li>Returning</li></a>
+	    <a href="#"><li class = "liHead"><i class="fa fa-shopping-basket"></i>
+			Jobs</li></a>
+	    <a href="#"><li>Unassigned</li></a>
+	    <a href="#"><li>Assigned</li></a>
+	    <a href="#"><li>Completed</li></a>
+	    <a href="#"><li class = "setHead"><i class="fa fa-toggle-on"></i>
+			Find Driver</li></a>
+	    <a href="#"><li class = "setHead"><i class="fa fa-cogs"></i>
+			Settings</li></a>
+	    <a href="#"><li class = "setHead"><i class="fa fa-sign-out"></i>
+			Logout</li></a>
+
+	  </ul>
+	</div>
 	<div class= "scrollBar">
 	    
 			<div ng-include ="'/views/deliveryAssociate/templates/intransit.html'"/>
 	   
-	</div>
-<!-- /*<script>
-$( ".burger" ).click(function() {
-	$(this).parents().find(".boxNav").toggleClass("hide");
+	</div> 
+</div>   
+	
+<script type="text/javascript">
+  $( ".cross" ).hide();
+$( ".menu" ).hide();
+$( ".hamburger" ).click(function() {
+$( ".menu" ).slideToggle( "slow", function() {
+$( ".hamburger" ).hide();
+$( ".cross" ).show();
 });
-</script>*/ -->
+});
+
+$( ".cross" ).click(function() {
+$( ".menu" ).slideToggle( "slow", function() {
+$( ".cross" ).hide();
+$( ".hamburger" ).show();
+});
+});	
+
+</script>
