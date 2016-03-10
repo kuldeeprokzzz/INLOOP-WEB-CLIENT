@@ -1,7 +1,7 @@
 
-    <div class = "bigBox" ng-click = "sendToBlankDriverPageWithContract(contract)" ng-repeat = "contract in contracts" ng-init = "initialize()">
-     <div>
-      <div class = "queueCard">
+    <div class = "bigBox" ng-init = "initialize()">
+     <div  ng-repeat = "contract in contracts" >
+      <div class = "queueCard" ng-click = "sendToBlankDriverPageWithContract(contract)">
         <img src="images/img.jpg" width = "100%" height = "250px";>
         <div style = "height:10px; background-color: #72C143;"></div>
         <div class = "boxSizing">

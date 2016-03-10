@@ -30,4 +30,18 @@ inLoopApp.service('driverService', ['sharedProperties','$http', function(sharedP
     		});
     }
 
+    this.getContractDetailsByContractId = function(contractId){
+        return $http({
+                method: 'GET',
+                url: sharedProperties.getUrl()+'/providers/'+providerId+'/vehicles?regNumber='+licensePlateNumber+'&wildcard=true',
+                headers: { token : sharedProperties.getAuthToken()}
+
+                }).success(function(response){
+                    return response;
+                }).error(function(response){
+                    return response;
+                });
+
+    }
+
 }])
