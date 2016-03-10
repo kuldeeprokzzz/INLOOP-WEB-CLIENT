@@ -20,9 +20,12 @@ inLoopApp.service('sharedProperties',function($location){
             
         };
 
-    
- 
-    
+        this._jobTypes = {
+            unassigned : { id : 0, type : "UNASSIGNED"},
+            assigned : {id : 1, type : "ASSIGNED"},
+            completed : {id : 2, type : "COMPLETED"},
+        }
+
         this.getUrl = function(){
             return this._baseURL;
         };
@@ -42,4 +45,8 @@ inLoopApp.service('sharedProperties',function($location){
         this.getContractStatusType = function(){
             return this._contractStatusType;
         };
+
+        this.getJobsTypes = function(){
+            return this._jobTypes;
+        }
 }); 

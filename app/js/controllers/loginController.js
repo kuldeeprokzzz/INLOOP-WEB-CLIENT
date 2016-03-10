@@ -29,7 +29,7 @@ inLoopApp.controller('loginController', function ($scope, sharedProperties, comp
 
 
 
-                        if(true){
+                        if(false){
 
                             completeModel.deliveryAssociate = {profile : {},from:''};
                             completeModel.deliveryAssociate.profile = response.data;
@@ -37,6 +37,15 @@ inLoopApp.controller('loginController', function ($scope, sharedProperties, comp
                             sharedProperties.setPath('/driverCheckInList');
 
 
+                        }
+
+
+                        if(true){
+                            completeModel.loadManager = {profile : {},}
+                            completeModel.loadManager.profile = response.data;
+
+
+                            sharedProperties.setPath('/jobsList');
                         }
                         
 

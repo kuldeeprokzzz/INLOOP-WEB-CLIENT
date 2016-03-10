@@ -1,16 +1,17 @@
 
-<div class = "cardListContainer">				     
-  <div class = "queueCard">
+<div class = "cardListContainer">			
+<div  ng-repeat="contract in contracts">
+  <div class = "queueCard" ng-click="sendToAssignJob(contract)">
     <img src="images/img.jpg" width = "100%" height = "250px";>
     <div style = "height:10px; background-color: #72C143;"></div>
     <div class = "boxSizing">
       <div>
     	<div class = "queueDetails">
         	<div class ="pull-left">
-        		<h4><!-- {{contract.driver_name}} --> Kuldeep Malik</h4>
+        		<h4>{{contract.driver_name}}</h4>
         	</div>
         	<div class ="pull-right">
-        		<h4><!-- {{contract.status}} --> Checked In</h4>
+        		<h4>{{contract.status}}</h4>
         	</div>
         </div>
       </div>
@@ -18,48 +19,16 @@
       <div>
         <div class = "queueDetails">
         	<div class ="pull-left">
-        		<h4><!-- {{contract.provider_name}} --> G Trans Pvt. Ltd.</h4>
+        		<h4>{{contract.provider_name}}</h4>
         	</div>
         	<div class ="pull-right">
-        		<h4><!-- {{contract.states[1].time}} --> 5:30 Am</h4>
+        		<h4>{{contract.states[1].time}}</h4>
         	</div>
         </div>
       </div>
     </div>  	 		
   </div>
+  </div>
 </div>  
 
-
-
-<!-- it is same repetetion of above card ... use ng repeat for this -->
-
-<div class = "cardListContainer">            
-  <div class = "queueCard">
-    <img src="images/img.jpg" width = "100%" height = "250px";>
-    <div style = "height:10px; background-color: #72C143;"></div>
-    <div class = "boxSizing">
-      <div>
-      <div class = "queueDetails">
-          <div class ="pull-left">
-            <h4><!-- {{contract.driver_name}} --> Kuldeep Malik</h4>
-          </div>
-          <div class ="pull-right">
-            <h4><!-- {{contract.status}} --> Checked In</h4>
-          </div>
-        </div>
-      </div>
-        
-      <div>
-        <div class = "queueDetails">
-          <div class ="pull-left">
-            <h4><!-- {{contract.provider_name}} --> G Trans Pvt. Ltd.</h4>
-          </div>
-          <div class ="pull-right">
-            <h4><!-- {{contract.states[1].time}} --> 5:30 Am</h4>
-          </div>
-        </div>
-      </div>
-    </div>        
-  </div>
-</div>
 				     

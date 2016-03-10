@@ -52,10 +52,12 @@ inLoopApp.config(function ($routeProvider) {
       })
       .when('/jobsList', {
         templateUrl: 'views/loadManager/jobsList.html',
+        controller: 'loadManagerJobController',
         
       })
       .when('/assignJob', {
         templateUrl: 'views/loadManager/assignJob.html',
+        controller: 'loadManagerJobAssignmentController',
         
       })
       .otherwise({

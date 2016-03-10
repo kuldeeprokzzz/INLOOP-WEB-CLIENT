@@ -127,7 +127,7 @@ inLoopApp.controller('deliveryAssociateBlankCardController', function ($scope, $
         deliveryAssociateService.checkinVelicleByContractId(completeModel.deliveryAssociate.contract.id,requestBody)
             .then(function(response){
 
-
+/*
                                                     response = 
 [
   {
@@ -212,7 +212,7 @@ inLoopApp.controller('deliveryAssociateBlankCardController', function ($scope, $
     ],
     "terms": []
   }
-];
+];*/
 
 
 
