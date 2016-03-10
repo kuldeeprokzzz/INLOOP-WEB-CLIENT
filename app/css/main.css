@@ -1,4 +1,31 @@
 /*sign in page css*/
+.middleButton{
+  text-align: center;
+  padding: 50px;
+
+}
+.wrapperAssign{
+  clear: both;
+  overflow: hidden;
+}
+.cardContainerAssign{
+  border: 1px solid grey;
+}
+.smallContainer{
+  clear: both;
+  overflow: hidden;
+  width: 88%;
+  margin: 0 auto;
+  font-size: 23px;
+  font-weight: bold;
+  margin-top: 11px;
+}
+.DeatilsContainer{
+  clear: both;
+  overflow: hidden;
+  border: 1px solid grey;
+  padding: 4px;
+}
 .cardListContainer{
   clear: both;
   overflow: hidden;

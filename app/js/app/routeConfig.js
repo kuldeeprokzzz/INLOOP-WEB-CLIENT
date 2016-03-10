@@ -54,6 +54,10 @@ inLoopApp.config(function ($routeProvider) {
         templateUrl: 'views/loadManager/jobsList.html',
         
       })
+      .when('/assignJob', {
+        templateUrl: 'views/loadManager/assignJob.html',
+        
+      })
       .otherwise({
         redirectTo: '/'
       });
