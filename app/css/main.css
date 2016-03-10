@@ -5,7 +5,7 @@
   background: white;
 }
 .detailsBox {
-  width: 90%;
+  width: 98%;
   margin: 0 auto;
   font-weight: bold;
   padding: 15px;
@@ -220,10 +220,10 @@ line-height: 50px;
 
  }   
 .boxInput{
-  padding: 5px 10px;
+  padding: 16px 10px;
   clear: both;
   overflow: hidden;
-  border: 2px solid grey;
+  border: 1px solid grey;
   background-color: white;
 }
 .card {
@@ -245,6 +245,8 @@ margin-top: 28px;
   background-color: white;
   border: 1px solid grey;
   font-size: 20px;
+  padding: 5px;
+
 
 }
 .btn.btn-info.ImgButton{
