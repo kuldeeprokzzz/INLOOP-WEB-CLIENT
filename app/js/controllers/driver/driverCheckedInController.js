@@ -2,6 +2,13 @@ inLoopApp.controller('driverCheckedInController', function ($scope,$filter, comp
 
     $scope.initialize = function(){
 
+        $scope.contract =  completeModel.driver.contract;
+        driverService.getContractDetailsByContractId($scope.contract.id)
+            .then(function(response){
+                completeModel.driver.contract = response.data;
+            });
+
+        $scope.contract =  completeModel.driver.contract;
         $scope.driver = completeModel.driver;
         $scope.driver.driverName = $scope.driver.first_name + " " + $scope.driver.middle_name+ " " + $scope.driver.last_name;
         $scope.driver.providerName = $scope.driver.organization_name;
