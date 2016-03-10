@@ -14,38 +14,41 @@ inLoopApp.controller('driverCardController', function ($scope, completeModel, dr
 
     $scope.OnLicenceKeyPress = function(event){
 
-        if(($scope.driver.licensePlateNumber).length == 4){
-            driverService.getVehicleProfile($scope.driver.organizationid,$scope.driver.licensePlateNumber)
-            .then(function(response){
+        if($scope.driver.licensePlateNumber != undefined){
+            if(($scope.driver.licensePlateNumber).length == 4){
+                driverService.getVehicleProfile($scope.driver.organizationid,$scope.driver.licensePlateNumber)
+                .then(function(response){
 
-                if(response.data.length == 0){
-                    $scope.driver.errorMessage = 'No Matching Vehicle Found';
-                }else{
+                    if(response.data.length == 0){
 
-                    if(response.data.length == 2){
-                        completeModel.driver.vehicleProfile = response.data[0];
-                        $scope.driver.vehicleProfile = response.data[0];
-                        $scope.driver.licensePlateNumber = response.data[0].regNumber;
+                        $scope.driver.errorMessage = 'No Matching Vehicle Found';
                     }else{
-                        $scope.driver.errorMessage = 'More than One vehicle Found';
-                    }
-                }
-            });
-        }
 
-        if($scope.driver.licensePlateNumber.length > 4){
-            if (event.keyCode == 8) {
-                $scope.driver.licensePlateNumber = '';
+                        if(response.data.length == 1){
+                            completeModel.driver.vehicleProfile = response.data[0];
+                            $scope.driver.vehicleProfile = response.data[0];
+                            $scope.driver.licensePlateNumber = response.data[0].regNumber;
+                            $scope.driver.licensePlateNumberCount = $scope.driver.licensePlateNumber.length;
+                        }else{
+                            $scope.driver.errorMessage = 'More than One vehicle Found';
+                            $scope.driver.vehicleProfile = '';
+                        }
+                    }
+                });
+            }
+
+            if($scope.driver.licensePlateNumber.length > 4){
+                if ($scope.driver.licensePlateNumber.length < $scope.driver.licensePlateNumberCount) {
+                    $scope.driver.licensePlateNumber = '';
+                }
             }
         }
     };
 
 
   	$scope.addLicencePlate = function(){
-        
-        if(!($scope.driver.licensePlateNumber.length<=4)){
             sharedProperties.setPath('/onMyWay');
-        }
+        
     };
 
   });

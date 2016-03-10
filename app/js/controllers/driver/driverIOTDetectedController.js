@@ -13,6 +13,8 @@ inLoopApp
         $scope.driver.showOnWayButton = false;
         $scope.driver.showMessage =  true;
         $scope.driver.message = 'IOT Detected';
+
+        $scope.contract =  completeModel.driver.contract;
     };
 
     $scope.next = function(){

@@ -6,6 +6,10 @@ inLoopApp.controller('loginController', function ($scope, sharedProperties, comp
             "username": $scope.username,
             "password": $scope.password,
         };
+
+
+
+
        
         loginService.getLoginToken(requestData)
         .then(function(response){
@@ -22,14 +26,14 @@ inLoopApp.controller('loginController', function ($scope, sharedProperties, comp
                         /*completeModel.driver = response.data;
                         sharedProperties.setPath('/driverBlankCard');*/    
 
-                        if(false){
+                        if($scope.username == '8010599690' && $scope.password == '9690'){
                         completeModel.driver = response.data;
                         sharedProperties.setPath('/licensePlate');
                         }
 
 
 
-                        if(false){
+                        if($scope.username == '8010599691' && $scope.password == '9691'){
 
                             completeModel.deliveryAssociate = {profile : {},from:''};
                             completeModel.deliveryAssociate.profile = response.data;
@@ -40,7 +44,7 @@ inLoopApp.controller('loginController', function ($scope, sharedProperties, comp
                         }
 
 
-                        if(true){
+                        if($scope.username == 'amazonDA' && $scope.password == 'amazonDA'){
                             completeModel.loadManager = {profile : {},}
                             completeModel.loadManager.profile = response.data;
 
