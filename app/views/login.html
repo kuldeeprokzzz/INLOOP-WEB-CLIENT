@@ -4,8 +4,9 @@
 	    	<div class="centered">
 	    		<div class="col-xs-12">
 	        	    <div class="form-wrap">
-	                    <form role="form" action="javascript:;" method="post" id="login-form" autocomplete="off">
-	                    {{$scope.errorMessage}}
+
+	                    <form name = "signInForm" role="form" action="javascript:;" method="post" id="login-form" autocomplete="off">
+
 	                        <div class="form-group">
 	                            <input ng-keypress = "validationChecks(1)" type="text" name="inputnumber" id="inputnumber" class="form-control login_number" ng-model = "username" ng-pattern="onlyNumbers"  placeholder="Mobile Number" required autofocus>
 	                        </div>
@@ -14,9 +15,11 @@
 	                            <input ng-keypress = "validationChecks(1)" type="text" name="password" id="password" class="form-control login_password" ng-model = "password" placeholder="Last 4 digits of AADHAR" required autofocus>
 	                        </div>
 
-	                        <p class = "textLine">Sign In with your <a href="http://localhost:9000/#/login" style = "text-decoration:none;font-size:30px">username, email</a> or mobile number.</p>
+	                        <p class = "textLine">Sign In with your username, email or mobile number.</p>
 
-	                        <button class="btn btn-lg btn-primary btn-block login_btn" type="submit" ng-click = "submit(1)">Sign in</button>
+
+	                        <button class="btn btn-lg btn-primary btn-block login_btn" type="submit" ng-click = "submit()" ng-disabled="signInForm.$invalid">Sign in</button>
+
 	                    </form>
 	        	    </div>
 	    		</div>

@@ -26,6 +26,7 @@ inLoopApp.controller('loginController', function ($scope, sharedProperties, comp
                         /*completeModel.driver = response.data;
                         sharedProperties.setPath('/driverBlankCard');*/    
 
+
                         if($scope.username == '8010599690' && $scope.password == '9690'){
                         completeModel.driver = response.data;
                         sharedProperties.setPath('/licensePlate');
@@ -33,7 +34,9 @@ inLoopApp.controller('loginController', function ($scope, sharedProperties, comp
 
 
 
+
                         if($scope.username == '8010599691' && $scope.password == '9691'){
+
 
                             completeModel.deliveryAssociate = {profile : {},from:''};
                             completeModel.deliveryAssociate.profile = response.data;

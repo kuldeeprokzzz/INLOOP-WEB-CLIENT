@@ -1,4 +1,22 @@
 /*sign in page css*/
+.menifestContainer{
+  border: 1px solid grey;
+  height: 513px;
+  background: white;
+}
+.detailsBox {
+  width: 90%;
+  margin: 0 auto;
+  font-weight: bold;
+  padding: 15px;
+
+}
+.btn.btn-info.formButton:disabled{
+  background-color:#717782;
+}
+#login #login-form .login_btn:disabled {
+    background-color:#717782;
+}
 .middleButton{
   text-align: center;
   padding: 50px;
@@ -210,7 +228,7 @@ line-height: 50px;
 }
 .card {
   background-color : white;
-  padding : 20px; 
+  padding : 37px; 
   border-bottom-style: groove;
 }
 .btn.btn-info.butt{
@@ -225,7 +243,9 @@ margin-top: 28px;
   clear : both;
   overflow: hidden;
   background-color: white;
-  padding: 15px
+  border: 1px solid grey;
+  font-size: 20px;
+
 }
 .btn.btn-info.ImgButton{
   height: 59px;width: 500px;
@@ -268,14 +288,17 @@ margin-top: 28px;
 .form-control.login_password, .form-control.login_number{
   padding: 30px; 
   font-size:24px;
+  width: 57%;
+  margin: 0 auto;
 }
 
 #login #login-form .login_btn{
   padding: 5px; 
-  font-size:32px; 
-  font-weight:bold; 
+  font-size:32px;  
   margin-top:60px; 
   background-color:#08A19C;
+  width: 66%;
+  margin: 0 auto;
 }
 
 .form-signin {
@@ -287,10 +310,11 @@ margin-top: 28px;
 .textLine {
   padding: 10px; 
   font-size:20px; 
-  font-weight:bold; 
   margin-top:15px; 
   color:#08A19C;
   text-align: center;
+  width: 50%;
+  margin: 0 auto;
 }
 
 

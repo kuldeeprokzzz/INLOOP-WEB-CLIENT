@@ -1,11 +1,22 @@
 <div class = "container">
-  <div class ="cardHeader" style ="height:244px; text-align: center;">
+  <div class ="cardHeader" style ="height:224px; text-align: center;">
     <h2>Delivery Manifest</h2>
     <h4>213126565465498454</h4>
-    <h2>44/44</h2> <span><button type="button" class="btn btn-success">Scan</button></span>
+    <h2>44/44</h2>
+    <span style = "float : right; font-size: xx-large;" ><i class="fa fa-barcode"></i></span>
   </div>
-  <div ng-include ="'/views/driver/manifestCard.html'"/>
-  <div style ="text-align:center">
+
+  <div class = "division">
+		<div class= "scrollBar" style = "margin-top:0px; width:100%; height : 600px;" id="style-2">
+		    
+		    <div ng-include ="'/views/driver/manifestCard.html'"/>
+				
+		   
+		</div> 
+  </div>	
+  
+  
+  <!-- <div style ="text-align:center">
     <button style = "height: 59px;width: 473px;font-size: 32px;background-color: #00A89F; margin-top: 28px;"type="button" class="btn btn-info">Returning To Center</button>
-  </div>
+  </div> -->
 </div>
