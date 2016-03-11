@@ -34,13 +34,13 @@ inLoopApp.config(function ($routeProvider) {
         templateUrl: 'views/deliveryAssociate/driverCheckInList.html',
         controller : 'deliveryAssociateCheckinListController'
       })
-      .when('/deliveryMenifest', {
-        templateUrl: 'views/driver/deliveryMenifest.html',
-        
+      .when('/driverJobAssigned', {
+        templateUrl: 'views/driver/driverJobAssigned.html',
+        controller: 'driverJobAssignedController',
       })
       .when('/scanPageIn', {
         templateUrl: 'views/driver/scanPageIn.html',
-        
+        controller: 'driverScanInController',
       })
       .when('/manifestDetails', {
         templateUrl: 'views/driver/manifestDetails.html',
@@ -48,6 +48,7 @@ inLoopApp.config(function ($routeProvider) {
       })
       .when('/deliveryMenifestMap', {
         templateUrl: 'views/driver/deliveryMenifestMap.html',
+        controller: 'deliveryMenifestMapController',
         
       })
       .when('/jobsList', {
