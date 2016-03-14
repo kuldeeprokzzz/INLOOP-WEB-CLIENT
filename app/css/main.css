@@ -1,4 +1,8 @@
 /*sign in page css*/
+.queueDetails h4 {
+  font-size: 22px;
+  font-family: 'Open Sans';
+}
 .errorMessage{
   padding: 20px;
   font-size: 25px;
@@ -136,11 +140,12 @@
   border-bottom: 2px solid grey;
 }
 .bigBox{
-  padding: 38px;
+  padding: 25px;
 }
 .queueCard{
   border: 2px solid grey;
   border-radius: 5px;
+  width:545px;
 }
 .boxSizing{
   background: white;
@@ -156,7 +161,7 @@
 .division {
   border : 1px solid black;
   background: #EBECEF;
-  height: 600px;
+  height: 774px;
 }
 .conatiner{
   border: 1px solid black;  
@@ -205,7 +210,7 @@
 header{
 width: 100%;
 background: #394165;
-height: 126px;
+height: 110.25px;
 line-height: 50px;
 }
 .hamburger{
@@ -217,7 +222,6 @@ line-height: 50px;
   color:#fff;
   border:0;
   font-size:1.4em;
-  font-weight:bold;
   cursor:pointer;
   outline:none;
   z-index:10000000000000;
@@ -231,7 +235,6 @@ line-height: 50px;
   border:0;
   font-size:33px;
   line-height:65px;
-  font-weight:bold;
   cursor:pointer;
   outline:none;
   z-index:10000000000000;
@@ -248,8 +251,8 @@ line-height: 50px;
   color: white;
 }
 .scrollBar{
-  height: 496px;
-  width: 88%;
+  height: 664px;
+  width: 99%;
   margin: 0 auto;
   overflow: scroll;
   overflow-x: hidden;
@@ -296,7 +299,6 @@ margin-top: 28px;
   margin-top: -160px;
   font-weight: bold;
   font-family: 'Open Sans';
-
 }
 .serverText {
   height: 59px;
@@ -387,7 +389,7 @@ margin-top: 28px;
   /*top:0;*/
   /*line-height:122px;*/ 
   margin:30px 0;
-  padding:0px 15px 0px 15px;
+  padding:0px 15px 0px 30px;
   color:white;
   border:0;
   font-size:33px;
@@ -399,7 +401,7 @@ margin-top: 28px;
   background:none;
   /*position:absolute;*/
   /*top:0px;*/
-  padding:0px 15px 0px 15px;
+  padding:0px 15px 0px 30px;
   color:white;
   border:0;
   font-size:33px;
