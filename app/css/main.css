@@ -1,4 +1,7 @@
 /*sign in page css*/
+.subHead {
+  font-size: 15px;
+}
 .queueDetails h4 {
   font-size: 22px;
   font-family: 'Open Sans';
@@ -11,7 +14,7 @@
   font-family: 'Open Sans'; 
 }
 .buttonBox{
-  padding: 51px;
+    padding: 12px;
 }
 .buttonBox p {
   margin: 0 0 10px;
@@ -102,7 +105,7 @@
   margin-top: -56px;
   color: white;
   font-weight: bold;
-  word-spacing: 146px;
+  word-spacing: 61px;
   padding: 22px;
 }
 .tabList a {
@@ -205,7 +208,7 @@
 }
 .liHead{
   font-size: 20px;
-  background:#E3E1E1;
+  background:#ebecef;
 }
 header{
 width: 100%;
@@ -239,7 +242,7 @@ line-height: 50px;
   outline:none;
   z-index:10000000000000;
 }
-.menu{border: 2px solid black; z-index:1000000; font-weight:bold; font-size:0.8em; width:100%; background:black;  position:absolute; box-shadow: 12px 10px 20px grey;}
+.menu{border: 2px solid black; z-index:1000000; font-weight:bold; font-size:0.8em; width:100%; background:black;  position:absolute; box-shadow: 12px 10px 20px grey; font-family: 'Open Sans';}
 .menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
 .menu li {display: block;   padding:15px 0 15px 15px; }
 .menu li:hover{display: block;    background:grey; padding:15px 0 15px 15px;}
