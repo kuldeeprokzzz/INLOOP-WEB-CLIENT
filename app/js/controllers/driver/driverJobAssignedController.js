@@ -1,5 +1,4 @@
-inLoopApp
-  .controller('driverIOTDetectedController', function ($scope,$filter, completeModel, driverService, sharedProperties) {
+inLoopApp.controller('driverJobAssignedController', function ($scope,$filter, completeModel, driverService, sharedProperties) {
 
     $scope.initialize = function(){
 
@@ -19,11 +18,12 @@ inLoopApp
         $scope.driver.tempTime = "";
         $scope.driver.showOnWayButton = false;
         $scope.driver.showMessage =  true;
-        $scope.driver.message = 'IOT Detected';
+        $scope.driver.message = 'Checked In';
     };
 
-    $scope.next = function(){
+    $scope.startScaningIn = function(){
 
-        sharedProperties.setPath('/driverCheckedIn');
+        sharedProperties.setPath('/scanPageIn');
     };
+
   });

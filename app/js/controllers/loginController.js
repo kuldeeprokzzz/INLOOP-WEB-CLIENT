@@ -1,6 +1,6 @@
 inLoopApp.controller('loginController', function ($scope, sharedProperties, completeModel, loginService, deliveryAssociateService) {
 
-    $scope.submit = function(){
+    $scope.submit = function(loginType){
 
         var requestData = {
             "username": $scope.username,
@@ -8,7 +8,17 @@ inLoopApp.controller('loginController', function ($scope, sharedProperties, comp
         };
 
 
+        if(loginType == 1){
+            if($scope.username.length == 10){
+                $scope.errorMessage = 'Please Enter a valid mobile number.';
+            }
 
+            if($scope.password.length <=4){
+                if($scope.errorMessage == ''){
+                    $scope.errorMessage
+                }
+            }
+        }
 
        
         loginService.getLoginToken(requestData)
@@ -47,7 +57,7 @@ inLoopApp.controller('loginController', function ($scope, sharedProperties, comp
                         }
 
 
-                        if($scope.username == 'amazonDA' && $scope.password == 'amazonDA'){
+                        if($scope.username == 'amazonLM' && $scope.password == 'amazonLM'){
                             completeModel.loadManager = {profile : {},}
                             completeModel.loadManager.profile = response.data;
 

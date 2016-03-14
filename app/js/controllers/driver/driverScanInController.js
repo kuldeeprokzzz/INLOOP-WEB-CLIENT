@@ -1,7 +1,9 @@
-inLoopApp
-  .controller('driverIOTDetectedController', function ($scope,$filter, completeModel, driverService, sharedProperties) {
+inLoopApp.controller('driverScanInController', function ($scope,$filter, completeModel, driverService, sharedProperties) {
 
     $scope.initialize = function(){
+
+        $scope.count = 38;
+        $scope.packages = 44;
 
         $scope.contract =  completeModel.driver.contract;
         driverService.getContractDetailsByContractId($scope.contract.id)
@@ -19,11 +21,17 @@ inLoopApp
         $scope.driver.tempTime = "";
         $scope.driver.showOnWayButton = false;
         $scope.driver.showMessage =  true;
-        $scope.driver.message = 'IOT Detected';
+        $scope.driver.message = 'Checked In';
     };
 
-    $scope.next = function(){
+    $scope.startScaningIn = function(){
 
-        sharedProperties.setPath('/driverCheckedIn');
+        $scope.count = $scope.count + 1;
+        if($scope.count == $scope.packages){
+            completeModel.packages = 44;
+            completeModel.count = 5;
+            sharedProperties.setPath('/deliveryMenifestMap');
+        }
     };
+
   });
