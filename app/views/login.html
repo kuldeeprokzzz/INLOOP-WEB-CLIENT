@@ -1,5 +1,5 @@
  <section id="login">
-    <div class="container" style = "background-color: #394165">
+    <div class="container" style = "background-color: #394165;width:600px;">
     	<!-- <div class="row"> -->
 	    	<div class="centered">
 	    		<div class="col-xs-12">
@@ -17,8 +17,10 @@
 
 	                        <p class = "textLine">Sign In with your username, email or mobile number.</p>
 
-
-	                        <button class="btn btn-lg btn-primary btn-block login_btn" type="submit" ng-click = "submit()" ng-disabled="signInForm.$invalid">Sign in</button>
+                            <div class = "buttonBox">
+                            	<p>Wrong Credentials</p>
+	                            <button class="btn btn-lg btn-primary btn-block login_btn" type="submit" ng-click = "submit()" ng-disabled="signInForm.$invalid">Sign In</button>
+	                        </div>
 
 	                    </form>
 	        	    </div>

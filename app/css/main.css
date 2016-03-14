@@ -1,4 +1,45 @@
 /*sign in page css*/
+.errorMessage{
+  padding: 20px;
+  font-size: 25px;
+  text-align: center;
+  color: red;
+  font-family: 'Open Sans'; 
+}
+.buttonBox{
+  padding: 51px;
+}
+.buttonBox p {
+  margin: 0 0 10px;
+  padding: 20px;
+  font-size: 25px;
+  text-align: center;
+  color: red;
+  font-family: 'Open Sans';
+}
+.wrapper {
+  height: 885px;
+  border :1px solid grey;
+}
+.cardAWrapper{
+  line-height: 24px;
+  padding: 24px;  
+}
+.cardFontA {
+  font-size: 33px;
+  font-family: 'Open Sans';
+}
+.cardFontB {
+  font-size: 22px;
+  font-family: 'Open Sans';
+}
+.alert.alert-warning.alert-dismissible.myAlert{
+  position: absolute;
+  top: 533px;
+  left: 456px;
+  background: #5BB75B;
+  color: black;
+}
 .menifestContainer{
   border: 1px solid grey;
   height: 513px;
@@ -7,7 +48,6 @@
 .detailsBox {
   width: 98%;
   margin: 0 auto;
-  font-weight: bold;
   padding: 15px;
 
 }
@@ -223,7 +263,6 @@ line-height: 50px;
   padding: 16px 10px;
   clear: both;
   overflow: hidden;
-  border: 1px solid grey;
   background-color: white;
 }
 .card {
@@ -244,16 +283,19 @@ margin-top: 28px;
   overflow: hidden;
   background-color: white;
   border: 1px solid grey;
-  font-size: 20px;
+  font-size: 29px;
   padding: 5px;
-
-
+  height: 79px;
+  font-family: "Open Sans";
 }
 .btn.btn-info.ImgButton{
-  height: 59px;width: 500px;
-  font-size: 32px;
-  background-color: #00A89F;
+  height: 60px;
+  width: 440px;
+  font-size: 27px;
+  background-color: #00a89f;
   margin-top: -160px;
+  font-weight: bold;
+  font-family: 'Open Sans';
 
 }
 .serverText {
@@ -269,37 +311,37 @@ margin-top: 28px;
   width: 100%;
 }
 .form-control.formInput {
-  width: 536px; 
+  width: 339px; 
   height: 60px;
   font-size: 26px;
   border: 0px;
   box-shadow: 0px 0px 0px;
   border-radius: 0px;
+  font-family: "Open Sans"; 
 
 }
 .btn.btn-info.formButton{
-  height: 59px;
-  width: 140px;
-  font-size: 32px;
+  height: 60px;
+  width: 144.75px;
+  font-size: 27px;
   background-color: #00A89F;
 }
 
-.cardHeader{
-  height: 153px;
-}
 .form-control.login_password, .form-control.login_number{
   padding: 30px; 
   font-size:24px;
-  width: 57%;
+  width: 384.75px;
   margin: 0 auto;
+  font-family: 'Open Sans';
 }
 
 #login #login-form .login_btn{
+  font-family: 'OpenSans-Semibold';
   padding: 5px; 
   font-size:32px;  
   margin-top:60px; 
-  background-color:#08A19C;
-  width: 66%;
+  background-color:#00a89f;
+  width: 439.5px;
   margin: 0 auto;
 }
 
@@ -310,12 +352,13 @@ margin-top: 28px;
   margin: 150px auto;
 }
 .textLine {
+  font-family: 'Open Sans';
   padding: 10px; 
-  font-size:20px; 
+  font-size:28px; 
   margin-top:15px; 
-  color:#08A19C;
+  color: #00a89f;
   text-align: center;
-  width: 50%;
+  width: 73%;
   margin: 0 auto;
 }
 
@@ -327,7 +370,8 @@ margin-top: 28px;
 .cardHeader {
   background-color: #394165;
   color:white;
-  padding: 23px;
+  padding: 1px;
+  height: 110.25px;
 }
 
 
