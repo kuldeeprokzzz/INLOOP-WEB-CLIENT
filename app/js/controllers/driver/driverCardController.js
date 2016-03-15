@@ -9,10 +9,12 @@ inLoopApp.controller('driverCardController', function ($scope, completeModel, dr
         $scope.driver.licensePlateNumber = '';
         $scope.driver.vehicleProfile = {};
         $scope.driver.errorMessage = '';
+        $scope.activateAdd = true;
     };
 
 
     $scope.OnLicenceKeyPress = function(event){
+        $scope.driver.errorMessage = '';
 
         if($scope.driver.licensePlateNumber != undefined){
             if(($scope.driver.licensePlateNumber).length == 4){
@@ -29,6 +31,7 @@ inLoopApp.controller('driverCardController', function ($scope, completeModel, dr
                             $scope.driver.vehicleProfile = response.data[0];
                             $scope.driver.licensePlateNumber = response.data[0].regNumber;
                             $scope.driver.licensePlateNumberCount = $scope.driver.licensePlateNumber.length;
+                            $scope.activateAdd = false;
                         }else{
                             $scope.driver.errorMessage = 'More than One vehicle Found';
                             $scope.driver.vehicleProfile = '';
