@@ -65,6 +65,11 @@ inLoopApp.config(function ($routeProvider) {
         controller: 'loadManagerJobAssignmentController',
         
       })
+      .when('/submitInvoice', {
+        templateUrl: 'views/accountsRecievable/submitInvoice.html',
+        controller: 'loadManagerJobAssignmentController',
+        
+      })
       .otherwise({
         redirectTo: '/'
       });
