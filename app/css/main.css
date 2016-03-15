@@ -66,30 +66,28 @@
 }
 .middleButton{
   text-align: center;
-  padding: 50px;
-
+  padding: 55px;
+  font-family: 'Open Sans';
 }
 .wrapperAssign{
   clear: both;
   overflow: hidden;
-}
-.cardContainerAssign{
-  border: 1px solid grey;
 }
 .smallContainer{
   clear: both;
   overflow: hidden;
   width: 88%;
   margin: 0 auto;
-  font-size: 23px;
-  font-weight: bold;
+  font-size: 25px;
   margin-top: 11px;
+  padding: 8px;
+  font-family: 'Open Sans'; 
 }
 .DeatilsContainer{
   clear: both;
   overflow: hidden;
-  border: 1px solid grey;
   padding: 4px;
+  border-bottom: 1px solid grey;
 }
 .cardListContainer{
   clear: both;
@@ -128,13 +126,25 @@
   vertical-align: middle;
 }
 .cardWrapper{
+  display: inline-block;
+  vertical-align: middle;
   padding: 14px;
   margin-left: 25px;
+  font-family: 'Open Sans';
+}
+.cardWrapperImage{
+  display: inline-block;
+  vertical-align: middle;
+  padding: 14px;
 
 }
-.cardWrapper h3{
+.cardWrapper p{
   color : #00A49B;
-  font-weight: bold;
+  font-family: 'Open Sans';
+  font-size: 27px;
+}
+.cardWrapper p{
+  font-family: 'Open Sans';
 }  
 .cardContainer {
   clear: both;
@@ -200,6 +210,7 @@
   display: inline-block;
   vertical-align: middle;
   margin-left: 25px;
+  font-family: 'Open Sans';
 
 }
 .setHead{
