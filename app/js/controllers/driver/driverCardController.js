@@ -15,6 +15,7 @@ inLoopApp.controller('driverCardController', function ($scope, completeModel, dr
 
     $scope.OnLicenceKeyPress = function(event){
         $scope.driver.errorMessage = '';
+        $scope.activateAdd = true;
 
         if($scope.driver.licensePlateNumber != undefined){
             if(($scope.driver.licensePlateNumber).length == 4){

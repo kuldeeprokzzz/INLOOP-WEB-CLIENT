@@ -78,4 +78,9 @@ inLoopApp.controller('loginController', function ($scope, sharedProperties, comp
 
                
     };
+
+
+    $scope.onLoginKeyPress = function(loginType){
+        $scope.errorMessage = '';
+    };
   });
