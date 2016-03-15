@@ -42,6 +42,10 @@ inLoopApp.config(function ($routeProvider) {
         templateUrl: 'views/driver/scanPageIn.html',
         controller: 'driverScanInController',
       })
+      .when('/scanPageOut', {
+        templateUrl: 'views/driver/scanPageOut.html',
+        controller: 'driverScanInController',
+      })
       .when('/manifestDetails', {
         templateUrl: 'views/driver/manifestDetails.html',
         
