@@ -44,4 +44,19 @@ inLoopApp.service('driverService', ['sharedProperties','$http', function(sharedP
 
     }
 
+    this.driverReturningTOCenter = function(contractId,requestData){
+
+        return $http({
+                method: 'PUT',
+                url: sharedProperties.getUrl()+'/contracts/'+contractId,
+                headers: {token : sharedProperties.getAuthToken()},
+                data: requestData
+
+            }).success(function(response){
+                return response;
+            }).error(function(response){
+                return response;
+            });
+    }
+
 }])

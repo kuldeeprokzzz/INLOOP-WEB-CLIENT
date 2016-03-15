@@ -26,28 +26,28 @@ inLoopApp.controller('deliveryMenifestMapController', function ($scope,$filter, 
 
     $scope.returnToCenter = function(){
 
+
       var body = {
-                  "providerid": $scope.driver.organizationid,
-                  "vehicleid": $scope.driver.vehicleProfile.id,
-                  "driverid": $scope.driver.id,
-                  "status": sharedProperties.getContractStatusType().onWay.type,
-                    "states": [
-                    {
-                      "id": sharedProperties.getContractStatusType().onWay.id,
-                      "type": sharedProperties.getContractStatusType().onWay.type,
-                      "time": $filter("date")(Date.now(), 'dd/MM/yyyy HH:mm:ss'),
-                      "location": {
-                        "longitude": 77.5936900,
-                        "latitute": 12.9719400
-                      },
-                      "odometer": 87917,
-                      "performed_by": $scope.driver.username,
-                    }]
+                    "shipperid": $scope.contract.shipperid,
+                    "delivery_centreid": $scope.contract.delivery_centreid,
+                    "status": sharedProperties.getContractStatusType().returning.type,
+                  "states":[
+                      {
+                        "id": sharedProperties.getContractStatusType().returning.id,
+                        "type": sharedProperties.getContractStatusType().returning.type,
+                        "time": $filter("date")(Date.now(), 'dd/MM/yyyy HH:mm:ss'),
+                        "location": {
+                          "longitude": 77.5936910,
+                          "latitute": 12.9719410
+                        },
+                        "odometer": 21355,
+                        "performed_by": $scope.driver.username,
+                      }]
                   };
 
-                  driverService.driverOnMyWay(body)
+          driverService.driverReturningTOCenter($scope.contract.id,body)
           .then(function(response){
-            if(response.status == 201){
+            if(response.status == 200){
               $scope.driver.showReturningButton = false;
               $scope.driver.message = 'RETURN TO CENTER';
               $scope.driver.showMessage = true;
