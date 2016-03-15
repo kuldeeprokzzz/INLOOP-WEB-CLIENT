@@ -70,6 +70,11 @@ inLoopApp.config(function ($routeProvider) {
         controller: 'loadManagerJobAssignmentController',
         
       })
+      .when('/ledger', {
+        templateUrl: 'views/accountsPayable/ledger.html',
+        controller: 'loadManagerJobAssignmentController',
+        
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -1,4 +1,72 @@
-/*sign in page css*/
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('fonts/OpenSans-Regular-webfont.eot');
+    src: url('fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sanssemibold';
+    src: url('fonts/OpenSans-Semibold-webfont.eot');
+    src: url('fonts/OpenSans-Semibold-webfont.woff');
+    src: url('fonts/OpenSans-Semibold-webfont.ttf');
+    src: url('fonts/OpenSans-Semibold-webfont.svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+.entryCover {
+  clear: both;
+  overflow: hidden;
+  background-color: white;
+  border-bottom: 1px solid grey;
+  
+}
+.detailRight{
+  
+  display: inline-block;
+  vertical-align: middle; 
+  margin-left: 96px;
+  text-align: center;
+}
+.detailLeft {
+  display: inline-block;
+  vertical-align: middle;
+  border-right: 1px solid grey;
+  width: 295px;
+  margin-left: 2px;
+  padding: 28px;
+  text-align: center;
+
+
+}
+.carDetails{
+  text-align: center;
+  padding: 13px;
+}
+.carDetailsB{
+  font-family: 'open sans';
+  font-size: 20px;
+  line-height: 0px;
+}
+.carDetailsA {
+  font-family: 'open sans';
+  font-size: 25px;
+  font-weight: bold;
+}
+.detailsCover{
+  background: white;
+  border-bottom: 1px solid grey;
+  padding: 15px;
+}
 .subHead {
   font-size: 15px;
 }
@@ -300,7 +368,6 @@ line-height: 50px;
   clear : both;
   overflow: hidden;
   background-color: white;
-  border: 1px solid grey;
   font-size: 29px;
   padding: 5px;
   height: 79px;
@@ -346,10 +413,11 @@ line-height: 50px;
 
 .form-control.login_password, .form-control.login_number{
   padding: 30px; 
-  font-size:24px;
+  font-size:20px;
   width: 384.75px;
   margin: 0 auto;
-  font-family: 'Open Sans';
+  font-family: 'open_sanssemibold';
+  line-height: 29px;
 }
 
 #login #login-form .login_btn{
@@ -440,17 +508,7 @@ line-height: 50px;
   margin-top:5px; 
   margin:0 auto;
 }*/
-@font-face {
-    font-family: 'action_manbold';
-    src: url('fonts/Action_Man_Bold-webfont.eot');
-    src: url('fonts/Action_Man_Bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/Action_Man_Bold-webfont.woff') format('woff'),
-         url('fonts/Action_Man_Bold-webfont.ttf') format('truetype'),
-         url('fonts/Action_Man_Bold-webfont.svg#action_manbold') format('svg');
-    font-weight: normal;
-    font-style: normal;
 
-}
 
 .browsehappy {
   margin: 0.2em 0;
