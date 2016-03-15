@@ -49,7 +49,7 @@
 }
 .menifestContainer{
   border: 1px solid grey;
-  height: 513px;
+  height: 675px;
   background: white;
 }
 .detailsBox {
@@ -278,10 +278,11 @@ line-height: 50px;
 }
 .btn.btn-info.butt{
   height: 59px;
-width: 473px;
-font-size: 32px;
-background-color: #00A89F; 
-margin-top: 28px;
+  width: 440px;
+  font-size: 27px;
+  background-color: #00A89F; 
+  margin-top: 28px;
+  font-family: 'Open Sans';
 }
 
 .Deatils {
