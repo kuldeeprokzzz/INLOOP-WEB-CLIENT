@@ -1,17 +1,18 @@
 <div class = "container" style = "width : 632px" ng-init="initialize()">
  <div class = "wrapper"> 
   <div class ="cardHeader" style ="height:209px; text-align: center;">
-    <h1 style = "font-family : 'open sans'">Delivery Manifest</h1>
-    <h4>213126565465498454</h4>
-    <h2>44/44</h2>
+    <p class = "contentA">Delivery Manifest</p>
+    <p class = "contentB">213126565</p>
+    <p class = "contentA"  style = "line-height: 100px;">44/44</p>
   </div>
-  <div>
-    <img src="images/map.png" style = "height: 674px;" class="img-responsive center-block imageSize">
+ 
+  <div class = "mapDiv">
+          <img src="images/map.png" style = "height: 773px;" class="img-responsive center-block imageSize">
+          <button type="button" class="btn btn-info ImgButton" style = "background-color:#00a89f; color: white;">Returning To Center</button>
+          <!-- <button type="button" class="btn btn-info ImgButton" style = "background-color: #f9f9f9; border: none; color: #394165;">Returning To Center</button>
+          </div> -->
   </div>
-  <div style ="text-align:center">
-    <h3 ng-show="!driver.showMessage" class="serverText">{{driver.message}}<h3>
-    <button  ng-show="driver.showReturningButton" ng-click="returnToCenter()" type="button" class="btn btn-indriver.showReturningButton fo ImgButton">Returning To Center</button>
-  </div>
+
  </div> 
 </div>
 

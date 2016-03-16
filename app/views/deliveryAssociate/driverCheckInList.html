@@ -10,28 +10,28 @@
 
 	<div class="menu">
 	  <ul>
-	    <div><li class = "liHead"><i class="fa fa-user"></i>
+	    <div><li class = "liHead">
 			DRIVERS</li></div>
 		<div><li class = 'subHead'>All</li></div>
 		<div><li class = 'subHead'>Available</li></div>	
 		<div><li class = 'subHead'>Assigned</li></div>
 		<div><li class = 'subHead'>Returning</li></div>		
-	    <div><li class = "liHead"><i class="fa fa-shopping-basket"></i>
+	    <div><li class = "liHead">
 			JOBS</li></div>
 		<div><li class = 'subHead'>Unassigned</li></div>
 		<div><li class = 'subHead'>Assigned</li></div>	
 		<div><li class = 'subHead'>Assigned</li></div>
 		<div><li class = 'subHead'>Completed</li></div>	
-	    <div  ng-click="sendToBlankDriverPage()"><li class = "setHead"><i class="fa fa-toggle-on"></i>
+	    <div  ng-click="sendToBlankDriverPage()">
 			Find Driver</li></div>
-	    <div><li class = "setHead"><i class="fa fa-cogs"></i>
+	    <div><li class = "setHead">
 			Settings</li></div>
-	    <div><li class = "setHead"><i class="fa fa-sign-out"></i>
+	    <div><li class = "setHead">
 			Logout</li></div>
 	  </ul>
 	</div>
 	<div class = "division">
-		<div class= "scrollBar" id="style-2">
+		<div class= "scrollBar" style  ="margin-top: 0px;height: 773px;" id="style-2">
 		    
 				<div ng-include ="'/views/deliveryAssociate/templates/intransit.html'"/>
 		   
@@ -41,12 +41,13 @@
 </div>   
 	
 <script type="text/javascript">
-  $( ".cross" ).hide();
+$( ".cross" ).hide();
 $( ".menu" ).hide();
 $( ".hamburger" ).click(function() {
 $( ".menu" ).slideToggle( "slow", function() {
 $( ".hamburger" ).hide();
 $( ".cross" ).show();
+// $(".menu").css("margin-left")="0px";
 });
 });
 
