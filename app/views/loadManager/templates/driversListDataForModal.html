@@ -1,17 +1,17 @@
 
 <div class = "cardListContainer">			
 <div  ng-repeat="contract in contracts">
-  <div class = "queueCard" style = "width : 485px; margin-left: -12px;"  ng-click="sendToAssignJob(contract)">
+  <div class = "queueCard" style = "width : 485px; margin-left: -12px; margin-bottom: 21px;"  ng-click="sendToAssignJob(contract)">
     <img src="images/img.jpg" width = "100%" height = "250px";>
     <div style = "height:10px; background-color: #72C143;"></div>
     <div class = "boxSizing">
       <div>
     	<div class = "queueDetails">
         	<div class ="pull-left">
-        		<h4>{{contract.driver_name}}</h4>
+        		<p class = "contract">{{contract.driver_name}}</p>
         	</div>
         	<div class ="pull-right">
-        		<h4>{{contract.status}}</h4>
+        		<p class ="status">{{contract.status}}</p>
         	</div>
         </div>
       </div>
@@ -19,10 +19,10 @@
       <div>
         <div class = "queueDetails">
         	<div class ="pull-left">
-        		<h4>{{contract.provider_name}}</h4>
+        		<p class ="status" style = "margin-top: -16px;">{{contract.provider_name}}</p>
         	</div>
         	<div class ="pull-right">
-        		<h4>{{contract.states[1].time}}</h4>
+        		<p class ="status" style = "margin-top: -16px;">{{contract.states[1].time}}</p>
         	</div>
         </div>
       </div>

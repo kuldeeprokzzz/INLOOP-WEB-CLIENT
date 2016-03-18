@@ -33,6 +33,119 @@
     font-style: normal;
 
 }
+.rupeesDetails{
+  font-size: 25px;
+  color: black;
+  font-family: 'open_sanssemibold';
+  margin-top: 52px;
+  margin-right: 15px;
+}
+.statusDetails{
+  color: #50B54F;
+  font-size: 22px;
+  font-family: 'open_sanssemibold';
+}
+.cardB{
+  font-size: 25px;
+  color: black;
+  font-family: 'open_sansregular';
+}
+.cardA{
+  color: #00a89f;
+  font-size: 27px;
+  font-family: 'open_sanssemibold';
+}
+.cardContainerAssign{
+  height: 317px;
+  position: relative;
+}
+.middleButton{
+  position: absolute;
+  bottom: 0px;
+  left: 48px;
+}
+.pull-left.cardWrapper .routeId{
+  font-size: 22px;
+  font-family: 'open_sansregular';
+  color: black;
+}
+.pull-left.cardWrapper .jobId{
+  color: #00a89f;
+  font-size: 27px;
+  font-family: 'open_sanssemibold';
+}
+.moveLeft{
+  display: inline-block;
+  vertical-align: middle;
+  width: 196px;
+  text-align: center;
+  border-bottom: 5px solid #00a89f;
+  height: 61px;
+}
+.moveMid{
+  display: inline-block;
+  vertical-align: middle;
+  width: 196px;
+  text-align: center;
+  height: 61px;
+  border-bottom: 5px solid #00a89f;
+}
+.moveRight{
+  display: inline-block;
+  vertical-align: middle;
+  width: 196px;
+  text-align: center;
+  height: 61px;
+  border-bottom: 5px solid #00a89f;
+}
+.tabsInLine{
+  background-color: #394165;
+  height: 61px;
+  font-size: 22px;
+  color: white;
+  font-family: 'open_sansregular';
+}
+
+.topBar {
+  height: 100px;
+  background-color: #394165;
+}
+
+.providerName{
+  font-size: 22px;
+  font-family: 'open_sansregular';
+  line-height: 0px;
+}
+.driverName {
+  font-size: 33px;
+  font-family: 'open_sanssemibold';
+  line-height: 68px;
+}
+.status {
+  font-size: 22px;
+  font-family: 'open_sansregular';
+  color: black;
+  line-height: 50px;
+}
+.contract {
+  font-size: 22px;
+  font-family: 'open_sansbold';
+  line-height: 47px;
+  color: black;
+}
+
+.lineBottom {
+  width: 88%;
+  margin: 0 auto;
+  border-bottom: 1px solid grey;
+}
+
+.bottomNav{
+  position: absolute;
+  bottom : 0;
+  width: 100%;
+
+}
 .textureA{
   display: inline-block;
   vertical-align: middle;
@@ -136,14 +249,14 @@
   padding: 13px;
 }
 .carDetailsB{
-  font-family: 'open sans';
-  font-size: 20px;
+  font-family: 'open_sansregular';
+  font-size: 22px;
   line-height: 0px;
 }
 .carDetailsA {
-  font-family: 'open sans';
+  font-family: 'open_sanssemibold';
   font-size: 25px;
-  font-weight: bold;
+  color: black;
 }
 .detailsCover{
   background: white;
@@ -219,7 +332,7 @@
 }
 .middleButton{
   text-align: center;
-  padding: 55px;
+  padding: 38px;
   font-family: 'Open Sans';
 }
 .wrapperAssign{
@@ -279,39 +392,34 @@
   vertical-align: middle;
 }
 .cardWrapper{
-  display: inline-block;
-  vertical-align: middle;
-  padding: 14px;
-  margin-left: 25px;
-  font-family: 'Open Sans';
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px;
+    margin-left: 16px;
+    margin-top: 18px;
+    line-height: 32px;
 }
+
 .cardWrapperImage{
   display: inline-block;
   vertical-align: middle;
   padding: 14px;
 
-}
-.cardWrapper p{
-  color : #00A49B;
-  font-family: 'Open Sans';
-  font-size: 27px;
-}
-.cardWrapper p{
-  font-family: 'Open Sans';
 }  
 .cardContainer {
   clear: both;
   overflow: hidden;
   background-color: white;
-  border-bottom: 2px solid grey;
+  border-bottom: 1px solid #9b9b9b;
 }
 .bigBox{
-  padding: 25px;
+  padding: 26px;
+  padding-bottom: 5px;
 }
 .queueCard{
-  border: 1px solid grey;
-  border-radius: 5px;
-  width:545px;
+    border: 1px solid #9b9b9b;
+    border-radius: 5px;
+    width: 537px;
 }
 .boxSizing{
   background: white;
@@ -395,6 +503,7 @@ line-height: 50px;
   cursor:pointer;
   outline:none;
   z-index:10000000000000;
+  word-spacing: 20px;
 }
 .cross{
   background:none;
@@ -408,6 +517,7 @@ line-height: 50px;
   cursor:pointer;
   outline:none;
   z-index:10000000000000;
+  word-spacing: 20px;
 }
 .menu{z-index:1000000; background:black;  position:absolute;}
 .menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
@@ -499,6 +609,7 @@ line-height: 50px;
   width: 144.75px;
   font-size: 27px;
   background-color: #00A89F;
+  font-family: 'open_sanssemibold';
 }
 
 .form-control.login_password, .form-control.login_number{
@@ -594,7 +705,9 @@ line-height: 50px;
     margin-left: 0px;
     width: 507px;
     background: white;
-    height: 884px
+    height: 884px;
+    border: 0.5px solid grey;
+    height: 774px
 }
 /*.menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
 .menu li {display: block;   padding:15px 0 15px 0; border-bottom:#1d1f20 1px solid;}
