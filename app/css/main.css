@@ -1,4 +1,277 @@
-/*sign in page css*/
+@font-face {
+    font-family: 'open_sansbold';
+    src: url('../fonts/OpenSans-Bold-webfont.eot');
+    src: url('../fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Bold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../fonts/OpenSans-Regular-webfont.eot');
+    src: url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sanssemibold';
+    src: url('../fonts/OpenSans-Semibold-webfont.eot');
+    src: url('../fonts/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Semibold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Semibold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Semibold-webfont.svg#open_sanssemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+.rupeesDetails{
+  font-size: 25px;
+  color: black;
+  font-family: 'open_sanssemibold';
+  margin-top: 52px;
+  margin-right: 15px;
+}
+.statusDetails{
+  color: #50B54F;
+  font-size: 22px;
+  font-family: 'open_sanssemibold';
+}
+.cardB{
+  font-size: 25px;
+  color: black;
+  font-family: 'open_sansregular';
+}
+.cardA{
+  color: #00a89f;
+  font-size: 27px;
+  font-family: 'open_sanssemibold';
+}
+.cardContainerAssign{
+  height: 317px;
+  position: relative;
+}
+.middleButton{
+  position: absolute;
+  bottom: 0px;
+  left: 48px;
+}
+.pull-left.cardWrapper .routeId{
+  font-size: 22px;
+  font-family: 'open_sansregular';
+  color: black;
+}
+.pull-left.cardWrapper .jobId{
+  color: #00a89f;
+  font-size: 27px;
+  font-family: 'open_sanssemibold';
+}
+.moveLeft{
+  display: inline-block;
+  vertical-align: middle;
+  width: 196px;
+  text-align: center;
+  border-bottom: 5px solid #00a89f;
+  height: 61px;
+}
+.moveMid{
+  display: inline-block;
+  vertical-align: middle;
+  width: 196px;
+  text-align: center;
+  height: 61px;
+  border-bottom: 5px solid #00a89f;
+}
+.moveRight{
+  display: inline-block;
+  vertical-align: middle;
+  width: 196px;
+  text-align: center;
+  height: 61px;
+  border-bottom: 5px solid #00a89f;
+}
+.tabsInLine{
+  background-color: #394165;
+  height: 61px;
+  font-size: 22px;
+  color: white;
+  font-family: 'open_sansregular';
+}
+
+.topBar {
+  height: 100px;
+  background-color: #394165;
+}
+
+.providerName{
+  font-size: 22px;
+  font-family: 'open_sansregular';
+  line-height: 0px;
+}
+.driverName {
+  font-size: 33px;
+  font-family: 'open_sanssemibold';
+  line-height: 68px;
+}
+.status {
+  font-size: 22px;
+  font-family: 'open_sansregular';
+  color: black;
+  line-height: 50px;
+}
+.contract {
+  font-size: 22px;
+  font-family: 'open_sansbold';
+  line-height: 47px;
+  color: black;
+}
+
+.lineBottom {
+  width: 88%;
+  margin: 0 auto;
+  border-bottom: 1px solid grey;
+}
+
+.bottomNav{
+  position: absolute;
+  bottom : 0;
+  width: 100%;
+
+}
+.textureA{
+  display: inline-block;
+  vertical-align: middle;
+  width: 338px;
+  margin-left: 95px;
+}
+.scan{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.arrow {
+  display: inline-block;
+  vertical-align: middle;
+}
+.texture {
+    width: 73%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4%;
+}
+.cardHeader .contentA {
+    font-size: 32px;
+    line-height: 88px;
+    font-family: 'open_sanssemibold';
+}
+
+.cardHeader .contentB {
+    font-size: 22px;
+    line-height: 0px;
+    font-family: 'open_sansregular';
+    margin-top: -10px;
+}
+
+.smallMapDiv{
+  height: 398px;
+  width: 100%;
+  position: relative;
+}
+
+.smallMapDiv img {
+  height: 398px;
+}
+
+.smallMapDiv .btn.btn-info.ImgButton {
+  position: absolute;
+  bottom: 30px;
+  left: 80px;
+  height: 60px;
+  width: 440px;
+  font-size: 27px;
+  background-color: #00a89f;
+  font-family: 'open_sanssemibold';
+}
+
+.mapDiv{
+  height: 773px;
+  width: 100%;
+  position: relative;
+}
+
+.mapDiv .btn.btn-info.ImgButton{
+  position: absolute;
+  bottom: 30px; 
+  left: 80px;
+  height: 60px;
+  width: 440px;
+  font-size: 27px;
+  background-color: #00a89f;
+  font-family: 'open_sanssemibold';
+}
+
+
+.entryCover {
+  clear: both;
+  overflow: hidden;
+  background-color: white;
+  border-bottom: 1px solid grey;
+  
+}
+.detailRight{
+  
+  display: inline-block;
+  vertical-align: middle; 
+  margin-left: 96px;
+  text-align: center;
+}
+.detailLeft {
+  display: inline-block;
+  vertical-align: middle;
+  border-right: 1px solid grey;
+  width: 295px;
+  margin-left: 2px;
+  padding: 28px;
+  text-align: center;
+
+
+}
+.carDetails{
+  text-align: center;
+  padding: 13px;
+}
+.carDetailsB{
+  font-family: 'open_sansregular';
+  font-size: 22px;
+  line-height: 0px;
+}
+.carDetailsA {
+  font-family: 'open_sanssemibold';
+  font-size: 25px;
+  color: black;
+}
+.detailsCover{
+  background: white;
+  border-bottom: 1px solid grey;
+  padding: 15px;
+}
+.subHead {
+  font-size: 22px;
+  font-family: 'open_sansregular';
+  color: black
+}
+.queueDetails h4 {
+  font-size: 22px;
+  font-family: 'Open Sans';
+}
 .errorMessage{
   padding: 20px;
   font-size: 25px;
@@ -7,7 +280,7 @@
   font-family: 'Open Sans'; 
 }
 .buttonBox{
-  padding: 51px;
+    padding: 12px;
 }
 .buttonBox p {
   margin: 0 0 10px;
@@ -19,7 +292,7 @@
 }
 .wrapper {
   height: 885px;
-  border :1px solid grey;
+  border :1px solid lightgrey;
 }
 .cardAWrapper{
   line-height: 24px;
@@ -27,11 +300,11 @@
 }
 .cardFontA {
   font-size: 33px;
-  font-family: 'Open Sans';
+  font-family: 'open_sanssemibold';
 }
 .cardFontB {
   font-size: 22px;
-  font-family: 'Open Sans';
+  font-family: 'open_sansregular';
 }
 .alert.alert-warning.alert-dismissible.myAlert{
   position: absolute;
@@ -41,8 +314,7 @@
   color: black;
 }
 .menifestContainer{
-  border: 1px solid grey;
-  height: 513px;
+  height: 675px;
   background: white;
 }
 .detailsBox {
@@ -52,37 +324,36 @@
 
 }
 .btn.btn-info.formButton:disabled{
-  background-color:#717782;
+  background-color: #b5b5b5 !important ;
+  font-family: 'open_sanssemibold';
 }
-#login #login-form .login_btn:disabled {
-    background-color:#717782;
+.login_btn:disabled {
+  background-color:#b2b1b1 !important;
 }
 .middleButton{
   text-align: center;
-  padding: 50px;
-
+  padding: 38px;
+  font-family: 'Open Sans';
 }
 .wrapperAssign{
   clear: both;
   overflow: hidden;
-}
-.cardContainerAssign{
-  border: 1px solid grey;
 }
 .smallContainer{
   clear: both;
   overflow: hidden;
   width: 88%;
   margin: 0 auto;
-  font-size: 23px;
-  font-weight: bold;
+  font-size: 25px;
   margin-top: 11px;
+  padding: 8px;
+  font-family: 'Open Sans'; 
 }
 .DeatilsContainer{
   clear: both;
   overflow: hidden;
-  border: 1px solid grey;
   padding: 4px;
+  border-bottom: 1px solid grey;
 }
 .cardListContainer{
   clear: both;
@@ -98,7 +369,7 @@
   margin-top: -56px;
   color: white;
   font-weight: bold;
-  word-spacing: 146px;
+  word-spacing: 61px;
   padding: 22px;
 }
 .tabList a {
@@ -121,26 +392,34 @@
   vertical-align: middle;
 }
 .cardWrapper{
-  padding: 14px;
-  margin-left: 25px;
-
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px;
+    margin-left: 16px;
+    margin-top: 18px;
+    line-height: 32px;
 }
-.cardWrapper h3{
-  color : #00A49B;
-  font-weight: bold;
+
+.cardWrapperImage{
+  display: inline-block;
+  vertical-align: middle;
+  padding: 14px;
+
 }  
 .cardContainer {
   clear: both;
   overflow: hidden;
   background-color: white;
-  border-bottom: 2px solid grey;
+  border-bottom: 1px solid #9b9b9b;
 }
 .bigBox{
-  padding: 38px;
+  padding: 26px;
+  padding-bottom: 5px;
 }
 .queueCard{
-  border: 2px solid grey;
-  border-radius: 5px;
+    border: 1px solid #9b9b9b;
+    border-radius: 5px;
+    width: 537px;
 }
 .boxSizing{
   background: white;
@@ -154,9 +433,8 @@
   margin: 0 auto;
 }
 .division {
-  border : 1px solid black;
   background: #EBECEF;
-  height: 600px;
+  height: 774px;
 }
 .conatiner{
   border: 1px solid black;  
@@ -192,6 +470,7 @@
   display: inline-block;
   vertical-align: middle;
   margin-left: 25px;
+  font-family: 'Open Sans';
 
 }
 .setHead{
@@ -200,12 +479,16 @@
 }
 .liHead{
   font-size: 20px;
-  background:#E3E1E1;
+  background:#ebecef;
+  font-size: 22px;
+  background: #ebecef;
+  font-family: 'open_sansbold';
+  color: black;
 }
 header{
 width: 100%;
 background: #394165;
-height: 126px;
+height: 110.25px;
 line-height: 50px;
 }
 .hamburger{
@@ -217,10 +500,10 @@ line-height: 50px;
   color:#fff;
   border:0;
   font-size:1.4em;
-  font-weight:bold;
   cursor:pointer;
   outline:none;
   z-index:10000000000000;
+  word-spacing: 20px;
 }
 .cross{
   background:none;
@@ -231,25 +514,22 @@ line-height: 50px;
   border:0;
   font-size:33px;
   line-height:65px;
-  font-weight:bold;
   cursor:pointer;
   outline:none;
   z-index:10000000000000;
+  word-spacing: 20px;
 }
-.menu{border: 2px solid black; z-index:1000000; font-weight:bold; font-size:0.8em; width:100%; background:black;  position:absolute; box-shadow: 12px 10px 20px grey;}
+.menu{z-index:1000000; background:black;  position:absolute;}
 .menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
-.menu li {display: block;   padding:15px 0 15px 15px; }
-.menu li:hover{display: block;    background:grey; padding:15px 0 15px 15px;}
-.menu ul li a { text-decoration:none;  margin: 0px; color:grey;}
-.menu ul li a:hover {  color: grey; text-decoration:none;}
-.menu a{text-decoration:none; color:black;}
-.menu a:hover{text-decoration:none; color:black;}
+.menu li {display: block;   padding:15px 0 15px 46px; }
+
+
 .boxNav{
   color: white;
 }
 .scrollBar{
-  height: 496px;
-  width: 88%;
+  height: 664px;
+  width: 99%;
   margin: 0 auto;
   overflow: scroll;
   overflow-x: hidden;
@@ -268,36 +548,36 @@ line-height: 50px;
 .card {
   background-color : white;
   padding : 37px; 
-  border-bottom-style: groove;
+  border-bottom: 1px solid lightgrey
 }
 .btn.btn-info.butt{
   height: 59px;
-width: 473px;
-font-size: 32px;
-background-color: #00A89F; 
-margin-top: 28px;
+  width: 440px;
+  font-size: 27px;
+  background-color: #00A89F; 
+  margin-top: 28px;
+  font-family: 'open_sanssemibold';
 }
 
 .Deatils {
   clear : both;
   overflow: hidden;
   background-color: white;
-  border: 1px solid grey;
-  font-size: 29px;
+  font-size: 25px;
   padding: 5px;
   height: 79px;
-  font-family: "Open Sans";
+  line-height: 39px;
+  font-family: 'open_sanssemibold';
+  color: black;
 }
-.btn.btn-info.ImgButton{
+/*.btn.btn-info.ImgButton{
   height: 60px;
   width: 440px;
   font-size: 27px;
   background-color: #00a89f;
   margin-top: -160px;
-  font-weight: bold;
-  font-family: 'Open Sans';
-
-}
+  font-family: 'open_sanssemibold';
+}*/
 .serverText {
   height: 59px;
   font-size: 40px;
@@ -311,38 +591,46 @@ margin-top: 28px;
   width: 100%;
 }
 .form-control.formInput {
-  width: 339px; 
+  width: 347px; 
   height: 60px;
   font-size: 26px;
   border: 0px;
   box-shadow: 0px 0px 0px;
   border-radius: 0px;
-  font-family: "Open Sans"; 
-
+  font-family: 'open_sansregular';
+  color: black; 
+}
+.form-control.formInput:focus {
+  outline : none;
+  box-shadow: none;
 }
 .btn.btn-info.formButton{
   height: 60px;
   width: 144.75px;
   font-size: 27px;
   background-color: #00A89F;
+  font-family: 'open_sanssemibold';
 }
 
 .form-control.login_password, .form-control.login_number{
   padding: 30px; 
-  font-size:24px;
+  font-size:20px;
   width: 384.75px;
   margin: 0 auto;
-  font-family: 'Open Sans';
+  font-family: 'open_sansregular';
+  line-height: 29px;
+  color: black;
 }
 
 #login #login-form .login_btn{
-  font-family: 'OpenSans-Semibold';
+  font-family: 'open_sanssemibold';
   padding: 5px; 
-  font-size:32px;  
+  font-size:27px;  
   margin-top:60px; 
   background-color:#00a89f;
   width: 439.5px;
   margin: 0 auto;
+  height: 60px;
 }
 
 .form-signin {
@@ -352,14 +640,14 @@ margin-top: 28px;
   margin: 150px auto;
 }
 .textLine {
-  font-family: 'Open Sans';
-  padding: 10px; 
-  font-size:28px; 
-  margin-top:15px; 
+  padding: 10px;
+  font-size: 23px;
+  margin-top: 15px;
   color: #00a89f;
   text-align: center;
-  width: 73%;
+  width: 71%;
   margin: 0 auto;
+  font-family: 'open_sansregular';
 }
 
 
@@ -387,19 +675,20 @@ margin-top: 28px;
   /*top:0;*/
   /*line-height:122px;*/ 
   margin:30px 0;
-  padding:0px 15px 0px 15px;
+  padding:0px 15px 0px 30px;
   color:white;
   border:0;
   font-size:33px;
   cursor:pointer;
   outline:none;
-  z-index:10000000000000;
+  z-index:10;
+  font-family: 'open_sanssemibold';
 }
 .cross{
   background:none;
   /*position:absolute;*/
   /*top:0px;*/
-  padding:0px 15px 0px 15px;
+  padding:0px 15px 0px 30px;
   color:white;
   border:0;
   font-size:33px;
@@ -407,9 +696,19 @@ margin-top: 28px;
   margin: 30px 0px;
   cursor:pointer;
   outline:none;
-  z-index:10000000000000;
+  z-index: 999999;
+  font-family: 'open_sanssemibold';
 }
-.menu{z-index:1000000; margin-top: -36px; margin-left: 17px; font-weight:bold; font-size:0.8em; width:25%; background:white;}
+.menu{
+    z-index: 1000000;
+    margin-top: 0px;
+    margin-left: 0px;
+    width: 507px;
+    background: white;
+    height: 884px;
+    border: 0.5px solid grey;
+    height: 774px
+}
 /*.menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
 .menu li {display: block;   padding:15px 0 15px 0; border-bottom:#1d1f20 1px solid;}
 .menu li:hover{display: block;    background:#181818; padding:15px 0 15px 0; border-bottom:#1d1f20 1px solid;}
@@ -423,17 +722,7 @@ margin-top: 28px;
   margin-top:5px; 
   margin:0 auto;
 }*/
-@font-face {
-    font-family: 'action_manbold';
-    src: url('fonts/Action_Man_Bold-webfont.eot');
-    src: url('fonts/Action_Man_Bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/Action_Man_Bold-webfont.woff') format('woff'),
-         url('fonts/Action_Man_Bold-webfont.ttf') format('truetype'),
-         url('fonts/Action_Man_Bold-webfont.svg#action_manbold') format('svg');
-    font-weight: normal;
-    font-style: normal;
 
-}
 
 .browsehappy {
   margin: 0.2em 0;

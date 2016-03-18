@@ -16,8 +16,15 @@ inLoopApp.service('sharedProperties',function($location){
         this._contractStatusType = {
 
             onWay : {id : 0,type : 'ON_WAY'},
-            checkedIn : {id : 0,type : 'CHECKED_IN'},
+            checkedIn : {id : 1,type : 'CHECKED_IN'},
+            returning : {id : 2,type : 'RETURNING'}
             
+        };
+
+        this._contractTaskType = {
+            dispatched : 'DISPATCHED',
+            arrived : 'ARRIVED',
+
         };
 
         this._jobTypes = {
@@ -44,6 +51,10 @@ inLoopApp.service('sharedProperties',function($location){
 
         this.getContractStatusType = function(){
             return this._contractStatusType;
+        };
+
+        this.getContractTaskType = function(){
+            return this._contractTaskType;
         };
 
         this.getJobsTypes = function(){

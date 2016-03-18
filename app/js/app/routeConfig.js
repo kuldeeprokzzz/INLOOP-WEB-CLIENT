@@ -17,13 +17,17 @@ inLoopApp.config(function ($routeProvider) {
         templateUrl: 'views/driver/onWay.html',
         controller : 'driverOnWayController' 
       })
+      .when('/onWayDone', {
+        templateUrl: 'views/driver/triState.html',
+        controller : 'driverOnWayDoneController' 
+      })
       .when('/iotDetected', {
-        templateUrl: 'views/driver/driverIOTDetectedPage.html',
-        controller : 'driverIOTDetectedController'  
+        templateUrl: 'views/driver/triState.html',
+        controller : 'driverIOTDetectedController' 
       })
       .when('/driverCheckedIn', {
-        templateUrl: 'views/driver/driverCheckedIn.html',
-        controller : 'driverCheckedInController'
+        templateUrl: 'views/driver/triState.html',
+        controller : 'driverCheckedInController' 
       })
       .when('/driverBlankCard', {
         templateUrl: 'views/deliveryAssociate/driverBlankCard.html',
@@ -42,6 +46,10 @@ inLoopApp.config(function ($routeProvider) {
         templateUrl: 'views/driver/scanPageIn.html',
         controller: 'driverScanInController',
       })
+      .when('/scanPageOut', {
+        templateUrl: 'views/driver/scanPageOut.html',
+        controller: 'driverScanInController',
+      })
       .when('/manifestDetails', {
         templateUrl: 'views/driver/manifestDetails.html',
         
@@ -58,6 +66,16 @@ inLoopApp.config(function ($routeProvider) {
       })
       .when('/assignJob', {
         templateUrl: 'views/loadManager/assignJob.html',
+        controller: 'loadManagerJobAssignmentController',
+        
+      })
+      .when('/submitInvoice', {
+        templateUrl: 'views/accountsRecievable/submitInvoice.html',
+        controller: 'loadManagerJobAssignmentController',
+        
+      })
+      .when('/ledger', {
+        templateUrl: 'views/accountsPayable/ledger.html',
         controller: 'loadManagerJobAssignmentController',
         
       })

@@ -1,18 +1,19 @@
 <div>
-    <div class = "container" ng-init="initialize()">
-        <div ng-include ="'/views/deliveryAssociate/templates/deliveryAssociateHeader.html'"/>
-        <div ng-include ="'/views/driver/templates/driverImage.html'"/>
-        <!-- <div ng-include ="'/views/driver/templates/vehicleDetails.html'"/> -->
-        <div ng-show = "showDriverFooter">
-        	<div ng-include ="'/views/driver/templates/driverFooter.html'"/>
+    <div class = "container" style = "width:632px;" ng-init="initialize()">
+        <div class = "wrapper">
+            <div ng-include ="'/views/deliveryAssociate/templates/deliveryAssociateHeader.html'"/>
+            <div ng-include ="'/views/driver/templates/driverImage.html'"/>
+            <!-- <div ng-include ="'/views/driver/templates/vehicleDetails.html'"/> -->
+            <div ng-show = "showDriverFooter">
+            	<div ng-include ="'/views/driver/templates/driverFooter.html'"/>
+            </div>
+            <div>
+                <div style = "border-bottom: 1px solid grey" ng-show="showVehicleDetails" ng-include ="'/views/driver/templates/vehicleDetails.html'"/>
+            </div>
+            <div ng-show = "showAddOdometer">
+            	<div ng-include ="'/views/deliveryAssociate/templates/odometer.html'"/>	
+            </div>
         </div>
-        <div>
-            <div ng-show="showVehicleDetails" ng-include ="'/views/driver/templates/vehicleDetails.html'"/>
-        </div>
-        <div ng-show = "showAddOdometer">
-        	<div ng-include ="'/views/deliveryAssociate/templates/odometer.html'"/>	
-        </div>
-        
 
     </div>	        	
 </div>
