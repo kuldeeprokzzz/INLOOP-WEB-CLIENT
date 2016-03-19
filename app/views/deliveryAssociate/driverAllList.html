@@ -1,0 +1,62 @@
+	
+<div class = "container" style = "width:632px;" ng-init = "initialize()">
+  <div class = "wrapper" >	
+	<header>
+	  <button class="hamburger"><i class="fa fa-bars"></i>
+			 Driver Check-in</button>
+	  <button class="cross"><i class="fa fa-bars"></i>
+			 Driver Check-in</button>
+	</header>
+
+	<div class="menu">
+	  <ul>
+	    <div ><li class = "liHead">DRIVERS</li></div>
+		<div ng-click="menuClicked(daMenu.drivers.items.all)"><li class = 'subHead'><img ng-show="{{menuItem == daMenu.drivers.items.all}}"   src='../images/check_mark.png'>All</li></div>
+		<div ng-click="menuClicked(daMenu.drivers.items.available)"><li class = 'subHead'><img ng-show="{{menuItem == daMenu.drivers.items.available}}"   src='../images/check_mark.png'>Available</li></div>	
+		<div ng-click="menuClicked(daMenu.drivers.items.assigned)"><li class = 'subHead'><img ng-show="{{menuItem == daMenu.drivers.items.assigned}}"   src='../images/check_mark.png'>Assigned</li></div>
+		<div ng-click="menuClicked(daMenu.drivers.items.returning)"><li class = 'subHead'><img ng-show="{{menuItem == daMenu.drivers.items.returning}}"   src='../images/check_mark.png'>Returning</li></div>		
+	    <!-- <div><li class = "liHead">
+			JOBS</li></div>
+		<div><li class = 'subHead'>Unassigned</li></div>
+		<div><li class = 'subHead'>Assigned</li></div>	
+		<div><li class = 'subHead'>Assigned</li></div>
+		<div><li class = 'subHead'>Completed</li></div>	 -->
+		<div class ="bottomNav">
+		    <div class = "lineBottom"><li class = "subHead" style = "margin-left: -31px;"><i class="fa fa-cog"></i>
+				Settings</li></div>
+		    <div><li class = "subHead"><i class="fa fa-times"></i>
+				Logout</li></div>
+		</div>		
+	  </ul>
+	</div>
+	<div class = "division">
+		<div class= "scrollBar" style  ="margin-top: 0px;height: 773px;" id="style-2">
+		    
+				<div ng-include ="'/views/deliveryAssociate/templates/intransit.html'"/>
+		   
+		</div> 
+	</div>
+  </div>		
+</div>   
+	
+<script type="text/javascript">
+$( ".cross" ).hide();
+$( ".menu" ).hide();
+$( ".hamburger" ).click(function() {
+$( ".menu" ).slideToggle( "slow", function() {
+$( ".hamburger" ).hide();
+$( ".cross" ).show();
+// $(".menu").css("margin-left")="0px";
+});
+});
+
+$( ".cross" ).click(function() {
+$( ".menu" ).slideToggle( "slow", function() {
+$( ".cross" ).hide();
+$( ".hamburger" ).show();
+});
+});
+
+
+
+</script>
