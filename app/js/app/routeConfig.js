@@ -17,9 +17,17 @@ inLoopApp.config(function ($routeProvider) {
         templateUrl: 'views/driver/onWay.html',
         controller : 'driverOnWayController' 
       })
-      .when('/alreadyOnWay', {
-        templateUrl: 'views/driver/alreadyOnway.html',
-        controller : 'driverOnWayController' 
+      .when('/onWayDone', {
+        templateUrl: 'views/driver/triState.html',
+        controller : 'driverOnWayDoneController' 
+      })
+      .when('/iotDetected', {
+        templateUrl: 'views/driver/triState.html',
+        controller : 'driverIOTDetectedController' 
+      })
+      .when('/driverCheckedIn', {
+        templateUrl: 'views/driver/triState.html',
+        controller : 'driverCheckedInController' 
       })
       .when('/driverBlankCard', {
         templateUrl: 'views/deliveryAssociate/driverBlankCard.html',
@@ -29,6 +37,10 @@ inLoopApp.config(function ($routeProvider) {
       .when('/driverCheckInList', {
         templateUrl: 'views/deliveryAssociate/driverCheckInList.html',
         controller : 'deliveryAssociateCheckinListController'
+      })
+      .when('/driverAllList', {
+        templateUrl: 'views/deliveryAssociate/driverAllList.html',
+        controller : 'deliveryAssociateAllListController'
       })
       .when('/driverJobAssigned', {
         templateUrl: 'views/driver/driverJobAssigned.html',

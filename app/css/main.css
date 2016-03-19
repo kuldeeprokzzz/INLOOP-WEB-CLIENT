@@ -839,4 +839,10 @@ body {
   }
 }
 
+.active-menu-item{
+  float: left;
+  color: #00a89f;
+  background-image: url('../images/check_mark.png');
+}
+
 

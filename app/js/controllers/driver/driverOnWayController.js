@@ -13,6 +13,12 @@ inLoopApp
         $scope.driver.showOnWayButton = true;
         $scope.driver.showMessage =  false;
         $scope.driver.message = '';
+
+        completeModel.contractTask = {};
+        $scope.contractTask = {};
+
+        completeModel.deliveryCenter = {};
+        $scope.deliveryCenter = {};
     };
 
 
@@ -20,7 +26,39 @@ inLoopApp
 
       $scope.driver.tempTime = $filter("date")(Date.now(), 'dd/MM/yyyy HH:mm:ss');
 
-      var body = {
+      driverService.getContractTaskByVehicleLicencePlateAndDriverId($scope.driver.id,$scope.driver.licensePlateNumber)
+        .then(function(response){
+          if(response.status == 200){
+            completeModel.contractTask = response.data[0];
+            $scope.contractTask = completeModel.contractTask;
+
+            var requestBody = {
+              "type": sharedProperties.getContractTaskType.dispatched,
+              "time": '2016-03-19T08:14:00+0530',
+              "location": {
+                "longitude":77.59369,
+                "latitude": 12.97194
+              }, 
+                "odometer": 17334,
+              "performed_by": $scope.driver.username,
+            };
+
+            driverService.updataContractStateToDispatched($scope.contractTask.id,requestBody)
+              .then(function(response){
+                if(response.status == 201){
+                  driverService.getDeliveryCenterDetails($scope.contractTask.shipperid,$scope.contractTask.delivery_centreid)
+                    .then(function(response){
+                      completeModel.deliveryCenter = response.data;
+                      sharedProperties.setPath('/onWayDone');
+                    });
+                }
+              });
+
+
+          }
+        });
+
+/*      var body = {
                   "providerid": $scope.driver.organizationid,
                   "vehicleid": $scope.driver.vehicleProfile.id,
                   "driverid": $scope.driver.id,
@@ -50,7 +88,7 @@ inLoopApp
             }else{
 
             }
-      });
+      });*/
 
     }
 

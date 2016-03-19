@@ -1,9 +1,9 @@
 inLoopApp.service('deliveryAssociateService', ['sharedProperties','$http', function(sharedProperties, $http){
 
 
-	this.getAllVehiclesByDeliveryCenterId = function(deliveryCenterId){
+	this.getArrivedVehiclesByDeliveryCenterId = function(deliveryCenterId){
 
-        return $http.get(sharedProperties.getUrl()+'/contracts/?delivery_centreid='+deliveryCenterId, { token : sharedProperties.getAuthToken})
+        return $http.get(sharedProperties.getUrl()+'/contract_tasks/?status='+sharedProperties.getContractTaskType().arrived.type+'&delivery_centreid='+deliveryCenterId, { token : sharedProperties.getAuthToken})
         .then(function(response){
             return response;
         }, function(response){
@@ -23,9 +23,35 @@ inLoopApp.service('deliveryAssociateService', ['sharedProperties','$http', funct
     }
 
 
-    this.checkinVelicleByContractId = function(contractId,requestBody){
+    this.updateContractTaskToCheckedIn = function(contractTaskId,requestBody){
 
-        return $http.put(sharedProperties.getUrl()+'/contracts/'+contractId, requestBody ,{ token : sharedProperties.getAuthToken})
+
+        return $http({
+                method: 'POST',
+                url: sharedProperties.getUrl()+'/contract_tasks/'+contractTaskId+'/states/',
+                headers: {token : sharedProperties.getAuthToken()},
+                data: requestBody,
+
+            }).success(function(response){
+                return response;
+            }).error(function(response){
+                return response;
+            });
+    }
+
+    this.getAllVehiclesByDeliveryCenterId = function(deliveryCenterId){
+        /*cheched In , Assigned , assigned Job*/
+        return $http.get(sharedProperties.getUrl()+'/contract_tasks/?status='+sharedProperties.getContractTaskType().checkedIn.type+','+sharedProperties.getContractTaskType().arrived.type+','+sharedProperties.getContractTaskType().assignedJob.type+'&delivery_centreid='+deliveryCenterId, { token : sharedProperties.getAuthToken})
+        .then(function(response){
+            return response;
+        }, function(response){
+            return response;
+        });
+    }
+
+    this.getVehiclesByDeliveryCenterIdAndStates = function(deliveryCenterId,state){
+        /*cheched In , Assigned , assigned Job*/
+        return $http.get(sharedProperties.getUrl()+'/contract_tasks/?status='+state+'&delivery_centreid='+deliveryCenterId, { token : sharedProperties.getAuthToken})
         .then(function(response){
             return response;
         }, function(response){

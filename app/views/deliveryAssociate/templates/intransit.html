@@ -1,17 +1,18 @@
 <div ng-init = "initialize()">
-    <div class = "bigBox" ng-repeat = "contract in contracts">
-     <div>
-      <div class = "queueCard" ng-click = "sendToBlankDriverPageWithContract(contract)">
+    <div class = "bigBox" ng-repeat = "contractTask in contractTasks">
+     
+     <div ng-show="{{contractTask.card_type == cardType.yellowCard.type}}">
+      <div class = "queueCard" ng-click = "sendToBlankDriverPageWithContract(contractTask)">
         <img src="images/img.jpg" width = "100%" height = "250px";>
-        <div style = "height:15px; background-color: #72C143;"></div>
+        <div style = "height:15px; background-color: #72c143;"></div>
         <div class = "boxSizing">
           <div>
         	<div class = "queueDetails">
 	        	<div class ="pull-left">
-	        		<p class = "contract">{{contract.driver_name}}</p>
+	        		<p class = "contract">{{contractTask.driver_name}}</p>
 	        	</div>
 	        	<div class ="pull-right">
-	        		<p class ="status">{{contract.status}}</p>
+	        		<p class ="status">{{cardType.yellowCard.text}}</p>
 	        	</div>
 	        </div>
 	      </div>
@@ -19,16 +20,137 @@
 	      <div>
 	        <div class = "queueDetails">
 	        	<div class ="pull-left">
-	        		<p class ="status" style = "margin-top: -16px;">{{contract.provider_name}}</p>
+	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.provider_name}}</p>
 	        	</div>
 	        	<div class ="pull-right">
-	        		<p class ="status" style = "margin-top: -16px;">{{contract.states[1].time}}</p>
+	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.states[contractTask.states.length-1].time}}</p>
 	        	</div>
 	        </div>
 	      </div>
         </div>  	 		
       </div>
      </div>
+
+    <div ng-show="{{contractTask.card_type == cardType.orangeCard.type}}">
+      <div class = "queueCard" ng-click = "sendToBlankDriverPageWithContract(contractTask)">
+        <img src="images/img.jpg" width = "100%" height = "250px";>
+        <div style = "height:15px; background-color: #FFA500;"></div>
+        <div class = "boxSizing">
+          <div>
+        	<div class = "queueDetails">
+	        	<div class ="pull-left">
+	        		<p class = "contract">{{contractTask.driver_name}}</p>
+	        	</div>
+	        	<div class ="pull-right">
+	        		<p class ="status">{{cardType.orangeCard.text}}</p>
+	        	</div>
+	        </div>
+	      </div>
+	        
+	      <div>
+	        <div class = "queueDetails">
+	        	<div class ="pull-left">
+	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.provider_name}}</p>
+	        	</div>
+	        	<div class ="pull-right">
+	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.states[contractTask.states.length-1].time}}</p>
+	        	</div>
+	        </div>
+	      </div>
+        </div>  	 		
+      </div>
+     </div>
+
+    <div ng-show="{{contractTask.card_type == cardType.greenCard.type}}">
+      <div class = "queueCard" ng-click = "sendToBlankDriverPageWithContract(contractTask)">
+        <img src="images/img.jpg" width = "100%" height = "250px";>
+        <div style = "height:15px; background-color: #72C143;"></div>
+        <div class = "boxSizing">
+          <div>
+        	<div class = "queueDetails">
+	        	<div class ="pull-left">
+	        		<p class = "contract">{{contractTask.driver_name}}</p>
+	        	</div>
+	        	<div class ="pull-right">
+	        		<p class ="status">{{contractTask.states[contractTask.states.length-1].odometer}}</p>
+	        	</div>
+	        </div>
+	      </div>
+	        
+	      <div>
+	        <div class = "queueDetails">
+	        	<div class ="pull-left">
+	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.provider_name}}</p>
+	        	</div>
+	        	<div class ="pull-right">
+	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.states[contractTask.states.length-1].time}}</p>
+	        	</div>
+	        </div>
+	      </div>
+        </div>  	 		
+      </div>
+     </div>
+
+    <div ng-show="{{contractTask.card_type == cardType.blueCard.type}}">
+      <div class = "queueCard" ng-click = "sendToBlankDriverPageWithContract(contractTask)">
+        <img src="images/img.jpg" width = "100%" height = "250px";>
+        <div style = "height:15px; background-color: #72C143;"></div>
+        <div class = "boxSizing">
+          <div>
+        	<div class = "queueDetails">
+	        	<div class ="pull-left">
+	        		<p class = "contract">{{contractTask.driver_name}}</p>
+	        	</div>
+	        	<div class ="pull-right">
+	        		<p class ="status">{{cardType.blueCard.text}}</p>
+	        	</div>
+	        </div>
+	      </div>
+	        
+	      <div>
+	        <div class = "queueDetails">
+	        	<div class ="pull-left">
+	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.provider_name}}</p>
+	        	</div>
+	        	<div class ="pull-right">
+	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.states[contractTask.states.length-1].time}}</p>
+	        	</div>
+	        </div>
+	      </div>
+        </div>  	 		
+      </div>
+     </div>
+
+    <div ng-show="{{contractTask.card_type == 'Sample text'}}">
+      <div class = "queueCard" ng-click = "sendToBlankDriverPageWithContract(contractTask)">
+        <img src="images/img.jpg" width = "100%" height = "250px";>
+        <div style = "height:15px; background-color: #72C143;"></div>
+        <div class = "boxSizing">
+          <div>
+        	<div class = "queueDetails">
+	        	<div class ="pull-left">
+	        		<p class = "contract">{{contractTask.driver_name}}</p>
+	        	</div>
+	        	<div class ="pull-right">
+	        		<p class ="status">{{contractTask.status}}</p>
+	        	</div>
+	        </div>
+	      </div>
+	        
+	      <div>
+	        <div class = "queueDetails">
+	        	<div class ="pull-left">
+	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.provider_name}}</p>
+	        	</div>
+	        	<div class ="pull-right">
+	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.states[contractTask.states.length-1].time}}</p>
+	        	</div>
+	        </div>
+	      </div>
+        </div>  	 		
+      </div>
+     </div>
+
     </div>
 </div>      
 

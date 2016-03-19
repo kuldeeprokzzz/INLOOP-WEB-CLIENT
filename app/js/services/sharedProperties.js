@@ -21,10 +21,41 @@ inLoopApp.service('sharedProperties',function($location){
             
         };
 
+        this._contractTaskType = {
+            dispatched : { id : 0, type : 'DISPATCHED'},
+            arrived : { id : 1, type : 'ARRIVED'},
+            checkedIn :{ id : 2, type : 'CHECKED_IN'}, 
+            assignedJob : { id : 3, type : 'ASSIGNED_JOB'},
+        };
+
         this._jobTypes = {
             unassigned : { id : 0, type : "UNASSIGNED"},
             assigned : {id : 1, type : "ASSIGNED"},
             completed : {id : 2, type : "COMPLETED"},
+        }
+
+        this._cardType = {
+            yellowCard : { type : 'yellow', text : 'ARRIVED'},
+            orangeCard : {type : 'orange' , text : 'ARRIVED'},
+            greenCard : { type : 'green' , text : 'CHECKED IN' },
+            blueCard : { type : 'blue' , text : 'JOB ASSIGNED' },
+        }
+
+        this._daMenu = {
+            drivers : { name : 'DRIVERS',
+                        items : {
+                            all : 'All',
+                            available : 'Available',
+                            assigned : 'Assigned',
+                            returning : 'Dispatched',
+                        }
+                    },
+            jobs : { name : 'JOBS', 
+                     items : {
+                        unassigned : 'Unassigned',
+                        assigned : 'Assigned',
+                        completed : 'Completed',
+                     }},
         }
 
         this.getUrl = function(){
@@ -47,7 +78,19 @@ inLoopApp.service('sharedProperties',function($location){
             return this._contractStatusType;
         };
 
+        this.getContractTaskType = function(){
+            return this._contractTaskType;
+        };
+
         this.getJobsTypes = function(){
             return this._jobTypes;
+        }
+
+        this.getCardTypes = function(){
+            return this._cardType;
+        }
+
+        this.getdaMenu = function(){
+            return this._daMenu;
         }
 }); 

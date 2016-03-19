@@ -2,120 +2,42 @@ inLoopApp.controller('deliveryAssociateCheckinListController', function ($scope,
     
     $scope.initialize = function(){
 
-        var deliveryCenterId = 0;
+        var deliveryCenterId = 5;
 
         $scope.showDriverList = false;
-        
+
+        $scope.contractTaskType = sharedProperties.getContractTaskType();
+        $scope.cardType = sharedProperties.getCardTypes();
+        $scope.daMenu = sharedProperties.getdaMenu();
+
         if(completeModel.deliveryAssociate.profile.delivery_centreid != undefined){
             deliveryCenterId = response.data.delivery_centreid;
         }
 
-        deliveryAssociateService.getAllVehiclesByDeliveryCenterId(deliveryCenterId)
+        if(completeModel.menuItem == undefined){
+          completeModel.menuItem = sharedProperties.getdaMenu().drivers.items.all;
+          $scope.menuItem = completeModel.menuItem;
+        }
+
+        deliveryAssociateService.getArrivedVehiclesByDeliveryCenterId(deliveryCenterId)
 		    .then(function(response){
-		        
-
-                                    /*response.data.length != 0*/
-
-
-
-
-
-                                    /*response = 
-[
-  {
-    "id": 0,
-    "shipperid": 1,
-    "shipper_name": "Amazon India Pvt. Ltd.",
-    "providerid": 0,
-    "provider_name": "GTrans Logistics Pvt. Ltd.",
-    "vehicleid": 1,
-    "vehicle_regNumber": "KA02AB1924",
-    "vehicle_make": "TATA ACE",
-    "driverid": 0,
-    "driver_name": "Ramlal Gupta",
-    "driver_image": "http://54.169.251.56/media/drivers/ramlal.png",
-    "delivery_centreid": 0,
-    "delivery_centre_name": "Jakkur Delivery Centre",
-    "status": "CHECKED_IN",
-    "states": [
-      {
-        "id": 0,
-        "type": "ON_WAY",
-        "time": "26/02/2016 07:55:00",
-        "location": {
-          "longitude": 77.59369,
-          "latitute": 12.97194
-        },
-        "odometer": 19007,
-        "performed_by": "+919012123456"
-      },
-      {
-        "id": 1,
-        "type": "CHECKED_IN",
-        "time": "26/02/2016 08:17:00",
-        "location": {
-          "longitude": 77.593691,
-          "latitute": 12.971941
-        },
-        "odometer": 19012,
-        "performed_by": "kvkumar"
-      }
-    ],
-    "terms": []
-  },
-  {
-    "id": 1,
-    "shipperid": 1,
-    "shipper_name": "Amazon India Pvt. Ltd.",
-    "providerid": 0,
-    "provider_name": "GTrans Logistics Pvt. Ltd.",
-    "vehicleid": 1,
-    "vehicle_regNumber": "KA04DS2328",
-    "vehicle_make": "TATA ACE",
-    "driverid": 0,
-    "driver_name": "Harilal Pande",
-    "driver_image": "http://54.169.251.56/media/drivers/harilal_pande.png",
-    "delivery_centreid": 0,
-    "delivery_centre_name": "Jakkur Delivery Centre",
-    "status": "CHECKED_IN",
-    "states": [
-      {
-        "id": 0,
-        "type": "ON_WAY",
-        "time": "26/02/2016 07:37:00",
-        "location": {
-          "longitude": 77.59369,
-          "latitute": 12.97194
-        },
-        "odometer": 21345,
-        "performed_by": "+919012123456"
-      },
-      {
-        "id": 1,
-        "type": "CHECKED_IN",
-        "time": "26/02/2016 08:01:00",
-        "location": {
-          "longitude": 77.593691,
-          "latitute": 12.971941
-        },
-        "odometer": 21355,
-        "performed_by": "kvkumar"
-      }
-    ],
-    "terms": []
-  }
-];*/
 		
-		if(response.data.length != 0){
+      		if(response.data.length != 0){
 
-			$scope.contracts = response.data;
-			$scope.showDriverList = true;
+            if(response.data.length != 1){
+              completeModel.deliveryAssociate.from = 'driversList';
+              completeModel.deliveryAssociate.contractTask = response.data[0];
+              sharedProperties.setPath('/driverBlankCard');
+            }
 
-		}else{
-			completeModel.deliveryAssociate.from = 'login';
-			completeModel.deliveryAssociate.blankDriverCard = undefined;
-			sharedProperties.setPath('/driverBlankCard');
-		}
+      			$scope.contractTasks = response.data;
+      			$scope.showDriverList = true;
+
+      		}else{
+      			completeModel.deliveryAssociate.from = 'login';
+      			completeModel.deliveryAssociate.blankDriverCard = undefined;
+      			sharedProperties.setPath('/driverBlankCard');
+      		}
 
         });
     };
@@ -132,10 +54,16 @@ inLoopApp.controller('deliveryAssociateCheckinListController', function ($scope,
 		sharedProperties.setPath('/driverBlankCard');
 	}
 
-	$scope.sendToBlankDriverPageWithContract = function(contract){
+	$scope.sendToBlankDriverPageWithContract = function(contractTask){
 		completeModel.deliveryAssociate.from = 'driversList';
-		completeModel.deliveryAssociate.contract = contract;
+		completeModel.deliveryAssociate.contractTask = contractTask;
 		sharedProperties.setPath('/driverBlankCard');
 	}
 
-  });
+  $scope.menuClicked = function(item){
+    $scope.menuItem = item;
+    completeModel.menuItem = item;
+    sharedProperties.setPath('/driverAllList');
+  }
+
+});
