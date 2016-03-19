@@ -1,0 +1,842 @@
+@font-face {
+    font-family: 'open_sansbold';
+    src: url('../fonts/OpenSans-Bold-webfont.eot');
+    src: url('../fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Bold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../fonts/OpenSans-Regular-webfont.eot');
+    src: url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sanssemibold';
+    src: url('../fonts/OpenSans-Semibold-webfont.eot');
+    src: url('../fonts/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Semibold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Semibold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Semibold-webfont.svg#open_sanssemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+.rupeesDetails{
+  font-size: 25px;
+  color: black;
+  font-family: 'open_sanssemibold';
+  margin-top: 52px;
+  margin-right: 15px;
+}
+.statusDetails{
+  color: #50B54F;
+  font-size: 22px;
+  font-family: 'open_sanssemibold';
+}
+.cardB{
+  font-size: 25px;
+  color: black;
+  font-family: 'open_sansregular';
+}
+.cardA{
+  color: #00a89f;
+  font-size: 27px;
+  font-family: 'open_sanssemibold';
+}
+.cardContainerAssign{
+  height: 317px;
+  position: relative;
+}
+.middleButton{
+  position: absolute;
+  bottom: 0px;
+  left: 48px;
+}
+.pull-left.cardWrapper .routeId{
+  font-size: 22px;
+  font-family: 'open_sansregular';
+  color: black;
+}
+.pull-left.cardWrapper .jobId{
+  color: #00a89f;
+  font-size: 27px;
+  font-family: 'open_sanssemibold';
+}
+.moveLeft{
+  display: inline-block;
+  vertical-align: middle;
+  width: 196px;
+  text-align: center;
+  border-bottom: 5px solid #00a89f;
+  height: 61px;
+}
+.moveMid{
+  display: inline-block;
+  vertical-align: middle;
+  width: 196px;
+  text-align: center;
+  height: 61px;
+  border-bottom: 5px solid #00a89f;
+}
+.moveRight{
+  display: inline-block;
+  vertical-align: middle;
+  width: 196px;
+  text-align: center;
+  height: 61px;
+  border-bottom: 5px solid #00a89f;
+}
+.tabsInLine{
+  background-color: #394165;
+  height: 61px;
+  font-size: 22px;
+  color: white;
+  font-family: 'open_sansregular';
+}
+
+.topBar {
+  height: 100px;
+  background-color: #394165;
+}
+
+.providerName{
+  font-size: 22px;
+  font-family: 'open_sansregular';
+  line-height: 0px;
+}
+.driverName {
+  font-size: 33px;
+  font-family: 'open_sanssemibold';
+  line-height: 68px;
+}
+.status {
+  font-size: 22px;
+  font-family: 'open_sansregular';
+  color: black;
+  line-height: 50px;
+}
+.contract {
+  font-size: 22px;
+  font-family: 'open_sansbold';
+  line-height: 47px;
+  color: black;
+}
+
+.lineBottom {
+  width: 88%;
+  margin: 0 auto;
+  border-bottom: 1px solid grey;
+}
+
+.bottomNav{
+  position: absolute;
+  bottom : 0;
+  width: 100%;
+
+}
+.textureA{
+  display: inline-block;
+  vertical-align: middle;
+  width: 338px;
+  margin-left: 95px;
+}
+.scan{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.arrow {
+  display: inline-block;
+  vertical-align: middle;
+}
+.texture {
+    width: 73%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4%;
+}
+.cardHeader .contentA {
+    font-size: 32px;
+    line-height: 88px;
+    font-family: 'open_sanssemibold';
+}
+
+.cardHeader .contentB {
+    font-size: 22px;
+    line-height: 0px;
+    font-family: 'open_sansregular';
+    margin-top: -10px;
+}
+
+.smallMapDiv{
+  height: 398px;
+  width: 100%;
+  position: relative;
+}
+
+.smallMapDiv img {
+  height: 398px;
+}
+
+.smallMapDiv .btn.btn-info.ImgButton {
+  position: absolute;
+  bottom: 30px;
+  left: 80px;
+  height: 60px;
+  width: 440px;
+  font-size: 27px;
+  background-color: #00a89f;
+  font-family: 'open_sanssemibold';
+}
+
+.mapDiv{
+  height: 773px;
+  width: 100%;
+  position: relative;
+}
+
+.mapDiv .btn.btn-info.ImgButton{
+  position: absolute;
+  bottom: 30px; 
+  left: 80px;
+  height: 60px;
+  width: 440px;
+  font-size: 27px;
+  background-color: #00a89f;
+  font-family: 'open_sanssemibold';
+}
+
+
+.entryCover {
+  clear: both;
+  overflow: hidden;
+  background-color: white;
+  border-bottom: 1px solid grey;
+  
+}
+.detailRight{
+  
+  display: inline-block;
+  vertical-align: middle; 
+  margin-left: 96px;
+  text-align: center;
+}
+.detailLeft {
+  display: inline-block;
+  vertical-align: middle;
+  border-right: 1px solid grey;
+  width: 295px;
+  margin-left: 2px;
+  padding: 28px;
+  text-align: center;
+
+
+}
+.carDetails{
+  text-align: center;
+  padding: 13px;
+}
+.carDetailsB{
+  font-family: 'open_sansregular';
+  font-size: 22px;
+  line-height: 0px;
+}
+.carDetailsA {
+  font-family: 'open_sanssemibold';
+  font-size: 25px;
+  color: black;
+}
+.detailsCover{
+  background: white;
+  border-bottom: 1px solid grey;
+  padding: 15px;
+}
+.subHead {
+  font-size: 22px;
+  font-family: 'open_sansregular';
+  color: black
+}
+.queueDetails h4 {
+  font-size: 22px;
+  font-family: 'Open Sans';
+}
+.errorMessage{
+  padding: 20px;
+  font-size: 25px;
+  text-align: center;
+  color: red;
+  font-family: 'Open Sans'; 
+}
+.buttonBox{
+    padding: 12px;
+}
+.buttonBox p {
+  margin: 0 0 10px;
+  padding: 20px;
+  font-size: 25px;
+  text-align: center;
+  color: red;
+  font-family: 'Open Sans';
+}
+.wrapper {
+  height: 885px;
+  border :1px solid lightgrey;
+}
+.cardAWrapper{
+  line-height: 24px;
+  padding: 24px;  
+}
+.cardFontA {
+  font-size: 33px;
+  font-family: 'open_sanssemibold';
+}
+.cardFontB {
+  font-size: 22px;
+  font-family: 'open_sansregular';
+}
+.alert.alert-warning.alert-dismissible.myAlert{
+  position: absolute;
+  top: 533px;
+  left: 456px;
+  background: #5BB75B;
+  color: black;
+}
+.menifestContainer{
+  height: 675px;
+  background: white;
+}
+.detailsBox {
+  width: 98%;
+  margin: 0 auto;
+  padding: 15px;
+
+}
+.btn.btn-info.formButton:disabled{
+  background-color: #b5b5b5 !important ;
+  font-family: 'open_sanssemibold';
+}
+.login_btn:disabled {
+  background-color:#b2b1b1 !important;
+}
+.middleButton{
+  text-align: center;
+  padding: 38px;
+  font-family: 'Open Sans';
+}
+.wrapperAssign{
+  clear: both;
+  overflow: hidden;
+}
+.smallContainer{
+  clear: both;
+  overflow: hidden;
+  width: 88%;
+  margin: 0 auto;
+  font-size: 25px;
+  margin-top: 11px;
+  padding: 8px;
+  font-family: 'Open Sans'; 
+}
+.DeatilsContainer{
+  clear: both;
+  overflow: hidden;
+  padding: 4px;
+  border-bottom: 1px solid grey;
+}
+.cardListContainer{
+  clear: both;
+  overflow: hidden;
+  padding: 15px;
+}
+.modal-header{
+  background-color: #394165;
+  color:white;
+}
+.tabList{
+  background-color: #394165;
+  margin-top: -56px;
+  color: white;
+  font-weight: bold;
+  word-spacing: 61px;
+  padding: 22px;
+}
+.tabList a {
+  text-decoration: none !important;
+  color: white;
+}
+.tabList h3:hover{
+  color: black; 
+}
+.pullLeft{
+  display: inline-block;
+  vertical-align: middle;
+}
+.pullMiddle{
+  display: inline-block;
+  vertical-align: middle;
+}
+.pullRight{
+  display: inline-block;
+  vertical-align: middle;
+}
+.cardWrapper{
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px;
+    margin-left: 16px;
+    margin-top: 18px;
+    line-height: 32px;
+}
+
+.cardWrapperImage{
+  display: inline-block;
+  vertical-align: middle;
+  padding: 14px;
+
+}  
+.cardContainer {
+  clear: both;
+  overflow: hidden;
+  background-color: white;
+  border-bottom: 1px solid #9b9b9b;
+}
+.bigBox{
+  padding: 26px;
+  padding-bottom: 5px;
+}
+.queueCard{
+    border: 1px solid #9b9b9b;
+    border-radius: 5px;
+    width: 537px;
+}
+.boxSizing{
+  background: white;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+.queueDetails{
+  clear: both;
+  overflow: hidden;
+  width: 90%;
+  margin: 0 auto;
+}
+.division {
+  background: #EBECEF;
+  height: 774px;
+}
+.conatiner{
+  border: 1px solid black;  
+}
+
+#style-2::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 20px;
+  background-color: lightgrey;
+}
+#style-2::-webkit-scrollbar
+{
+  width: 6px;
+  background-color: lightgrey;
+}
+
+#style-2::-webkit-scrollbar-thumb
+{
+  border-radius: 20px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: grey;
+}
+.buttonAlign{
+  display: inline-block;
+  vertical-align: middle;
+}
+.buttonAlign a {
+  text-decoration: none;
+  color: white;
+}
+.textAlign{
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 25px;
+  font-family: 'Open Sans';
+
+}
+.setHead{
+  font-size: 20px;
+  border-top: 2px solid grey;
+}
+.liHead{
+  font-size: 20px;
+  background:#ebecef;
+  font-size: 22px;
+  background: #ebecef;
+  font-family: 'open_sansbold';
+  color: black;
+}
+header{
+width: 100%;
+background: #394165;
+height: 110.25px;
+line-height: 50px;
+}
+.hamburger{
+  background:none;
+  position:absolute;
+  top:26;
+  line-height:45px;
+  padding:0px 15px 0px 15px;
+  color:#fff;
+  border:0;
+  font-size:1.4em;
+  cursor:pointer;
+  outline:none;
+  z-index:10000000000000;
+  word-spacing: 20px;
+}
+.cross{
+  background:none;
+  position:absolute;
+  top:-10px;
+  padding:0px 15px 0px 15px;
+  color:#fff;
+  border:0;
+  font-size:33px;
+  line-height:65px;
+  cursor:pointer;
+  outline:none;
+  z-index:10000000000000;
+  word-spacing: 20px;
+}
+.menu{z-index:1000000; background:black;  position:absolute;}
+.menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
+.menu li {display: block;   padding:15px 0 15px 46px; }
+
+
+.boxNav{
+  color: white;
+}
+.scrollBar{
+  height: 664px;
+  width: 99%;
+  margin: 0 auto;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin-top: 58px;
+  border-radius: 7px;
+
+
+ }   
+.boxInput{
+  padding: 16px 10px;
+  clear: both;
+  overflow: hidden;
+  background-color: white;
+}
+.card {
+  background-color : white;
+  padding : 37px; 
+  border-bottom: 1px solid lightgrey
+}
+.btn.btn-info.butt{
+  height: 59px;
+  width: 440px;
+  font-size: 27px;
+  background-color: #00A89F; 
+  margin-top: 28px;
+  font-family: 'open_sanssemibold';
+}
+
+.Deatils {
+  clear : both;
+  overflow: hidden;
+  background-color: white;
+  font-size: 25px;
+  padding: 5px;
+  height: 79px;
+  line-height: 39px;
+  font-family: 'open_sanssemibold';
+  color: black;
+}
+/*.btn.btn-info.ImgButton{
+  height: 60px;
+  width: 440px;
+  font-size: 27px;
+  background-color: #00a89f;
+  margin-top: -160px;
+  font-family: 'open_sanssemibold';
+}*/
+.serverText {
+  height: 59px;
+  font-size: 40px;
+  color: #00A89F;
+  margin-top: -67px;
+
+  
+
+}
+.img-responsive.center-block.imageSize {
+  width: 100%;
+}
+.form-control.formInput {
+  width: 347px; 
+  height: 60px;
+  font-size: 26px;
+  border: 0px;
+  box-shadow: 0px 0px 0px;
+  border-radius: 0px;
+  font-family: 'open_sansregular';
+  color: black; 
+}
+.form-control.formInput:focus {
+  outline : none;
+  box-shadow: none;
+}
+.btn.btn-info.formButton{
+  height: 60px;
+  width: 144.75px;
+  font-size: 27px;
+  background-color: #00A89F;
+  font-family: 'open_sanssemibold';
+}
+
+.form-control.login_password, .form-control.login_number{
+  padding: 30px; 
+  font-size:20px;
+  width: 384.75px;
+  margin: 0 auto;
+  font-family: 'open_sansregular';
+  line-height: 29px;
+  color: black;
+}
+
+#login #login-form .login_btn{
+  font-family: 'open_sanssemibold';
+  padding: 5px; 
+  font-size:27px;  
+  margin-top:60px; 
+  background-color:#00a89f;
+  width: 439.5px;
+  margin: 0 auto;
+  height: 60px;
+}
+
+.form-signin {
+  margin-top : 150px;
+  width: 405px;
+  text-align: center;
+  margin: 150px auto;
+}
+.textLine {
+  padding: 10px;
+  font-size: 23px;
+  margin-top: 15px;
+  color: #00a89f;
+  text-align: center;
+  width: 71%;
+  margin: 0 auto;
+  font-family: 'open_sansregular';
+}
+
+
+/*end of sign in page css*/
+
+/*css for driverCard*/
+
+.cardHeader {
+  background-color: #394165;
+  color:white;
+  padding: 1px;
+  height: 110.25px;
+}
+
+
+/*end of css for driverCard*/
+.cover {
+  background:#394165; 
+  height:125px; 
+  line-height:50px;
+}
+.hamburger{
+  background:none;
+  /*position:absolute;*/
+  /*top:0;*/
+  /*line-height:122px;*/ 
+  margin:30px 0;
+  padding:0px 15px 0px 30px;
+  color:white;
+  border:0;
+  font-size:33px;
+  cursor:pointer;
+  outline:none;
+  z-index:10;
+  font-family: 'open_sanssemibold';
+}
+.cross{
+  background:none;
+  /*position:absolute;*/
+  /*top:0px;*/
+  padding:0px 15px 0px 30px;
+  color:white;
+  border:0;
+  font-size:33px;
+  /*line-height:203px;*/
+  margin: 30px 0px;
+  cursor:pointer;
+  outline:none;
+  z-index: 999999;
+  font-family: 'open_sanssemibold';
+}
+.menu{
+    z-index: 1000000;
+    margin-top: 0px;
+    margin-left: 0px;
+    width: 507px;
+    background: white;
+    height: 884px;
+    border: 0.5px solid grey;
+    height: 774px
+}
+/*.menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
+.menu li {display: block;   padding:15px 0 15px 0; border-bottom:#1d1f20 1px solid;}
+.menu li:hover{display: block;    background:#181818; padding:15px 0 15px 0; border-bottom:#1d1f20 1px solid;}
+.menu ul li a { text-decoration:none;  margin: 0px; color:#fff;}
+.menu ul li a:hover {  color: #fff; text-decoration:none;}
+.menu a{text-decoration:none; color:white;}
+.menu a:hover{text-decoration:none; color:white;}
+.glyphicon-home{
+  color:white; 
+  font-size:1.5em; 
+  margin-top:5px; 
+  margin:0 auto;
+}*/
+
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+
+body { 
+  padding: 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  
+  .container{
+    background-color: #394165;
+  }
+
+  #login #login-form .textLine{
+    padding: 10px 0px;
+    font-size: 18px;
+  }
+
+  #login #login-form .login_btn{
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width : 1024px) {
+  #login{
+    background-color: #394165;
+  }
+  .form-control.formInput {
+  width: 359px; 
+  height: 60px;
+  font-size: 26px;
+  border: 0px;
+  box-shadow: 0px 0px 0px;
+  border-radius: 0px;
+  }
+}
+
+

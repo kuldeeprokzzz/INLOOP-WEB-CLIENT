@@ -1,0 +1,1 @@
+var inLoopApp = angular.module('inLoopApp', ['ngRoute']);
