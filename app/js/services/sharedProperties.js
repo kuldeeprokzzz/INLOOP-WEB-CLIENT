@@ -21,12 +21,6 @@ inLoopApp.service('sharedProperties',function($location){
             
         };
 
-        this._contractTaskType = {
-            dispatched : 'DISPATCHED',
-            arrived : 'ARRIVED',
-
-        };
-
         this._jobTypes = {
             unassigned : { id : 0, type : "UNASSIGNED"},
             assigned : {id : 1, type : "ASSIGNED"},
@@ -51,10 +45,6 @@ inLoopApp.service('sharedProperties',function($location){
 
         this.getContractStatusType = function(){
             return this._contractStatusType;
-        };
-
-        this.getContractTaskType = function(){
-            return this._contractTaskType;
         };
 
         this.getJobsTypes = function(){
