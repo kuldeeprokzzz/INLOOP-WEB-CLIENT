@@ -2,6 +2,8 @@ inLoopApp.controller('deliveryAssociateBlankCardController', function ($scope, $
     
     $scope.initialize = function(){
 
+      
+
       if(completeModel.deliveryAssociate.from == 'login'){
 
         if(completeModel.deliveryAssociate.blankDriverCard == undefined){
@@ -51,6 +53,11 @@ inLoopApp.controller('deliveryAssociateBlankCardController', function ($scope, $
           odometerReading : $scope.blankDriverCard.states[$scope.blankDriverCard.states.length-1].odometer,
         };
 
+        if(($scope.driver.odometerReading).length == 0){
+            $scope.disableOdometer = true;
+          }else{
+            $scope.disableOdometer = false;
+          }
         }
       }
 
@@ -131,6 +138,18 @@ inLoopApp.controller('deliveryAssociateBlankCardController', function ($scope, $
       completeModel.deliveryAssociate.contractTask = undefined;
       completeModel.deliveryAssociate.from == '';
       sharedProperties.setPath('/driverAllList');
+    };
+
+    $scope.odometerKeyPress = function(){
+      if($scope.driver.odometerReading != undefined){
+        if(($scope.driver.odometerReading).length == 0){
+          $scope.disableOdometer = true;
+        }else{
+          $scope.disableOdometer = false;
+        }
+      }else{
+        $scope.disableOdometer = true;
+      }
     };
 
   });

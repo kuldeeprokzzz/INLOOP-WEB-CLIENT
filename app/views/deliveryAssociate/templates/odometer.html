@@ -1,8 +1,8 @@
 <div class = "boxInput">
 	<div class = "pull-left">
-	<input type="text" class="form-control formInput" placeholder ="Odometer" ng-model = "driver.odometerReading" required>
+	<input type="text" class="form-control formInput" placeholder ="Odometer" ng-model = "driver.odometerReading" ng-change="odometerKeyPress()" required>
 	</div>
 	<div class = "pull-right">
-		<button style = "width: 176.75px;" type="button" class="btn btn-info formButton" ng-click ="addOdometerReading()">Check In</button>
+		<button ng-disabled="disableOdometer"style = "width: 176.75px;" type="button" class="btn btn-info formButton" ng-click ="addOdometerReading()">Check In</button>
     </div>
 </div>
