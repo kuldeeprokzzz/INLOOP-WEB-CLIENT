@@ -100,5 +100,4 @@ inLoopApp.service('driverService', ['sharedProperties','$http', function(sharedP
             });
 
     }
-
 }])
