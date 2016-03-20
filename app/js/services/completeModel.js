@@ -4,7 +4,9 @@ inLoopApp.service('completeModel',function(){
       
     driver : {},
     deliveryAssociate : {},
-    
+    loadManager : {},
+    accountsPayble : {},
+    accountsReceivable : {},
   }
         
 
