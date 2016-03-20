@@ -52,6 +52,7 @@ inLoopApp.controller('deliveryAssociateBlankCardController', function ($scope, $
           licensePlateNumber : $scope.blankDriverCard.vehicle_regNumber,
           vehicleModelName : $scope.blankDriverCard.vehicle_make,
           odometerReading : $scope.blankDriverCard.states[$scope.blankDriverCard.states.length-1].odometer,
+          image : $scope.blankDriverCard.driver_image,
         };
 
         if(($scope.driver.odometerReading).length == 0){
@@ -70,7 +71,7 @@ inLoopApp.controller('deliveryAssociateBlankCardController', function ($scope, $
         
     };
 
-    $scope.OnLicenceKeyPress = function(event){
+/*    $scope.OnLicenceKeyPress = function(event){
 
         if(($scope.driver.licensePlateNumber).length == 4){
             deliveryAssociateService.getOnWayOrReturningContractByVehicleNumberPlate($scope.driver.licensePlateNumber)
@@ -109,7 +110,7 @@ inLoopApp.controller('deliveryAssociateBlankCardController', function ($scope, $
         $scope.showDriverFooter = false;
         $scope.showVehicleDetails = true;
         $scope.showAddOdometer = true;
-    }
+    }*/
 
     $scope.addOdometerReading = function(){
 
