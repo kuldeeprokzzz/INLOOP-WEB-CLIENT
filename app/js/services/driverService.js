@@ -15,7 +15,9 @@ inLoopApp.service('driverService', ['sharedProperties','$http', function(sharedP
                 });
     }
 
-    this.driverOnMyWay = function(requestData){
+    /*These API's were meant for contract , NEED TO BE DELETED*/
+
+    /*this.driverOnMyWay = function(requestData){
 
     	return $http({
                 method: 'POST',
@@ -28,9 +30,9 @@ inLoopApp.service('driverService', ['sharedProperties','$http', function(sharedP
             }).error(function(response){
     			return response;
     		});
-    }
+    }*/
 
-    this.getContractDetailsByContractId = function(contractId){
+    /*this.getContractDetailsByContractId = function(contractId){
         return $http({
                 method: 'GET',
                 url: sharedProperties.getUrl()+'/contracts/'+contractId,
@@ -42,9 +44,9 @@ inLoopApp.service('driverService', ['sharedProperties','$http', function(sharedP
                     return response;
                 });
 
-    }
+    }*/
 
-    this.driverReturningTOCenter = function(contractId,requestData){
+/*    this.driverReturningTOCenter = function(contractId,requestData){
 
         return $http({
                 method: 'PUT',
@@ -57,7 +59,7 @@ inLoopApp.service('driverService', ['sharedProperties','$http', function(sharedP
             }).error(function(response){
                 return response;
             });
-    }
+    }*/
 
     this.getContractTaskByVehicleLicencePlateAndDriverId = function(driverId,vehicleRegNumber){
         return $http({
@@ -74,6 +76,20 @@ inLoopApp.service('driverService', ['sharedProperties','$http', function(sharedP
     }
 
     this.updataContractStateToDispatched = function(contractTaskId,requestData){
+        return $http({
+                method: 'POST',
+                url: sharedProperties.getUrl()+'/contract_tasks/'+contractTaskId+'/states/',
+                headers: { token : sharedProperties.getAuthToken()},
+                data: requestData,
+                }).success(function(response){
+                    return response;
+                }).error(function(response){
+                    return response;
+                });
+
+    }
+
+    this.updataContractStateToIOTDetected = function(contractTaskId,requestData){
         return $http({
                 method: 'POST',
                 url: sharedProperties.getUrl()+'/contract_tasks/'+contractTaskId+'/states/',

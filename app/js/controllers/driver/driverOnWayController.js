@@ -33,7 +33,7 @@ inLoopApp
             $scope.contractTask = completeModel.contractTask;
 
             var requestBody = {
-              "type": sharedProperties.getContractTaskType.dispatched,
+              "type": sharedProperties.getContractTaskType().dispatched.type,
               "time": '2016-03-19T08:14:00+0530',
               "location": {
                 "longitude":77.59369,

@@ -50,7 +50,6 @@ inLoopApp.service('deliveryAssociateService', ['sharedProperties','$http', funct
     }
 
     this.getVehiclesByDeliveryCenterIdAndStates = function(deliveryCenterId,state){
-        /*cheched In , Assigned , assigned Job*/
         return $http.get(sharedProperties.getUrl()+'/contract_tasks/?status='+state+'&delivery_centreid='+deliveryCenterId, { token : sharedProperties.getAuthToken})
         .then(function(response){
             return response;

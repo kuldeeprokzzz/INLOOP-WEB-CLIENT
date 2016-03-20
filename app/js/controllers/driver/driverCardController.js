@@ -10,6 +10,7 @@ inLoopApp.controller('driverCardController', function ($scope, completeModel, dr
         $scope.driver.vehicleProfile = {};
         $scope.driver.errorMessage = '';
         $scope.activateAdd = true;
+        $scope.driver.image = $scope.driver.image;
     };
 
 
