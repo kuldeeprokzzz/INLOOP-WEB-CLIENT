@@ -32,6 +32,7 @@ inLoopApp.controller('deliveryAssociateBlankCardController', function ($scope, $
           driverName : $scope.blankDriverCard.first_name + ' ' + $scope.blankDriverCard.middle_name + ' ' + $scope.blankDriverCard.last_name,
           providerName : $scope.blankDriverCard.providerName,
           licensePlateNumber : $scope.blankDriverCard.licensePlateNumber,
+          image : $scope.blankDriverCard.driver_image,
         }
 
       }
