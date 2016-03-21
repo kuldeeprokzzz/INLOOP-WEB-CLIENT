@@ -2,9 +2,90 @@ inLoopApp.controller('deliveryAssociateBlankCardController', function ($scope, $
     
     $scope.initialize = function(){
 
-      
+      //initializing scope to show driver card
 
-      if(completeModel.deliveryAssociate.from == 'login'){
+      if(completeModel.deliveryAssociate.from == 'driversList'){
+        if(completeModel.deliveryAssociate.contractTask != undefined){
+
+          $scope.showDriverFooter = false;
+          $scope.showVehicleDetails = true;
+          $scope.showAddOdometer = true;
+
+          $scope.blankDriverCard = completeModel.deliveryAssociate.contractTask;
+
+          $scope.driver = {
+          driverName : $scope.blankDriverCard.driver_name,
+          providerName : $scope.blankDriverCard.provider_name,
+          licensePlateNumber : $scope.blankDriverCard.vehicle_regNumber,
+          vehicleModelName : $scope.blankDriverCard.vehicle_make,
+          odometerReading : $scope.blankDriverCard.states[$scope.blankDriverCard.states.length-1].odometer,
+          image : $scope.blankDriverCard.driver_image,
+        };
+
+        if(($scope.driver.odometerReading).length == 0){
+            $scope.disableOdometer = true;
+          }else{
+            $scope.disableOdometer = false;
+          }
+        }
+      }
+    };
+
+    // called on submitting checkin button
+    $scope.addOdometerReading = function(){
+
+        var requestBody =  {
+          id: 1,
+          type: 'CHECKED_IN',
+          time: '26/02/201608:01:00',
+          location: {
+            longitude: 77.5936910,
+            latitude: 12.9719410
+          },
+          odometer: 21355,
+          performed_by: 'kvkumar',
+        }
+
+        // updating contract state to checked-in 
+        deliveryAssociateService.updateContractTaskToCheckedIn(completeModel.deliveryAssociate.contractTask.id,requestBody)
+            .then(function(response){
+              completeModel.menuItem = sharedProperties.getdaMenu().drivers.items.all;
+              sharedProperties.setPath('/driverAllList');
+
+            });
+    }
+
+    $scope.sendToAllDriverQueue = function(){
+      completeModel.deliveryAssociate.blankDriverCard = undefined;
+      completeModel.deliveryAssociate.contractTask = undefined;
+      completeModel.deliveryAssociate.from == '';
+      sharedProperties.setPath('/driverAllList');
+    };
+
+    // odometer validation checks
+    $scope.odometerKeyPress = function(){
+      if($scope.driver.odometerReading != undefined){
+        if(($scope.driver.odometerReading).length == 0){
+          $scope.disableOdometer = true;
+        }else{
+          $scope.disableOdometer = false;
+        }
+      }else{
+        $scope.disableOdometer = true;
+      }
+    };
+
+  });
+
+
+
+// Early Code, Not needed now as Black Page 
+// to identify driver will be never shown to DA
+
+
+
+
+/*if(completeModel.deliveryAssociate.from == 'login'){
 
         if(completeModel.deliveryAssociate.blankDriverCard == undefined){
            completeModel.deliveryAssociate.blankDriverCard= {
@@ -35,43 +116,10 @@ inLoopApp.controller('deliveryAssociateBlankCardController', function ($scope, $
           image : $scope.blankDriverCard.driver_image,
         }
 
-      }
-
-      if(completeModel.deliveryAssociate.from == 'driversList'){
-        if(completeModel.deliveryAssociate.contractTask != undefined){
-
-          $scope.showDriverFooter = false;
-          $scope.showVehicleDetails = true;
-          $scope.showAddOdometer = true;
-
-          $scope.blankDriverCard = completeModel.deliveryAssociate.contractTask;
-
-          $scope.driver = {
-          driverName : $scope.blankDriverCard.driver_name,
-          providerName : $scope.blankDriverCard.provider_name,
-          licensePlateNumber : $scope.blankDriverCard.vehicle_regNumber,
-          vehicleModelName : $scope.blankDriverCard.vehicle_make,
-          odometerReading : $scope.blankDriverCard.states[$scope.blankDriverCard.states.length-1].odometer,
-          image : $scope.blankDriverCard.driver_image,
-        };
-
-        if(($scope.driver.odometerReading).length == 0){
-            $scope.disableOdometer = true;
-          }else{
-            $scope.disableOdometer = false;
-          }
-        }
-      }
+      }*/
 
 
-
-        
-        
-
-        
-    };
-
-/*    $scope.OnLicenceKeyPress = function(event){
+      /*    $scope.OnLicenceKeyPress = function(event){
 
         if(($scope.driver.licensePlateNumber).length == 4){
             deliveryAssociateService.getOnWayOrReturningContractByVehicleNumberPlate($scope.driver.licensePlateNumber)
@@ -111,47 +159,3 @@ inLoopApp.controller('deliveryAssociateBlankCardController', function ($scope, $
         $scope.showVehicleDetails = true;
         $scope.showAddOdometer = true;
     }*/
-
-    $scope.addOdometerReading = function(){
-
-        var requestBody =  {
-          id: 1,
-          type: 'CHECKED_IN',
-          time: '26/02/201608:01:00',
-          location: {
-            longitude: 77.5936910,
-            latitude: 12.9719410
-          },
-          odometer: 21355,
-          performed_by: 'kvkumar',
-        }
-
-
-        deliveryAssociateService.updateContractTaskToCheckedIn(completeModel.deliveryAssociate.contractTask.id,requestBody)
-            .then(function(response){
-              completeModel.menuItem = sharedProperties.getdaMenu().drivers.items.all;
-              sharedProperties.setPath('/driverAllList');
-
-            });
-    }
-
-    $scope.sendToAllDriverQueue = function(){
-      completeModel.deliveryAssociate.blankDriverCard = undefined;
-      completeModel.deliveryAssociate.contractTask = undefined;
-      completeModel.deliveryAssociate.from == '';
-      sharedProperties.setPath('/driverAllList');
-    };
-
-    $scope.odometerKeyPress = function(){
-      if($scope.driver.odometerReading != undefined){
-        if(($scope.driver.odometerReading).length == 0){
-          $scope.disableOdometer = true;
-        }else{
-          $scope.disableOdometer = false;
-        }
-      }else{
-        $scope.disableOdometer = true;
-      }
-    };
-
-  });
