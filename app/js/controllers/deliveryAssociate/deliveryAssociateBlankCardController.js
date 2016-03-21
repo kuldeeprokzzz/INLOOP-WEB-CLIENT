@@ -129,7 +129,7 @@ inLoopApp.controller('deliveryAssociateBlankCardController', function ($scope, $
 
         deliveryAssociateService.updateContractTaskToCheckedIn(completeModel.deliveryAssociate.contractTask.id,requestBody)
             .then(function(response){
-
+              completeModel.menuItem = sharedProperties.getdaMenu().drivers.items.all;
               sharedProperties.setPath('/driverAllList');
 
             });

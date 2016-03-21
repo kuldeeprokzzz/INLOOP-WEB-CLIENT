@@ -1,0 +1,19 @@
+<ul>
+	    <div ><li class = "liHead">DRIVERS</li></div>
+		<div ng-click="menuClicked(daMenu.drivers.items.all)"><li class = 'subHead' ng-class="{ 'active-menu-item' : menuItem == daMenu.drivers.items.all}">All</li></div>
+		<div ng-click="menuClicked(daMenu.drivers.items.available)"><li class = 'subHead' ng-class="{ 'active-menu-item' : menuItem == daMenu.drivers.items.available}">Available</li></div>	
+		<div ng-click="menuClicked(daMenu.drivers.items.assigned)"><li class = 'subHead' ng-class="{ 'active-menu-item' : menuItem == daMenu.drivers.items.assigned}">Assigned</li></div>
+		<div ng-click="menuClicked(daMenu.drivers.items.returning)"><li class = 'subHead' ng-class="{ 'active-menu-item' : menuItem == daMenu.drivers.items.returning}">Returning</li></div>		
+<!-- 	    <div><li class = "liHead">
+			JOBS</li></div>
+		<div><li class = 'subHead'>Unassigned</li></div>
+		<div><li class = 'subHead'>Assigned</li></div>	
+		<div><li class = 'subHead'>Assigned</li></div>
+		<div><li class = 'subHead'>Completed</li></div>	 -->
+		<div class ="bottomNav">
+		    <div class = "lineBottom"><li class = "subHead" style = "margin-left: -31px;"><i class="fa fa-cog"></i>
+				Settings</li></div>
+		    <div><li class = "subHead"><i class="fa fa-times"></i>
+				Logout</li></div>
+		</div>		
+</ul>
