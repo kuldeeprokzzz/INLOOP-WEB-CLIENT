@@ -3,6 +3,7 @@ inLoopApp
 
     $scope.initialize = function(){
 
+        // initializing scope
         $scope.driver = completeModel.driver;
         $scope.driver.driverName = $scope.driver.first_name + " " + $scope.driver.middle_name+ " " + $scope.driver.last_name;
         $scope.driver.providerName = $scope.driver.organization_name;

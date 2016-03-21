@@ -2,6 +2,7 @@ inLoopApp.controller('driverCardController', function ($scope, completeModel, dr
     
     $scope.initializeDriver = function(){
 
+        // Initializing Scope 
         $scope.driver = completeModel.driver;
         var middleName = $scope.driver.middle_name + " ";
         $scope.driver.driverName = $scope.driver.first_name + " " + middleName + $scope.driver.last_name;
@@ -13,7 +14,7 @@ inLoopApp.controller('driverCardController', function ($scope, completeModel, dr
         $scope.driver.image = $scope.driver.image;
     };
 
-
+    // this function is called when vehicle number is entered
     $scope.OnLicenceKeyPress = function(event){
         $scope.driver.errorMessage = '';
         $scope.activateAdd = true;
@@ -50,7 +51,7 @@ inLoopApp.controller('driverCardController', function ($scope, completeModel, dr
         }
     };
 
-
+    // on adding licence plate
   	$scope.addLicencePlate = function(){
             sharedProperties.setPath('/onMyWay');
         

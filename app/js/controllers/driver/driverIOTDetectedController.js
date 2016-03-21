@@ -3,6 +3,7 @@ inLoopApp
 
     $scope.initialize = function(){
 
+      // initializing scope
         $scope.contractTask =  completeModel.contractTask;
         $scope.driver = completeModel.driver;
 
@@ -17,10 +18,11 @@ inLoopApp
               "performed_by": $scope.driver.username,
             };
 
-
+        // updating contract task to ARRIVED by http call
         driverService.updataContractStateToIOTDetected($scope.contractTask.id,requestBody)
         	.then(function(response){
         		if(response.status == 201){
+              // updating model and scope for updated contract task
         			completeModel.contractTask = response.data[0];
         			$scope.contractTask =  completeModel.contractTask;
 
@@ -28,6 +30,7 @@ inLoopApp
 			        $scope.driver.providerName = $scope.driver.organization_name;
 			        $scope.message = 'IOT Detected';
         		}else{
+              // in case of failure send to previous view
         			sharedProperties.setPath('/onWayDone');
         		}
         	});

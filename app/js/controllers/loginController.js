@@ -7,20 +7,6 @@ inLoopApp.controller('loginController', function ($scope, sharedProperties, comp
             "password": $scope.password,
         };
 
-
-        if(loginType == 1){
-            if($scope.username.length == 10){
-                $scope.errorMessage = 'Please Enter a valid mobile number.';
-            }
-
-            if($scope.password.length <=4){
-                if($scope.errorMessage == ''){
-                    $scope.errorMessage
-                }
-            }
-        }
-
-       
         loginService.getLoginToken(requestData)
         .then(function(response){
 
@@ -28,17 +14,18 @@ inLoopApp.controller('loginController', function ($scope, sharedProperties, comp
 
                 sharedProperties.setAuthToken(response.data.token);
                 
+                // if login is successful then making a 
+                // profile call for the user
                 loginService.getProfile()
                 .then(function(response){
 
                     if(response.status == 200)
                     {
-                        /*completeModel.driver = response.data;
-                        sharedProperties.setPath('/driverBlankCard');*/    
-
+                        // If Login and Profiles calls are Successful 
+                        // then directing user according to its roleid
 
                         if($scope.username == '8010599690' && $scope.password == '9690'){
-                        completeModel.driver = response.data;
+                        completeModel.driver = response.data; // Initalizing model for Driver
                         sharedProperties.setPath('/licensePlate');
                         }
 
@@ -49,7 +36,7 @@ inLoopApp.controller('loginController', function ($scope, sharedProperties, comp
 
 
                             completeModel.deliveryAssociate = {profile : {},from:''};
-                            completeModel.deliveryAssociate.profile = response.data;
+                            completeModel.deliveryAssociate.profile = response.data; // Initalizing model for Delivery Associate
 
                             sharedProperties.setPath('/driverCheckInList');
 
@@ -59,7 +46,7 @@ inLoopApp.controller('loginController', function ($scope, sharedProperties, comp
 
                         if($scope.username == 'amazonLM' && $scope.password == 'amazonLM'){
                             completeModel.loadManager = {profile : {},}
-                            completeModel.loadManager.profile = response.data;
+                            completeModel.loadManager.profile = response.data;  // Initalizing model for Load Manager
 
 
                             sharedProperties.setPath('/jobsList');
