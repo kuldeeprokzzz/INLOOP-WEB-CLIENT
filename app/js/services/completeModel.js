@@ -1,13 +1,18 @@
 inLoopApp.service('completeModel',function(){
  
-  this.completeModel = {
+  /*this.completeModel = {
       
     driver : {},
     deliveryAssociate : {},
     loadManager : {},
     accountsPayble : {},
     accountsReceivable : {},
-  }
-        
+  }*/
+      
+  /*this.completeModel = {
+
+  }  */
+
+  return {};
 
 }); 

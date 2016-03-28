@@ -1,4 +1,4 @@
-inLoopApp.service('driverService', ['sharedProperties','$http', function(sharedProperties, $http){
+inLoopApp.service('driverService', ['sharedProperties','$http', function(sharedProperties, $http, $filter){
 
 
 	this.getVehicleProfile = function(providerId,licensePlateNumber){
@@ -61,10 +61,10 @@ inLoopApp.service('driverService', ['sharedProperties','$http', function(sharedP
             });
     }*/
 
-    this.getContractTaskByVehicleLicencePlateAndDriverId = function(driverId,vehicleRegNumber){
+    this.getTodayContractTaskByVehicleLicencePlateAndDriverId = function(driverId,vehicleRegNumber){
         return $http({
                 method: 'GET',
-                url: sharedProperties.getUrl()+'/contract_tasks/?driverid='+driverId+'&vehicle_regNumber='+vehicleRegNumber,
+                url: sharedProperties.getUrl()+'/contract_tasks/?driverid='+driverId+'&vehicle_regNumber='+vehicleRegNumber+'&task_date='+sharedProperties.getTodayDate(),
                 headers: { token : sharedProperties.getAuthToken()},
 
                 }).success(function(response){

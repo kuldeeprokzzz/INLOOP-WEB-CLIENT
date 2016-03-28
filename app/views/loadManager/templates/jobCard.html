@@ -1,13 +1,16 @@
 <div>
 <div class ="cardContainer" ng-repeat="job in jobs">
-	<div class = "pull-left cardWrapper" ng-click="clickUnassignedJob(job)">
-		<p class = "jobId" style = "color:#00a89f;">{{job.jobId}}</p>
-		<p class = "routeId" >{{job.route}}</p>
-		<p class = "routeId" >{{job.packages}} packages</p>
+<div  ng-click="clickJob(job)">
+	<div class = "pull-left cardWrapper">
+		<p class = "jobId" style = "color:#00a89f;">{{job.id}}</p>
+		<p class = "routeId" >{{job.area}}</p>
+		<p class = "routeId" >{{job.number_of_packages}} packages</p>
 	</div>
-	<div class = "pull-right cardWrapperImage">
+	<div ng-show="{{job.status == lmMenu.unassigned.type}}" class = "pull-right cardWrapperImage">
 		<img class="img-circle img-responsive" src="images/img.jpg" style = "    height: 97px;
         margin-right: 20px;margin-top: 16px;border: 2px solid #394165">
 	</div>
 </div>
 </div>
+</div>
+

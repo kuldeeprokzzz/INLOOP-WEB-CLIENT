@@ -83,7 +83,7 @@
   vertical-align: middle;
   width: 196px;
   text-align: center;
-  border-bottom: 5px solid #00a89f;
+  border-bottom: 5px solid #394165;
   height: 61px;
 }
 .moveMid{
@@ -92,7 +92,7 @@
   width: 196px;
   text-align: center;
   height: 61px;
-  border-bottom: 5px solid #00a89f;
+  border-bottom: 5px solid #394165;
 }
 .moveRight{
   display: inline-block;
@@ -100,7 +100,7 @@
   width: 194px;
   text-align: center;
   height: 61px;
-  border-bottom: 5px solid #00a89f;
+  border-bottom: 5px solid #394165;
 }
 .tabsInLine{
   background-color: #394165;
@@ -847,6 +847,10 @@ body {
 
 .active-menu-item{
   color: #00a89f;
+}
+
+.active-job-tab{
+  border-bottom: 5px solid #00a89f;
 }
 
 

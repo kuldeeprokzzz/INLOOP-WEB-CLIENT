@@ -1,5 +1,5 @@
 	
-<div class = "BigRapper" ng-init="initializeJobs()">
+<div class = "BigRapper" ng-init="initialize()">
   <div class = "wrapper">	
 		<div class = "topBar">
 			<button class="hamburger"><i class="fa fa-bars"></i>
@@ -8,25 +8,23 @@
 				 Jobs</button>
 		</div>
 		<div class = "tabsInLine">
-			<div class = "moveLeft">UNASSIGNED</div>
-			<div class = "moveMid">ASSIGNED</div>
-			<div class = "moveRight">COMPLETED</div>
+			<div ng-click="clickJobType(lmMenu.unassigned.type)" ng-class="{ 'active-job-tab' : menuItem == lmMenu.unassigned.type}" class = "moveLeft">UNASSIGNED</div>
+			<div ng-click="clickJobType(lmMenu.assigned.type)" ng-class="{ 'active-job-tab' : menuItem == lmMenu.assigned.type}" class = "moveMid">ASSIGNED</div>
+			<div ng-click="clickJobType(lmMenu.completed.type)" ng-class="{ 'active-job-tab' : menuItem == lmMenu.completed.type}" class = "moveRight">COMPLETED</div>
 		</div>		 
 
 	<div class="menu">
 	  <ul>
-	    <div><li class = "liHead">
-			DRIVERS</li></div>
-		<div><li class = 'subHead'>All</li></div>
-		<div><li class = 'subHead'>Available</li></div>	
-		<div><li class = 'subHead'>Assigned</li></div>
-		<div><li class = 'subHead'>Returning</li></div>		
+		<div ><li class = "liHead">DRIVERS</li></div>
+		<div ng-click="menuClicked(daMenu.drivers.items.all)"><li class = 'subHead' ng-class="{ 'active-menu-item' : menuItem == daMenu.drivers.items.all}">All</li></div>
+		<div ng-click="menuClicked(daMenu.drivers.items.available)"><li class = 'subHead' ng-class="{ 'active-menu-item' : menuItem == daMenu.drivers.items.available}">Available</li></div>	
+		<div ng-click="menuClicked(daMenu.drivers.items.assigned)"><li class = 'subHead' ng-class="{ 'active-menu-item' : menuItem == daMenu.drivers.items.assigned}">Assigned</li></div>
+		<div ng-click="menuClicked(daMenu.drivers.items.returning)"><li class = 'subHead' ng-class="{ 'active-menu-item' : menuItem == daMenu.drivers.items.returning}">Returning</li></div>	
 	    <div><li class = "liHead">
 			JOBS</li></div>
-		<div><li class = 'subHead'>Unassigned</li></div>
-		<div><li class = 'subHead'>Assigned</li></div>	
-		<div><li class = 'subHead'>Assigned</li></div>
-		<div><li class = 'subHead'>Completed</li></div>	
+		<div><li ng-click="clickJobType(lmMenu.unassigned.type)" ng-class="{ 'active-menu-item' : menuItem == lmMenu.unassigned.type}" class = 'subHead'>Unassigned</li></div>
+		<div><li ng-click="clickJobType(lmMenu.assigned.type)" ng-class="{ 'active-menu-item' : menuItem == lmMenu.assigned.type}" class = 'subHead'>Assigned</li></div>	
+		<div><li ng-click="clickJobType(lmMenu.completed.type)" ng-class="{ 'active-menu-item' : menuItem == lmMenu.completed.type}" class = 'subHead'>Completed</li></div>	
 		<div class ="bottomNav">
 		    <div class = "lineBottom"><li class = "subHead" style = "margin-left: -31px;"><i class="fa fa-cog"></i>
 				Settings</li></div>
@@ -36,7 +34,9 @@
 	  </ul>
 	</div>
 
+
 	<div class = "division" style = "height : 730px">
+
 		<div class= "scrollBar" style = "margin-top:0px; width:100%; height : 728px;" id="style-2">
 		    
 				<div ng-include ="'/views/loadManager/templates/jobCard.html'"/>
@@ -63,7 +63,7 @@
 	    <!-- Modal content-->
 	    <div class="modal-content" style = "width: 528px;margin: 0 auto;height: 738px;">
 	      <div class="modal-header" style ="border-top-left-radius: 4px; border-top-right-radius: 4px;">
-	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <button id="closeModal" type="button" class="close" data-dismiss="modal">&times;</button>
 	        <p class="modal-title" style = "font-size: 25px;font-family: 'open_sansbold';">Available Drivers</p>
 	      </div>
 	      <div class="modal-body">

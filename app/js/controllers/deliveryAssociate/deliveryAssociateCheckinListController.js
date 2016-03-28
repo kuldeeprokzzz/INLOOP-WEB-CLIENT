@@ -35,7 +35,7 @@ inLoopApp.controller('deliveryAssociateCheckinListController', function ($scope,
             
             // if response has only one arrived driver 
             // we send it directly to the driver checkin page
-            if(response.data.length != 1){
+            if(response.data.length == 1){
               completeModel.deliveryAssociate.from = 'driversList';
               completeModel.deliveryAssociate.contractTask = response.data[0];
               sharedProperties.setPath('/driverBlankCard');
@@ -44,12 +44,13 @@ inLoopApp.controller('deliveryAssociateCheckinListController', function ($scope,
             // if response has more than one arrived drivers
             // then we show the arrived drivers list 
       			$scope.contractTasks = response.data;
-      			$scope.showDriverList = true;
+           	$scope.showDriverList = true;
 
       		}else{
 
             // if response has no arrived drivers 
             // we send user to show all driver queue
+            // for morning
             completeModel.menuItem = sharedProperties.getdaMenu().drivers.items.all;
             sharedProperties.setPath('/driverAllList');
       		}
@@ -66,6 +67,10 @@ inLoopApp.controller('deliveryAssociateCheckinListController', function ($scope,
     $scope.menuItem = item;
     completeModel.menuItem = item;
     sharedProperties.setPath('/driverAllList');
+  }
+
+  $scope.getTime = function(utcTime){
+    return sharedProperties.getTimeFromUTCDateTime(utcTime);
   }
 
 });

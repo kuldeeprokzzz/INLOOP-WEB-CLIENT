@@ -8,10 +8,10 @@
 			   <p class = "cardB">{{jobTime}}</p>
 			</div>			
 		</div>	
-		<p class = "cardB">{{route}}</p>
+		<p class = "cardB">{{area}}</p>
 		<p class = "cardB">{{packages}} packages</p>
 	</div>
-	<div class = "middleButton">
+	<div ng-show="{{contract.status == contratTaskType.checkedIn.type}}" class = "middleButton" ng-click="assignJobToContract()">
     	<button type="button" class="btn btn-info formButton" style = "width: 440px; font-weight : bold;">Assign</button>
     </div>	
 </div>

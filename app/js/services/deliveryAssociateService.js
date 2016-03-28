@@ -3,7 +3,7 @@ inLoopApp.service('deliveryAssociateService', ['sharedProperties','$http', funct
 
 	this.getArrivedVehiclesByDeliveryCenterId = function(deliveryCenterId){
 
-        return $http.get(sharedProperties.getUrl()+'/contract_tasks/?status='+sharedProperties.getContractTaskType().arrived.type+'&delivery_centreid='+deliveryCenterId, { token : sharedProperties.getAuthToken})
+        return $http.get(sharedProperties.getUrl()+'/contract_tasks/?status='+sharedProperties.getContractTaskType().arrived.type+'&delivery_centreid='+deliveryCenterId+'&task_date=today', { token : sharedProperties.getAuthToken()})
         .then(function(response){
             return response;
         }, function(response){
@@ -14,7 +14,7 @@ inLoopApp.service('deliveryAssociateService', ['sharedProperties','$http', funct
     this.getOnWayOrReturningContractByVehicleNumberPlate = function(licencePlateNumber){
 
         licencePlateNumber = '5432';
-        return $http.get(sharedProperties.getUrl()+'/contracts/?status=ON_WAY&vehicle_regNumber='+licencePlateNumber+'&wildcard=true', { token : sharedProperties.getAuthToken})
+        return $http.get(sharedProperties.getUrl()+'/contracts/?status=ON_WAY&vehicle_regNumber='+licencePlateNumber+'&wildcard=true', { token : sharedProperties.getAuthToken()})
         .then(function(response){
             return response;
         }, function(response){
@@ -41,7 +41,7 @@ inLoopApp.service('deliveryAssociateService', ['sharedProperties','$http', funct
 
     this.getAllVehiclesByDeliveryCenterId = function(deliveryCenterId){
         /*cheched In , Assigned , assigned Job*/
-        return $http.get(sharedProperties.getUrl()+'/contract_tasks/?status='+sharedProperties.getContractTaskType().checkedIn.type+','+sharedProperties.getContractTaskType().arrived.type+','+sharedProperties.getContractTaskType().assignedJob.type+'&delivery_centreid='+deliveryCenterId, { token : sharedProperties.getAuthToken})
+        return $http.get(sharedProperties.getUrl()+'/contract_tasks/?status='+sharedProperties.getContractTaskType().checkedIn.type+','+sharedProperties.getContractTaskType().arrived.type+','+sharedProperties.getContractTaskType().assignedJob.type+'&delivery_centreid='+deliveryCenterId, { token : sharedProperties.getAuthToken()})
         .then(function(response){
             return response;
         }, function(response){
@@ -50,7 +50,7 @@ inLoopApp.service('deliveryAssociateService', ['sharedProperties','$http', funct
     }
 
     this.getVehiclesByDeliveryCenterIdAndStates = function(deliveryCenterId,state){
-        return $http.get(sharedProperties.getUrl()+'/contract_tasks/?status='+state+'&delivery_centreid='+deliveryCenterId, { token : sharedProperties.getAuthToken})
+        return $http.get(sharedProperties.getUrl()+'/contract_tasks/?status='+state+'&delivery_centreid='+deliveryCenterId+'&task_date=today', { token : sharedProperties.getAuthToken()})
         .then(function(response){
             return response;
         }, function(response){

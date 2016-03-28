@@ -1,10 +1,43 @@
 <div ng-init = "initialize()">
     <div class = "bigBox" ng-repeat = "contractTask in contractTasks">
-     
-     <div ng-show="{{contractTask.card_type == cardType.yellowCard.type}}">
+
+    <div ng-if="contractTask.card_type == cardType.blankCard.type">
       <div class = "queueCard" ng-click = "sendToBlankDriverPageWithContract(contractTask)">
         <img src="{{contractTask.driver_image}}" width = "100%" height = "250px";>
-        <div style = "height:15px; background-color: #72c143;"></div>
+        <div style = "height:15px; background-color: #ffffff;"></div>
+        <div class = "boxSizing">
+          <div>
+        	<div class = "queueDetails">
+	        	<div class ="pull-left">
+	        		<p class = "contract">{{contractTask.driver_name}}</p>
+	        	</div>
+	        	<div ng-if="contractTask.status == contractTaskType.dispatched.type" class ="pull-right">
+	        		<p class ="status">IN TRANSIT</p>
+	        	</div>
+	        	<div ng-show="contractTask.status == contractTaskType.returning.type" class ="pull-right">
+	        		<p class ="status">IN TRANSIT</p>
+	        	</div>
+	        </div>
+	      </div>
+	        
+	      <div>
+	        <div class = "queueDetails">
+	        	<div class ="pull-left">
+	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.provider_name}}</p>
+	        	</div>
+	        	<div ng-if="contractTask.status == contractTaskType.dispatched.type || contractTask.status == contractTaskType.dispatched.type" class ="pull-right">
+	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.latest_state.time | date: 'hh:mm a'}}</p>
+	        	</div>
+	        </div>
+	      </div>
+        </div>  	 		
+      </div>
+     </div>
+     
+     <div ng-if="contractTask.card_type == cardType.yellowCard.type">
+      <div class = "queueCard" ng-click = "sendToBlankDriverPageWithContract(contractTask)">
+        <img src="{{contractTask.driver_image}}" width = "100%" height = "250px";>
+        <div style = "height:15px; background-color: #FFFF00;"></div>
         <div class = "boxSizing">
           <div>
         	<div class = "queueDetails">
@@ -12,7 +45,7 @@
 	        		<p class = "contract">{{contractTask.driver_name}}</p>
 	        	</div>
 	        	<div class ="pull-right">
-	        		<p class ="status">{{cardType.yellowCard.text}}</p>
+	        		<p class ="status">ARRIVED</p>
 	        	</div>
 	        </div>
 	      </div>
@@ -23,7 +56,7 @@
 	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.provider_name}}</p>
 	        	</div>
 	        	<div class ="pull-right">
-	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.states[contractTask.states.length-1].time}}</p>
+	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.latest_state.time | date: 'hh:mm a'}}</p>
 	        	</div>
 	        </div>
 	      </div>
@@ -31,7 +64,7 @@
       </div>
      </div>
 
-    <div ng-show="{{contractTask.card_type == cardType.orangeCard.type}}">
+    <div ng-if="contractTask.card_type == cardType.orangeCard.type">
       <div class = "queueCard" ng-click = "sendToBlankDriverPageWithContract(contractTask)">
         <img src="{{contractTask.driver_image}}" width = "100%" height = "250px";>
         <div style = "height:15px; background-color: #FFA500;"></div>
@@ -42,7 +75,7 @@
 	        		<p class = "contract">{{contractTask.driver_name}}</p>
 	        	</div>
 	        	<div class ="pull-right">
-	        		<p class ="status">{{cardType.orangeCard.text}}</p>
+	        		<p class ="status">ARRIVED</p>
 	        	</div>
 	        </div>
 	      </div>
@@ -53,15 +86,15 @@
 	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.provider_name}}</p>
 	        	</div>
 	        	<div class ="pull-right">
-	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.states[contractTask.states.length-1].time}}</p>
+	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.latest_state.time | date: 'hh:mm a'}}</p>
 	        	</div>
 	        </div>
 	      </div>
         </div>  	 		
       </div>
      </div>
-
-    <div ng-show="{{contractTask.card_type == cardType.greenCard.type}}">
+<!-- {{ 'shortTime' | contractTask.latest_state.time : 'hh:mm a' : '+0530'}} -->
+    <div ng-if="contractTask.card_type == cardType.greenCard.type">
       <div class = "queueCard" ng-click = "sendToBlankDriverPageWithContract(contractTask)">
         <img src="{{contractTask.driver_image}}" width = "100%" height = "250px";>
         <div style = "height:15px; background-color: #72C143;"></div>
@@ -72,7 +105,7 @@
 	        		<p class = "contract">{{contractTask.driver_name}}</p>
 	        	</div>
 	        	<div class ="pull-right">
-	        		<p class ="status">{{contractTask.states[contractTask.states.length-1].odometer}}</p>
+	        		<p class ="status">{{contractTask.latest_state.odometer}}</p>
 	        	</div>
 	        </div>
 	      </div>
@@ -83,18 +116,18 @@
 	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.provider_name}}</p>
 	        	</div>
 	        	<div class ="pull-right">
-	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.states[contractTask.states.length-1].time}}</p>
+	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.latest_state.time | date: 'hh:mm a'}}</p>
 	        	</div>
 	        </div>
 	      </div>
         </div>  	 		
       </div>
      </div>
-
-    <div ng-show="{{contractTask.card_type == cardType.blueCard.type}}">
+<!-- {{ 'shortTime' | contractTask.latest_state.time : 'hh:mm a' : '+0530'}} -->
+    <div ng-if="contractTask.card_type == cardType.blueCard.type">
       <div class = "queueCard" ng-click = "sendToBlankDriverPageWithContract(contractTask)">
         <img src="{{contractTask.driver_image}}" width = "100%" height = "250px";>
-        <div style = "height:15px; background-color: #72C143;"></div>
+        <div style = "height:15px; background-color: #7EC0EE;"></div>
         <div class = "boxSizing">
           <div>
         	<div class = "queueDetails">
@@ -102,7 +135,7 @@
 	        		<p class = "contract">{{contractTask.driver_name}}</p>
 	        	</div>
 	        	<div class ="pull-right">
-	        		<p class ="status">{{cardType.blueCard.text}}</p>
+	        		<p class ="status">{{contractTask.jobid}}</p>
 	        	</div>
 	        </div>
 	      </div>
@@ -113,44 +146,14 @@
 	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.provider_name}}</p>
 	        	</div>
 	        	<div class ="pull-right">
-	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.states[contractTask.states.length-1].time}}</p>
+	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.latest_state.time | date: 'hh:mm a'}}</p>
 	        	</div>
 	        </div>
 	      </div>
         </div>  	 		
       </div>
      </div>
-
-    <div ng-show="{{contractTask.card_type == 'Sample text'}}">
-      <div class = "queueCard" ng-click = "sendToBlankDriverPageWithContract(contractTask)">
-        <img src="{{contractTask.driver_image}}" width = "100%" height = "250px";>
-        <div style = "height:15px; background-color: #72C143;"></div>
-        <div class = "boxSizing">
-          <div>
-        	<div class = "queueDetails">
-	        	<div class ="pull-left">
-	        		<p class = "contract">{{contractTask.driver_name}}</p>
-	        	</div>
-	        	<div class ="pull-right">
-	        		<p class ="status">{{contractTask.status}}</p>
-	        	</div>
-	        </div>
-	      </div>
-	        
-	      <div>
-	        <div class = "queueDetails">
-	        	<div class ="pull-left">
-	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.provider_name}}</p>
-	        	</div>
-	        	<div class ="pull-right">
-	        		<p class ="status" style = "margin-top: -16px;">{{contractTask.states[contractTask.states.length-1].time}}</p>
-	        	</div>
-	        </div>
-	      </div>
-        </div>  	 		
-      </div>
-     </div>
-
+     
     </div>
 </div>      
 

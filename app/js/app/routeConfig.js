@@ -73,6 +73,11 @@ inLoopApp.config(function ($routeProvider) {
         controller: 'loadManagerJobAssignmentController',
         
       })
+      .when('/lmDrivers', {
+        templateUrl: 'views/loadManager/deliveryAssociateDriverList.html',
+        controller: 'loadManagerDriverController',
+        
+      })
       .when('/submitInvoice', {
         templateUrl: 'views/accountsRecievable/submitInvoice.html',
         controller: 'loadManagerJobAssignmentController',

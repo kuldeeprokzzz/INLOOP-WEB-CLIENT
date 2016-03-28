@@ -9,7 +9,7 @@ inLoopApp
 
         var requestBody = {
               "type": sharedProperties.getContractTaskType().arrived.type,
-              "time": '2016-03-19T08:14:00+0530',
+              "time": sharedProperties.getTodatUTCDateTime(),
               "location": {
                 "longitude":77.59369,
                 "latitude": 12.97194
@@ -31,7 +31,7 @@ inLoopApp
 			        $scope.message = 'IOT Detected';
         		}else{
               // in case of failure send to previous view
-        			sharedProperties.setPath('/onWayDone');
+        			//sharedProperties.setPath('/onWayDone');
         		}
         	});
     };

@@ -70,10 +70,10 @@ inLoopApp.service('loadManagerService', ['sharedProperties','$http', function(sh
     
 
 
-this.getAllAvailableDriversByDeliveryCenterId = function(deliveryCenterId){
-
-        deliveryCenterId = '0';
-        return $http.get(sharedProperties.getUrl()+'/contracts/?status=CHECKED_IN&delivery_centreid='+deliveryCenterId+'&wildcard=true', { token : sharedProperties.getAuthToken})
+this.getTodaysJobsByDeliveryCenterIdShipperIdAndStatus = function(deliveryCenterId,shipperId,status){
+        shipperId = 1;
+        var today = 'today'; // sharedProperties.getTodayDate()
+        return $http.get(sharedProperties.getUrl()+'/jobs?job_date='+today+'&delivery_centreid='+deliveryCenterId+'&shippered='+shipperId+'&status='+status, { token : sharedProperties.getAuthToken()})
         .then(function(response){
             return response;
         }, function(response){
@@ -81,37 +81,85 @@ this.getAllAvailableDriversByDeliveryCenterId = function(deliveryCenterId){
         });
     }
 
+this.getTodayCheckedInContractTaskByDeliveryCenterId = function(deliveryCenterId){
 
-    // this.getAllAvailableDeliveryBoysByDeliveryCenterId = function(deliveryCenterId){
+        var today = 'today'; // sharedProperties.getTodayDate()
 
+        return $http.get(sharedProperties.getUrl()+'/contract_tasks/?status='+sharedProperties.getContractTaskType().checkedIn.type+'&delivery_centreid='+deliveryCenterId+'&task_date='+today, { token : sharedProperties.getAuthToken()})
+        .then(function(response){
+            return response;
+        }, function(response){
+            return response;
+        });
+} 
 
-    //     var response = [
-    //   {
-    //     id : 0,
-    //     driverName : 'Prashant Sonkar',
-    //     providerName: 'GTrans Logistics Pvt. Limited'
-    //   },
-    //   {
-    //     driverName : 'Mustaq Singh Bijral',
-    //     providerName: 'GTrans Logistics Pvt. Limited'
-    //   },
-    //   {
-    //     driverName : 'Kuldeep',
-    //     providerName: 'Bajrang Trading Company'
-    //   },
-    //   {
-    //     driverName : 'Prashant Sonkar',
-    //     providerName: 'a Logistics Pvt. Limited'
-    //   },
-    //   {
-    //     driverName : 'Prashant Sonkar',
-    //     providerName: 'GTrans Logistics Pvt. Limited'
-    //   },
-    // ];
+this.updateJobToAssigned = function(jobId,performedBy){
 
+        var requestBody = {
+                           "type": sharedProperties.getJobsTypes().assigned.type,
+                           "time": sharedProperties.getTodatUTCDateTime(),
+                           "performed_by": performedBy,
+                           };
 
-    //     return response;
-    // };
+        return $http.post(sharedProperties.getUrl()+'/jobs/'+jobId+'/states',requestBody,{ token : sharedProperties.getAuthToken()})
+        .then(function(response){
+            return response;
+        }, function(response){
+            return response;
+        });
+}
 
+this.createTripForJob = function(vehicleId,driverId,contractTaskId,jobId,odometerDeviceId){
+
+        var requestBody = {
+                            'vehicleid' : vehicleId,
+                            'driverid': driverId,
+                            'contract_taskid': contractTaskId,
+                            'jobid': jobId, 
+                            'odometer_deviceid':odometerDeviceId,
+                          };
+
+        return $http.post(sharedProperties.getUrl()+'/trips',requestBody,{ token : sharedProperties.getAuthToken()})
+        .then(function(response){
+            return response;
+        }, function(response){
+            return response;
+        });
+}
+
+this.updateTripToJob = function(jobId,contractTaskId,tripId){
+
+        var requestBody = {
+                            'contract_taskid': contractTaskId,
+                            'tripid': tripId,
+                          };
+
+        return $http.put(sharedProperties.getUrl()+'/jobs/'+jobId+'/',requestBody,{ token : sharedProperties.getAuthToken()})
+        .then(function(response){
+            return response;
+        }, function(response){
+            return response;
+        });
+}
+
+this.updateTaskToAssingedJob = function(contractTaskId,requestBody){
+
+        return $http.post(sharedProperties.getUrl()+'/contract_tasks/'+contractTaskId+'/states',requestBody,{ token : sharedProperties.getAuthToken()})
+        .then(function(response){
+            return response;
+        }, function(response){
+            return response;
+        });
+}
+
+this.getContractTaskByID = function(contractTaskId){
+
+        return $http.get(sharedProperties.getUrl()+'/contract_tasks/'+contractTaskId,{ token : sharedProperties.getAuthToken()})
+        .then(function(response){
+            return response;
+        }, function(response){
+            return response;
+        });
+}
 
 }])

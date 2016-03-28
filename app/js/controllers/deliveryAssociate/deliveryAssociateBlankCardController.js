@@ -18,8 +18,9 @@ inLoopApp.controller('deliveryAssociateBlankCardController', function ($scope, $
           providerName : $scope.blankDriverCard.provider_name,
           licensePlateNumber : $scope.blankDriverCard.vehicle_regNumber,
           vehicleModelName : $scope.blankDriverCard.vehicle_make,
-          odometerReading : $scope.blankDriverCard.states[$scope.blankDriverCard.states.length-1].odometer,
+          odometerReading : $scope.blankDriverCard.latest_state.odometer,
           image : $scope.blankDriverCard.driver_image,
+          status : $scope.blankDriverCard;
         };
 
         if(($scope.driver.odometerReading).length == 0){
@@ -35,16 +36,16 @@ inLoopApp.controller('deliveryAssociateBlankCardController', function ($scope, $
     $scope.addOdometerReading = function(){
 
         var requestBody =  {
-          id: 1,
-          type: 'CHECKED_IN',
-          time: '26/02/201608:01:00',
+          id: $scope.blankDriverCard.id,
+          type: sharedProperties.getContractTaskType().checkedIn.type,
+          time: sharedProperties.getTodatUTCDateTime(),
           location: {
             longitude: 77.5936910,
             latitude: 12.9719410
           },
-          odometer: 21355,
-          performed_by: 'kvkumar',
-        }
+          odometer: $scope.driver.odometerReading,
+          performed_by: completeModel.deliveryAssociate.profile.id,
+        };
 
         // updating contract state to checked-in 
         deliveryAssociateService.updateContractTaskToCheckedIn(completeModel.deliveryAssociate.contractTask.id,requestBody)

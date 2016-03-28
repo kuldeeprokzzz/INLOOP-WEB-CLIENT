@@ -1,4 +1,4 @@
-inLoopApp.controller('loginController', function ($scope, sharedProperties, completeModel, loginService, deliveryAssociateService) {
+inLoopApp.controller('loginController', function ($scope,localStorageService, sharedProperties, completeModel, loginService, deliveryAssociateService) {
 
     $scope.submit = function(loginType){
 
@@ -13,7 +13,9 @@ inLoopApp.controller('loginController', function ($scope, sharedProperties, comp
             if(response.status == 200){
 
                 sharedProperties.setAuthToken(response.data.token);
-                
+                completeModel.token = response.data.token;
+                completeModel.tokenExpires = response.data.expires;
+                completeModel.loginTime = new Date();
                 // if login is successful then making a 
                 // profile call for the user
                 loginService.getProfile()
@@ -23,39 +25,45 @@ inLoopApp.controller('loginController', function ($scope, sharedProperties, comp
                     {
                         // If Login and Profiles calls are Successful 
                         // then directing user according to its roleid
+                        if(response.data.verified == true){
+// response.data.roleid == sharedProperties.getRoles().driver
+                            if(!(response.data.roleid == sharedProperties.getRoles().driver)){
+                                completeModel.driver = response.data; // Initalizing model for Driver
+                                sharedProperties.setPath('/licensePlate');
+                            }
 
-                        if($scope.username == '8010599690' && $scope.password == '9690'){
-                        completeModel.driver = response.data; // Initalizing model for Driver
-                        sharedProperties.setPath('/licensePlate');
+
+
+
+                            if(!(response.data.roleid == sharedProperties.getRoles().deliveryAssociate)){
+
+
+                                completeModel.deliveryAssociate = {profile : {},from:''};
+                                completeModel.deliveryAssociate.profile = response.data; // Initalizing model for Delivery Associate
+
+                                sharedProperties.setPath('/driverCheckInList');
+
+
+                            }
+
+                            if(response.data.roleid == sharedProperties.getRoles().loadManager){
+                                completeModel.loadManager = {profile : {},}
+                                completeModel.loadManager.profile = response.data;  // Initalizing model for Load Manager
+
+
+                                sharedProperties.setPath('/jobsList');
+                            }
+                        }else{
+                            $scope.errorMessage = "Please verify your account before login";
                         }
-
-
-
-
-                        if($scope.username == '8010599691' && $scope.password == '9691'){
-
-
-                            completeModel.deliveryAssociate = {profile : {},from:''};
-                            completeModel.deliveryAssociate.profile = response.data; // Initalizing model for Delivery Associate
-
-                            sharedProperties.setPath('/driverCheckInList');
-
-
-                        }
-
-
-                        if($scope.username == 'amazonLM' && $scope.password == 'amazonLM'){
-                            completeModel.loadManager = {profile : {},}
-                            completeModel.loadManager.profile = response.data;  // Initalizing model for Load Manager
-
-
-                            sharedProperties.setPath('/jobsList');
-                        }
+                        
                         
 
                     }
                 });
-            }
+            }/*else{
+                $scope.errorMessage = "Wrong username or password";
+            }*/
             else{
                 //handle error
                 sharedProperties.setPath('/');
@@ -70,4 +78,11 @@ inLoopApp.controller('loginController', function ($scope, sharedProperties, comp
     $scope.onLoginKeyPress = function(loginType){
         $scope.errorMessage = '';
     };
+
+    $scope.$watch(function(){
+        return completeModel;
+    }, function (newValue) {
+        localStorageService.set('completeModel',newValue);
+    });
+
   });
