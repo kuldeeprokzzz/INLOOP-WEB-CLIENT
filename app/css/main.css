@@ -33,6 +33,34 @@
     font-style: normal;
 
 }
+.fontDesign{
+    font-size: 21px;
+    padding: 12px;
+    font-family: 'open_sansregular';
+    color: black;
+}
+.selectChoice {
+  padding: 4px;
+  line-height: 50px;
+  font-size: 20px;
+  color: black;
+  font-family: 'open_sansregular';
+}
+.modalHeaderA{
+  width: 74%;
+  margin: 0 auto;
+  margin-top: 90px;
+}
+.box {
+  display: inline-block;
+  vertical-align: middle;
+}
+.logoScreen {
+  display: inline-block;
+  vertical-align: middle;
+  float: right;
+  margin-top: 27px;
+}
 .BigRapper{
   width:600px; 
   margin: 0 auto;
